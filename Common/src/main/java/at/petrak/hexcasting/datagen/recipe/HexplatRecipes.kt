@@ -53,6 +53,7 @@ class HexplatRecipes(
         wandRecipe(recipes, HexItems.STAFF_ACACIA, Items.ACACIA_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_CRIMSON, Items.CRIMSON_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_WARPED, Items.WARPED_PLANKS)
+        wandRecipe(recipes, HexItems.STAFF_MANGROVE, Items.MANGROVE_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_EDIFIED, HexBlocks.EDIFIED_PLANKS.asItem())
 
         ringCornered(HexItems.FOCUS, 1,
