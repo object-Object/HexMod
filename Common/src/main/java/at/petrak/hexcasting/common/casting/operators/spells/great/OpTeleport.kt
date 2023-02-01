@@ -102,25 +102,25 @@ object OpTeleport : SpellAction {
             return
         }
 
-        val base = teleportee.rootVehicle
-        val target = base.position().add(delta)
-
         val playersToUpdate = mutableListOf<ServerPlayer>()
-        val indirect = base.indirectPassengers
+        val target = teleportee.position().add(delta)
 
-        val sticky = indirect.any { it.type.`is`(HexTags.Entities.STICKY_TELEPORTERS) }
-        val cannotSticky = indirect.none { it.type.`is`(HexTags.Entities.CANNOT_TELEPORT) }
-        if (sticky && cannotSticky)
+        val cannotTeleport = teleportee.passengers.any { it.type.`is`(HexTags.Entities.CANNOT_TELEPORT) }
+        if (cannotTeleport)
             return
 
+        // A "sticky" entity teleports itself and its riders
+        val sticky = teleportee.type.`is`(HexTags.Entities.STICKY_TELEPORTERS)
+
+        // TODO: this probably does funky things with stacks of passengers. I doubt this will come up in practice
+        // though
         if (sticky) {
+            teleportee.stopRiding()
+            teleportee.indirectPassengers.filterIsInstance<ServerPlayer>().forEach(playersToUpdate::add)
             // this handles teleporting the passengers
-            base.teleportTo(target.x, target.y, target.z)
-            indirect
-                .filterIsInstance<ServerPlayer>()
-                .forEach(playersToUpdate::add)
+            teleportee.teleportTo(target.x, target.y, target.z)
         } else {
-            // Break it into two stacks
+            // Snap everyone off the stacks
             teleportee.stopRiding()
             teleportee.passengers.forEach(Entity::stopRiding)
             if (teleportee is ServerPlayer) {
