@@ -60,6 +60,14 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
         @ConfigEntry.Gui.Tooltip
         private double mediaToHealthRate = DEFAULT_MEDIA_TO_HEALTH_RATE;
 
+        @ConfigEntry.Gui.Tooltip
+        private int cypherCooldown = DEFAULT_CYPHER_COOLDOWN;
+        @ConfigEntry.Gui.Tooltip
+        private int trinketCooldown = DEFAULT_TRINKET_COOLDOWN;
+        @ConfigEntry.Gui.Tooltip
+        private int artifactCooldown = DEFAULT_ARTIFACT_COOLDOWN;
+
+
         @Override
         public void validatePostLoad() throws ValidationException {
             this.dustMediaAmount = Math.max(this.dustMediaAmount, 0);
@@ -86,6 +94,21 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
         @Override
         public double mediaToHealthRate() {
             return mediaToHealthRate;
+        }
+
+        @Override
+        public int cypherCooldown() {
+            return cypherCooldown;
+        }
+
+        @Override
+        public int trinketCooldown() {
+            return trinketCooldown;
+        }
+
+        @Override
+        public int artifactCooldown() {
+            return artifactCooldown;
         }
     }
 
