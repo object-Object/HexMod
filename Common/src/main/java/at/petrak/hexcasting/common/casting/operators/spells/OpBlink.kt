@@ -10,6 +10,7 @@ import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.api.spell.mishaps.MishapLocationTooFarAway
 import at.petrak.hexcasting.common.casting.operators.spells.great.OpTeleport
 import net.minecraft.world.entity.Entity
+import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 
 object OpBlink : SpellAction {
@@ -41,7 +42,7 @@ object OpBlink : SpellAction {
 
         return Triple(
             Spell(target, delta),
-            (MediaConstants.SHARD_UNIT * delta * 0.5).roundToInt(),
+            (MediaConstants.SHARD_UNIT * delta.absoluteValue * 0.5).roundToInt(),
             listOf(
                 ParticleSpray.cloud(targetMiddlePos, 2.0, 50),
                 ParticleSpray.burst(targetMiddlePos.add(dvec), 2.0, 100)
