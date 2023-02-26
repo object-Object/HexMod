@@ -169,6 +169,8 @@ public class RegisterPatterns {
                 OpCoerceToBool.INSTANCE);
             PatternRegistry.mapPattern(HexPattern.fromAngles("awdd", HexDir.SOUTH_EAST), modLoc("if"),
                 OpBoolIf.INSTANCE);
+            PatternRegistry.mapPattern(HexPattern.fromAngles("awd", HexDir.SOUTH_EAST), modLoc("bool_to_number"),
+                OpBoolToNumber.INSTANCE);
 
             PatternRegistry.mapPattern(HexPattern.fromAngles("eqqq", HexDir.NORTH_WEST), modLoc("random"),
                 OpRandom.INSTANCE);
