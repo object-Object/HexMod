@@ -20,8 +20,13 @@ import java.util.HashSet;
 import java.util.List;
 
 public class StaffCastEnv extends PlayerBasedCastEnv {
+    private InteractionHand castingHand;
+
+
     public StaffCastEnv(ServerPlayer caster, InteractionHand castingHand) {
         super(caster, castingHand);
+
+        this.castingHand = castingHand;
     }
 
     @Override
@@ -41,6 +46,11 @@ public class StaffCastEnv extends PlayerBasedCastEnv {
             this.caster.sendSystemMessage(Component.translatable("hexcasting.message.cant_overcast"));
         }
         return remaining;
+    }
+
+    @Override
+    public InteractionHand castingHand() {
+        return castingHand;
     }
 
     @Override
@@ -74,7 +84,7 @@ public class StaffCastEnv extends PlayerBasedCastEnv {
 
         var vm = IXplatAbstractions.INSTANCE.getStaffcastVM(sender, msg.handUsed());
 
-        ExecutionClientView clientInfo = vm.queueAndExecuteIota(new PatternIota(msg.pattern()), sender.getLevel());
+        ExecutionClientView clientInfo = vm.queueExecuteAndWrapIota(new PatternIota(msg.pattern()), sender.getLevel());
 
         if (clientInfo.isStackClear()) {
             IXplatAbstractions.INSTANCE.setStaffcastImage(sender, null);

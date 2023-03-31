@@ -1,4 +1,4 @@
-package at.petrak.hexcasting.api.casting.eval.vharnessm
+package at.petrak.hexcasting.api.casting.eval.vm
 
 import at.petrak.hexcasting.api.HexAPI
 import at.petrak.hexcasting.api.casting.PatternShapeMatch
