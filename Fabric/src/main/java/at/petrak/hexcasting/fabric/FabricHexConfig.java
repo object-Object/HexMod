@@ -8,7 +8,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -36,7 +36,7 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
     private final Server server = new Server();
 
     public static void setup() {
-        AutoConfig.register(FabricHexConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        AutoConfig.register(FabricHexConfig.class, PartitioningSerializer.wrap(GsonConfigSerializer::new));
         var instance = AutoConfig.getConfigHolder(FabricHexConfig.class).getConfig();
 
         HexConfig.setCommon(instance.common);
