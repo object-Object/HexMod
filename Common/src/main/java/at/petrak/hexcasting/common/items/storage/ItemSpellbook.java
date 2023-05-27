@@ -1,4 +1,4 @@
-package at.petrak.hexcasting.common.items;
+package at.petrak.hexcasting.common.items.storage;
 
 import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.spell.iota.Iota;
@@ -42,7 +42,7 @@ public class ItemSpellbook extends Item implements IotaHolderItem {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip,
-                                TooltipFlag isAdvanced) {
+        TooltipFlag isAdvanced) {
         boolean sealed = isSealed(stack);
         boolean empty = false;
         if (NBTHelper.hasNumber(stack, TAG_SELECTED_PAGE)) {

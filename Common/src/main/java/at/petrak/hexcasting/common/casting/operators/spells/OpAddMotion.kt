@@ -11,6 +11,9 @@ object OpAddMotion : SpellAction {
     override val argc: Int
         get() = 2
 
+    // for bug #387
+    val MAX_MOTION: Double = 8192.0
+
     override fun execute(
         args: List<Iota>,
         ctx: CastingContext
@@ -22,8 +25,13 @@ object OpAddMotion : SpellAction {
         if (ctx.hasBeenGivenMotion(target))
             motionForCost++
         ctx.markEntityAsMotionAdded(target)
+
+        val shrunkMotion = if (motion.lengthSqr() > MAX_MOTION * MAX_MOTION)
+            motion.normalize().scale(MAX_MOTION)
+        else
+            motion
         return Triple(
-            Spell(target, motion),
+            Spell(target, shrunkMotion),
             (motionForCost * MediaConstants.DUST_UNIT).toInt(),
             listOf(
                 ParticleSpray(

@@ -49,6 +49,8 @@ data class CastingContext(
 
     private val entitiesGivenMotion = mutableSetOf<Entity>()
 
+    // TODO: what the hell does this function even do. why are we using it. why do we continually put a predicate
+    // into here and then do the *same* predicate *again*
     inline fun getHeldItemToOperateOn(acceptItemIf: (ItemStack) -> Boolean): Pair<ItemStack, InteractionHand> {
         val handItem = caster.getItemInHand(otherHand)
         if (!acceptItemIf(handItem)) {
@@ -136,8 +138,8 @@ data class CastingContext(
 
     fun canEditBlockAt(pos: BlockPos): Boolean {
         return this.isVecInRange(Vec3.atCenterOf(pos))
-                && this.caster.gameMode.gameModeForPlayer != GameType.ADVENTURE
-                && this.world.mayInteract(this.caster, pos)
+            && this.caster.gameMode.gameModeForPlayer != GameType.ADVENTURE
+            && this.world.mayInteract(this.caster, pos)
     }
 
     /**

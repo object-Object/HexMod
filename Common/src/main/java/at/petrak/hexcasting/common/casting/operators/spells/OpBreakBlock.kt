@@ -25,7 +25,7 @@ object OpBreakBlock : SpellAction {
 
         return Triple(
             Spell(pos),
-            (MediaConstants.DUST_UNIT * 1.125).toInt(),
+            MediaConstants.DUST_UNIT / 8,
             listOf(ParticleSpray.burst(Vec3.atCenterOf(pos), 1.0))
         )
     }

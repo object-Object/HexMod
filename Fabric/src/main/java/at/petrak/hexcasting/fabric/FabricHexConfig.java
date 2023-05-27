@@ -8,7 +8,7 @@ import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
+import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -36,7 +36,7 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
     private final Server server = new Server();
 
     public static void setup() {
-        AutoConfig.register(FabricHexConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        AutoConfig.register(FabricHexConfig.class, PartitioningSerializer.wrap(GsonConfigSerializer::new));
         var instance = AutoConfig.getConfigHolder(FabricHexConfig.class).getConfig();
 
         HexConfig.setCommon(instance.common);
@@ -59,6 +59,14 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
         private int chargedCrystalMediaAmount = DEFAULT_CHARGED_MEDIA_AMOUNT;
         @ConfigEntry.Gui.Tooltip
         private double mediaToHealthRate = DEFAULT_MEDIA_TO_HEALTH_RATE;
+
+        @ConfigEntry.Gui.Tooltip
+        private int cypherCooldown = DEFAULT_CYPHER_COOLDOWN;
+        @ConfigEntry.Gui.Tooltip
+        private int trinketCooldown = DEFAULT_TRINKET_COOLDOWN;
+        @ConfigEntry.Gui.Tooltip
+        private int artifactCooldown = DEFAULT_ARTIFACT_COOLDOWN;
+
 
         @Override
         public void validatePostLoad() throws ValidationException {
@@ -86,6 +94,21 @@ public class FabricHexConfig extends PartitioningSerializer.GlobalData {
         @Override
         public double mediaToHealthRate() {
             return mediaToHealthRate;
+        }
+
+        @Override
+        public int cypherCooldown() {
+            return cypherCooldown;
+        }
+
+        @Override
+        public int trinketCooldown() {
+            return trinketCooldown;
+        }
+
+        @Override
+        public int artifactCooldown() {
+            return artifactCooldown;
         }
     }
 

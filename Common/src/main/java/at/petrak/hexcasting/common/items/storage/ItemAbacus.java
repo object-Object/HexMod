@@ -1,4 +1,4 @@
-package at.petrak.hexcasting.common.items;
+package at.petrak.hexcasting.common.items.storage;
 
 import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.spell.iota.DoubleIota;
@@ -66,7 +66,7 @@ public class ItemAbacus extends Item implements IotaHolderItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents,
-                                TooltipFlag pIsAdvanced) {
+        TooltipFlag pIsAdvanced) {
         IotaHolderItem.appendHoverText(this, pStack, pTooltipComponents, pIsAdvanced);
     }
 }

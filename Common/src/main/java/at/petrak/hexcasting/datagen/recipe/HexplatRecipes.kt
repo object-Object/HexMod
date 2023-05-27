@@ -53,7 +53,14 @@ class HexplatRecipes(
         wandRecipe(recipes, HexItems.STAFF_ACACIA, Items.ACACIA_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_CRIMSON, Items.CRIMSON_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_WARPED, Items.WARPED_PLANKS)
+        wandRecipe(recipes, HexItems.STAFF_MANGROVE, Items.MANGROVE_PLANKS)
         wandRecipe(recipes, HexItems.STAFF_EDIFIED, HexBlocks.EDIFIED_PLANKS.asItem())
+
+        ShapelessRecipeBuilder.shapeless(HexItems.THOUGHT_KNOT)
+            .requires(HexItems.AMETHYST_DUST)
+            .requires(Items.STRING)
+            .unlockedBy("has_item", hasItem(HexTags.Items.STAVES))
+            .save(recipes);
 
         ringCornered(HexItems.FOCUS, 1,
             ingredients.glowstoneDust(),

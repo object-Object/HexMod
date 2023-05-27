@@ -66,7 +66,7 @@ public record MsgNewSpellPatternAck(ControllerInfo info, int index) implements I
                 }
                 var screen = Minecraft.getInstance().screen;
                 if (screen instanceof GuiSpellcasting spellGui) {
-                    if (self.info().isStackClear()) {
+                    if (self.info().isStackClear() && self.info.getRavenmind() == null) {
                         mc.setScreen(null);
                     } else {
                         spellGui.recvServerUpdate(self.info(), self.index());

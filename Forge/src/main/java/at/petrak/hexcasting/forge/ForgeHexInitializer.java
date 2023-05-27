@@ -18,6 +18,7 @@ import at.petrak.hexcasting.common.loot.HexLootHandler;
 import at.petrak.hexcasting.common.misc.AkashicTreeGrower;
 import at.petrak.hexcasting.common.misc.Brainsweeping;
 import at.petrak.hexcasting.common.misc.PlayerPositionRecorder;
+import at.petrak.hexcasting.common.misc.VelocityFudging;
 import at.petrak.hexcasting.common.recipe.HexRecipeStuffRegistry;
 import at.petrak.hexcasting.forge.cap.CapSyncers;
 import at.petrak.hexcasting.forge.cap.ForgeCapabilityHandler;
@@ -108,6 +109,8 @@ public class ForgeHexInitializer {
         HexIotaTypes.registerTypes();
 
         HexAdvancementTriggers.registerTriggers();
+
+        VelocityFudging.register();
     }
 
     // https://github.com/VazkiiMods/Botania/blob/1.18.x/Forge/src/main/java/vazkii/botania/forge/ForgeCommonInitializer.java

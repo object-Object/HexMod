@@ -96,7 +96,7 @@ public record MsgCastParticleAck(ParticleSpray spray, FrozenColorizer colorizer)
                     var vel = velUnlen.scale(msg.spray().getVel().length() / 20);
 
                     Minecraft.getInstance().level.addParticle(
-                        new ConjureParticleOptions(color, false),
+                        new ConjureParticleOptions(color),
                         pos.x, pos.y, pos.z,
                         vel.x, vel.y, vel.z
                     );

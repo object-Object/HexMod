@@ -11,6 +11,7 @@
     "MixinReloadableServerResources",
     "MixinVillager",
     "MixinWitch",
+    "accessor.AccessorAbstractArrow",
     "accessor.AccessorEntity",
     "accessor.AccessorLivingEntity",
     "accessor.AccessorLootTable",
