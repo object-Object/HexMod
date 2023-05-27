@@ -30,7 +30,7 @@ public abstract class MixinClientLevel {
         ClientLevel self = ((ClientLevel) (Object) this);
 
         if (state.is(Blocks.BUDDING_AMETHYST)) {
-            ParticleOptions options = new ConjureParticleOptions(0x8932b8);
+            ParticleOptions options = new ConjureParticleOptions(0x8932b8, false);
             Vec3 center = Vec3.atCenterOf(pos);
             for (Direction direction : Direction.values()) {
                 int dX = direction.getStepX();

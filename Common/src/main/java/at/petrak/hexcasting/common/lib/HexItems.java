@@ -1,14 +1,10 @@
 package at.petrak.hexcasting.common.lib;
 
-import at.petrak.hexcasting.common.items.ItemJewelerHammer;
-import at.petrak.hexcasting.common.items.ItemLens;
-import at.petrak.hexcasting.common.items.ItemLoreFragment;
-import at.petrak.hexcasting.common.items.ItemStaff;
+import at.petrak.hexcasting.common.items.*;
 import at.petrak.hexcasting.common.items.colorizer.ItemDyeColorizer;
 import at.petrak.hexcasting.common.items.colorizer.ItemPrideColorizer;
 import at.petrak.hexcasting.common.items.colorizer.ItemUUIDColorizer;
 import at.petrak.hexcasting.common.items.magic.*;
-import at.petrak.hexcasting.common.items.storage.*;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceLocation;

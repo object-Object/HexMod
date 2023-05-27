@@ -1,4 +1,4 @@
-package at.petrak.hexcasting.common.items.storage;
+package at.petrak.hexcasting.common.items;
 
 import at.petrak.hexcasting.api.item.IotaHolderItem;
 import at.petrak.hexcasting.api.spell.iota.Iota;

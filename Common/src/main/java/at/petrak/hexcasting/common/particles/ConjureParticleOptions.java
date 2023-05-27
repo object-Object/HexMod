@@ -11,7 +11,7 @@ import net.minecraft.network.FriendlyByteBuf;
 
 import java.util.Locale;
 
-public record ConjureParticleOptions(int color) implements ParticleOptions {
+public record ConjureParticleOptions(int color, boolean isLight) implements ParticleOptions {
     @Override
     public ParticleType<?> getType() {
         return HexParticles.CONJURE_PARTICLE;
@@ -34,14 +34,14 @@ public record ConjureParticleOptions(int color) implements ParticleOptions {
 
             reader.expect(' ');
             var color = reader.readInt();
-            return new ConjureParticleOptions(color);
+            return new ConjureParticleOptions(color, false);
         }
 
         @Override
         public ConjureParticleOptions fromNetwork(ParticleType<ConjureParticleOptions> type,
             FriendlyByteBuf buf) {
             var col = buf.readInt();
-            return new ConjureParticleOptions(col);
+            return new ConjureParticleOptions(col, false);
         }
     };
 
@@ -55,7 +55,7 @@ public record ConjureParticleOptions(int color) implements ParticleOptions {
                     Codec.INT.fieldOf("color")
                         .forGetter((ConjureParticleOptions o) -> o.color)
                 )
-                .apply(instance, ConjureParticleOptions::new)
+                .apply(instance, color -> new ConjureParticleOptions(color, false))
         );
 
         @Override
