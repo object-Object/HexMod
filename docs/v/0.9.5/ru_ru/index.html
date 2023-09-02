@@ -102,6 +102,9 @@
         --pausetext-scale: 0.5;
         --dark-mode: 0;
       }
+      .dropdown-menu .divider {
+        margin: 4px 0;
+      }
       @media (prefers-color-scheme: dark) {
         body {
           background-color: #201a20;
@@ -135,9 +138,8 @@
           background-color: #402a40;
           min-width: 120px;
         }
-        .dropdown-menu-ltr {
-          left: 0;
-          right: auto;
+        .dropdown-menu .divider {
+          background-color: #080808;
         }
         .dropdown-menu > li > a {
           color: #bbb;
@@ -161,8 +163,9 @@
         }
       </style>
     </noscript>
-    <script>
+    <script type="module">
       "use strict";
+      import semver from 'https://cdn.jsdelivr.net/npm/semver@7.5.4/+esm';
       const speeds = [0, 0.25, 0.5, 1, 2, 4];
       const scrollThreshold = 100;
       const rfaQueue = [];
@@ -433,6 +436,7 @@
       const PAGE_URL = "https://object-object.github.io/HexMod/v/0.9.5/ru_ru";
       const VERSION = "0.9.5";
       const LANG = "ru_ru";
+      // Creates an element in the form `<li><a href=${href}>${text}</a></li>`
       function dropdownItem(text, href) {
         let a = document.createElement("a");
         a.href = href;
@@ -441,34 +445,83 @@
         li.appendChild(a);
         return li;
       }
-      function fillDropdowns(sitemap) {
-        let versionDropdown = document.getElementById("version-dropdown");
-        let langDropdown = document.getElementById("lang-dropdown");
-        // versions, linking to the current lang if possible
-        for (const version of Object.keys(sitemap).sort().reverse()) {
-          let {defaultPath, langPaths} = sitemap[version];
-          // link to the current language if available, else link to the default language
-          let path;
-          if (langPaths.hasOwnProperty(LANG)) {
-            path = langPaths[LANG];
+      function versionDropdownItem(sitemap, version) {
+        const {defaultPath, langPaths} = sitemap[version];
+        // link to the current language if available, else link to the default language
+        let path;
+        if (langPaths.hasOwnProperty(LANG)) {
+          path = langPaths[LANG];
+        } else {
+          path = defaultPath;
+        }
+        return dropdownItem(version, ROOT_URL + path);
+      }
+      function versionDropdownItems(sitemap, versions) {
+        return versions.map((version) => (
+          versionDropdownItem(sitemap, version)
+        ));
+      }
+      function dropdownSeparator() {
+        let li = document.createElement("li");
+        li.className = "divider";
+        li.setAttribute("role", "separator");
+        return li;
+      }
+      // Like array.filter(predicate), but also returns the items which didn't match the filter.
+      function partition(array, predicate) {
+        let matched = [];
+        let unmatched = [];
+        array.forEach((value, index) => {
+          if (predicate(value, index, array)) {
+            matched.push(value);
           } else {
-            path = defaultPath;
+            unmatched.push(value);
           }
-          let item = dropdownItem(version, ROOT_URL + path);
-          versionDropdown.appendChild(item);
+        });
+        return [matched, unmatched];
+      }
+      function sortSitemapVersions(sitemap) {
+        let [versions, branches] = partition(Object.keys(sitemap), (v) => semver.valid(v) != null);
+        // branches ascending, versions descending
+        // eg. ["dev", "main"], ["0.10.0", "0.9.0"]
+        branches.sort();
+        versions.sort(semver.rcompare);
+        return [branches, versions];
+      }
+      // Fills the version dropdown menus and the "old version" message.
+      function addDropdowns(sitemap) {
+        let [branches, versions] = sortSitemapVersions(sitemap);
+        // set the "old version" message if this page is a version number, but not the latest one
+        // this isn't a dropdown, but it's here since we have the data anyway
+        if (versions.slice(1).includes(VERSION)) {
+          // thanks for the idea petra
+          let oldVersionNotice = document.createElement("i");
+          oldVersionNotice.textContent = "The past is a foreign country; they do things differently there.";
+          document.getElementById("old-version-notice").append(
+            document.createElement("br"),
+            oldVersionNotice,
+          );
         }
-        // langs for the current version
-        let langPaths = sitemap[VERSION].langPaths;
-        for (const lang of Object.keys(langPaths).sort()) {
-          let item = dropdownItem(lang, ROOT_URL + langPaths[lang]);
-          langDropdown.appendChild(item);
-        }
+        // versions
+        document.getElementById("version-dropdown").append(
+          ...versionDropdownItems(sitemap, branches),
+          dropdownSeparator(),
+          ...versionDropdownItems(sitemap, versions),
+        );
+        // languages for the current version
+        const langPaths = sitemap[VERSION].langPaths;
+        const langs = Object.keys(langPaths).sort();
+        document.getElementById("lang-dropdown").append(
+          ...langs.map((lang) => dropdownItem(lang, ROOT_URL + langPaths[lang])),
+        );
+        // return sitemap for chaining, i guess
+        return sitemap
       }
       document.addEventListener("DOMContentLoaded", () => {
         // fetch the sitemap from the root and use it to generate the navbar
         fetch(`${ROOT_URL}/meta/sitemap.json`)
           .then(r => r.json())
-          .then(fillDropdowns)
+          .then(addDropdowns)
           .catch(e => console.error(e))
         document.querySelectorAll("details.spell-collapsible").forEach(hookLoad);
         document.querySelectorAll("a.toggle-link").forEach(hookToggle);
@@ -525,7 +578,7 @@
             aria-haspopup="true"
             aria-expanded="false"
           >ru_ru <span class="caret"></span></a>
-          <ul class="dropdown-menu" id="lang-dropdown"></ul>
+          <ul class="dropdown-menu dropdown-menu-left" id="lang-dropdown"></ul>
         </li>
       </ul>
     </div>
@@ -541,6 +594,7 @@
       <b>Entries which are blurred are spoilers</b>. Click to reveal them, but be aware that they may spoil endgame
       progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.
     </p>
+      <div id="old-version-notice"></div>
   </blockquote>
 </div>
 <div class="container">
@@ -656,11 +710,11 @@
   <details class="toc-category">
     <summary><a href="#patterns/great_spells">Сложные руны</a></summary>
     <ul>
-        <li><a href="#patterns/great_spells/zeniths">Zeniths</a></li>
         <li><a href="#patterns/great_spells/create_lava">Создать лаву</a></li>
         <li><a href="#patterns/great_spells/weather_manip">Weather Manipulation</a></li>
         <li><a href="#patterns/great_spells/flight">Полёт</a></li>
         <li><a href="#patterns/great_spells/teleport">Телепорт</a></li>
+        <li><a href="#patterns/great_spells/zeniths">Zeniths</a></li>
         <li><a href="#patterns/great_spells/greater_sentinel">Призвать чанк-лоадер метку</a></li>
         <li><a href="#patterns/great_spells/make_battery">Создать пузырь мыслей</a></li>
         <li><a href="#patterns/great_spells/brainsweep">Чистый разум</a></li>
@@ -5065,119 +5119,6 @@
     title="Permalink"
   ><i class="bi bi-link-45deg"></i></a></h2>
     <p>Руны, изложенные здесь считаются легендарно сложными и мощными. Кажется они были использованы очень редко (к счастью, в древних текстах они упоминаются). Вероятно это просто трактирные байки, но попробовать стоит. Разве могут возникнуть проблемы?</p>
-<div id="patterns/great_spells/zeniths">
-    <h3 class="entry-title page-header">Zeniths<a
-    href="#table-of-contents"
-    class="permalink small"
-    title="Jump to top"
-  ><i class="bi bi-box-arrow-up"></i></a><a
-    href="#patterns/great_spells/zeniths"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h3>
-    <p>This family of spells all impart a positive potion effect upon an entity, similar to the <a href='#patterns/spells/nadirs'><span style='color: #fc77be'>Nadirs</span></a>. However, these have their <span style='color: #74b3f2'>media</span> costs increase with the <i>cube</i> of the potency.</p>
-<br />
-  <div id="patterns/great_spells/zeniths@hexcasting:potion/regeneration">
-<h4 class="pattern-title">Эффект регенерации (entity, number, number →)<a
-    href="#patterns/great_spells/zeniths@hexcasting:potion/regeneration"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="spell-collapsible">
-    <summary class="collapse-spell"></summary>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qqqqaawawaedd"
-        data-start="north_west"
-        data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqaawawaedd</canvas>
-  </details>
-      <p>hexcasting.page.zeniths.potion/regeneration</p>
-  </div>
-<br />
-  <div id="patterns/great_spells/zeniths@hexcasting:potion/night_vision">
-<h4 class="pattern-title">Эффект ночного зрения (entity, number →)<a
-    href="#patterns/great_spells/zeniths@hexcasting:potion/night_vision"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="spell-collapsible">
-    <summary class="collapse-spell"></summary>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qqqaawawaeqdd"
-        data-start="west"
-        data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqqaawawaeqdd</canvas>
-  </details>
-      <p>hexcasting.page.zeniths.potion/night_vision</p>
-  </div>
-<br />
-  <div id="patterns/great_spells/zeniths@hexcasting:potion/absorption">
-<h4 class="pattern-title">Эффект поглощения (entity, number, number →)<a
-    href="#patterns/great_spells/zeniths@hexcasting:potion/absorption"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="spell-collapsible">
-    <summary class="collapse-spell"></summary>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qqaawawaeqqdd"
-        data-start="south_west"
-        data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqaawawaeqqdd</canvas>
-  </details>
-      <p>hexcasting.page.zeniths.potion/absorption</p>
-  </div>
-<br />
-  <div id="patterns/great_spells/zeniths@hexcasting:potion/haste">
-<h4 class="pattern-title">Эффект спешки (entity, number, number →)<a
-    href="#patterns/great_spells/zeniths@hexcasting:potion/haste"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="spell-collapsible">
-    <summary class="collapse-spell"></summary>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="qaawawaeqqqdd"
-        data-start="south_east"
-        data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qaawawaeqqqdd</canvas>
-  </details>
-      <p>hexcasting.page.zeniths.potion/haste</p>
-  </div>
-<br />
-  <div id="patterns/great_spells/zeniths@hexcasting:potion/strength">
-<h4 class="pattern-title">Эффект силы (entity, number, number →)<a
-    href="#patterns/great_spells/zeniths@hexcasting:potion/strength"
-    class="permalink small"
-    title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a></h4>
-  <details class="spell-collapsible">
-    <summary class="collapse-spell"></summary>
-      <canvas
-        class="spell-viz"
-        width="216"
-        height="216"
-        data-string="aawawaeqqqqdd"
-        data-start="east"
-        data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: aawawaeqqqqdd</canvas>
-  </details>
-      <p>hexcasting.page.zeniths.potion/strength</p>
-  </div>
-<br />
-</div>
 <div id="patterns/great_spells/create_lava">
     <h3 class="entry-title page-header">Создать лаву<a
     href="#table-of-contents"
@@ -5348,6 +5289,119 @@
     <p>The entity will be teleported by the given vector, which is an offset from its given position. No matter the distance, it always seems to cost about ten <span style='color: #b0b'>Charged Crystal</span>s.</p><p>The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn&#39;t <i>quite</i> stay attached, and tends to splatter everywhere at the destination.</p>
 <br />
 </div>
+<div id="patterns/great_spells/zeniths">
+    <h3 class="entry-title page-header">Zeniths<a
+    href="#table-of-contents"
+    class="permalink small"
+    title="Jump to top"
+  ><i class="bi bi-box-arrow-up"></i></a><a
+    href="#patterns/great_spells/zeniths"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h3>
+    <p>This family of spells all impart a positive potion effect upon an entity, similar to the <a href='#patterns/spells/nadirs'><span style='color: #fc77be'>Nadirs</span></a>. However, these have their <span style='color: #74b3f2'>media</span> costs increase with the <i>cube</i> of the potency.</p>
+<br />
+  <div id="patterns/great_spells/zeniths@hexcasting:potion/regeneration">
+<h4 class="pattern-title">Эффект регенерации (entity, number, number →)<a
+    href="#patterns/great_spells/zeniths@hexcasting:potion/regeneration"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="spell-collapsible">
+    <summary class="collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qqqqaawawaedd"
+        data-start="north_west"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: qqqqaawawaedd</canvas>
+  </details>
+      <p>hexcasting.page.zeniths.potion/regeneration</p>
+  </div>
+<br />
+  <div id="patterns/great_spells/zeniths@hexcasting:potion/night_vision">
+<h4 class="pattern-title">Эффект ночного зрения (entity, number →)<a
+    href="#patterns/great_spells/zeniths@hexcasting:potion/night_vision"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="spell-collapsible">
+    <summary class="collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qqqaawawaeqdd"
+        data-start="west"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: qqqaawawaeqdd</canvas>
+  </details>
+      <p>hexcasting.page.zeniths.potion/night_vision</p>
+  </div>
+<br />
+  <div id="patterns/great_spells/zeniths@hexcasting:potion/absorption">
+<h4 class="pattern-title">Эффект поглощения (entity, number, number →)<a
+    href="#patterns/great_spells/zeniths@hexcasting:potion/absorption"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="spell-collapsible">
+    <summary class="collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qqaawawaeqqdd"
+        data-start="south_west"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: qqaawawaeqqdd</canvas>
+  </details>
+      <p>hexcasting.page.zeniths.potion/absorption</p>
+  </div>
+<br />
+  <div id="patterns/great_spells/zeniths@hexcasting:potion/haste">
+<h4 class="pattern-title">Эффект спешки (entity, number, number →)<a
+    href="#patterns/great_spells/zeniths@hexcasting:potion/haste"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="spell-collapsible">
+    <summary class="collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="qaawawaeqqqdd"
+        data-start="south_east"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: qaawawaeqqqdd</canvas>
+  </details>
+      <p>hexcasting.page.zeniths.potion/haste</p>
+  </div>
+<br />
+  <div id="patterns/great_spells/zeniths@hexcasting:potion/strength">
+<h4 class="pattern-title">Эффект силы (entity, number, number →)<a
+    href="#patterns/great_spells/zeniths@hexcasting:potion/strength"
+    class="permalink small"
+    title="Permalink"
+  ><i class="bi bi-link-45deg"></i></a></h4>
+  <details class="spell-collapsible">
+    <summary class="collapse-spell"></summary>
+      <canvas
+        class="spell-viz"
+        width="216"
+        height="216"
+        data-string="aawawaeqqqqdd"
+        data-start="east"
+        data-per-world="True"
+      >Your browser does not support visualizing patterns. Pattern code: aawawaeqqqqdd</canvas>
+  </details>
+      <p>hexcasting.page.zeniths.potion/strength</p>
+  </div>
+<br />
+</div>
 <div id="patterns/great_spells/greater_sentinel">
     <h3 class="entry-title page-header">Призвать чанк-лоадер метку<a
     href="#table-of-contents"
@@ -5375,7 +5429,7 @@
         data-per-world="True"
       >Your browser does not support visualizing patterns. Pattern code: waeawaeqqqwqwqqwq</canvas>
   </details>
-      <p>Summon a greater version of my <a href='#patterns/great_spells/greater_sentinel'><span style='color: #8d6acc'>Sentinel</span></a>. Costs about 2 <span style='color: #b0b'>Amethyst Dust</span>s.</p>
+      <p>Summon a greater version of my <a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>Sentinel</span></a>. Costs about 2 <span style='color: #b0b'>Amethyst Dust</span>s.</p>
   </div>
 <br />
     <p>The stronger sentinel acts like the normal one I can summon without the use of a Great Spell, if a little more visually interesting. However, the range in which my spells can work is extended to a small region around my greater sentinel, about 16 blocks. In other words, no matter where in the world I am, I can interact with things around my sentinel (the mysterious forces of chunkloading notwithstanding).</p>
