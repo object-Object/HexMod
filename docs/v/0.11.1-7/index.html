@@ -102,9 +102,6 @@
         --pausetext-scale: 0.5;
         --dark-mode: 0;
       }
-      .navbar-brand {
-        pointer-events: none;
-      }
       @media (prefers-color-scheme: dark) {
         body {
           background-color: #201a20;
@@ -123,6 +120,8 @@
         .navbar-default .navbar-nav > li > a:focus {
           color: #aaa;
         }
+        .navbar-default .navbar-brand:focus,
+        .navbar-default .navbar-brand:hover,
         .navbar-default .navbar-nav > li > a:hover {
           color: #ccc;
         }
@@ -501,7 +500,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="navbar-brand">Hex Book</div>
+      <a class="navbar-brand" href="https://object-object.github.io/HexMod">Hex Book</a>
     </div>
     <!-- content -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
