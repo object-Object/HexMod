@@ -1,1 +1,1 @@
-{"latest": {"defaultPath": "/v/latest", "langPaths": {"en_us": "/v/latest", "ru_ru": "/v/latest/ru_ru", "zh_cn": "/v/latest/zh_cn"}}, "0.11.1-7": {"defaultPath": "/v/0.11.1-7", "langPaths": {"en_us": "/v/0.11.1-7", "he_xy": "/v/0.11.1-7/he_xy"}}}
+{"latest": {"defaultPath": "/v/latest", "langPaths": {"en_us": "/v/latest"}}, "0.11.1-7": {"defaultPath": "/v/0.11.1-7", "langPaths": {"en_us": "/v/0.11.1-7", "he_xy": "/v/0.11.1-7/he_xy"}}}
