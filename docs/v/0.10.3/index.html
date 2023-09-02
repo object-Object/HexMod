@@ -102,6 +102,9 @@
         --pausetext-scale: 0.5;
         --dark-mode: 0;
       }
+      .dropdown-menu .divider {
+        margin: 4px 0;
+      }
       @media (prefers-color-scheme: dark) {
         body {
           background-color: #201a20;
@@ -135,9 +138,8 @@
           background-color: #402a40;
           min-width: 120px;
         }
-        .dropdown-menu-ltr {
-          left: 0;
-          right: auto;
+        .dropdown-menu .divider {
+          background-color: #080808;
         }
         .dropdown-menu > li > a {
           color: #bbb;
@@ -161,8 +163,9 @@
         }
       </style>
     </noscript>
-    <script>
+    <script type="module">
       "use strict";
+      import semver from 'https://cdn.jsdelivr.net/npm/semver@7.5.4/+esm';
       const speeds = [0, 0.25, 0.5, 1, 2, 4];
       const scrollThreshold = 100;
       const rfaQueue = [];
@@ -433,6 +436,7 @@
       const PAGE_URL = "https://object-object.github.io/HexMod/v/0.10.3";
       const VERSION = "0.10.3";
       const LANG = "en_us";
+      // Creates an element in the form `<li><a href=${href}>${text}</a></li>`
       function dropdownItem(text, href) {
         let a = document.createElement("a");
         a.href = href;
@@ -441,34 +445,83 @@
         li.appendChild(a);
         return li;
       }
-      function fillDropdowns(sitemap) {
-        let versionDropdown = document.getElementById("version-dropdown");
-        let langDropdown = document.getElementById("lang-dropdown");
-        // versions, linking to the current lang if possible
-        for (const version of Object.keys(sitemap).sort().reverse()) {
-          let {defaultPath, langPaths} = sitemap[version];
-          // link to the current language if available, else link to the default language
-          let path;
-          if (langPaths.hasOwnProperty(LANG)) {
-            path = langPaths[LANG];
+      function versionDropdownItem(sitemap, version) {
+        const {defaultPath, langPaths} = sitemap[version];
+        // link to the current language if available, else link to the default language
+        let path;
+        if (langPaths.hasOwnProperty(LANG)) {
+          path = langPaths[LANG];
+        } else {
+          path = defaultPath;
+        }
+        return dropdownItem(version, ROOT_URL + path);
+      }
+      function versionDropdownItems(sitemap, versions) {
+        return versions.map((version) => (
+          versionDropdownItem(sitemap, version)
+        ));
+      }
+      function dropdownSeparator() {
+        let li = document.createElement("li");
+        li.className = "divider";
+        li.setAttribute("role", "separator");
+        return li;
+      }
+      // Like array.filter(predicate), but also returns the items which didn't match the filter.
+      function partition(array, predicate) {
+        let matched = [];
+        let unmatched = [];
+        array.forEach((value, index) => {
+          if (predicate(value, index, array)) {
+            matched.push(value);
           } else {
-            path = defaultPath;
+            unmatched.push(value);
           }
-          let item = dropdownItem(version, ROOT_URL + path);
-          versionDropdown.appendChild(item);
+        });
+        return [matched, unmatched];
+      }
+      function sortSitemapVersions(sitemap) {
+        let [versions, branches] = partition(Object.keys(sitemap), (v) => semver.valid(v) != null);
+        // branches ascending, versions descending
+        // eg. ["dev", "main"], ["0.10.0", "0.9.0"]
+        branches.sort();
+        versions.sort(semver.rcompare);
+        return [branches, versions];
+      }
+      // Fills the version dropdown menus and the "old version" message.
+      function addDropdowns(sitemap) {
+        let [branches, versions] = sortSitemapVersions(sitemap);
+        // set the "old version" message if this page is a version number, but not the latest one
+        // this isn't a dropdown, but it's here since we have the data anyway
+        if (versions.slice(1).includes(VERSION)) {
+          // thanks for the idea petra
+          let oldVersionNotice = document.createElement("i");
+          oldVersionNotice.textContent = "The past is a foreign country; they do things differently there.";
+          document.getElementById("old-version-notice").append(
+            document.createElement("br"),
+            oldVersionNotice,
+          );
         }
-        // langs for the current version
-        let langPaths = sitemap[VERSION].langPaths;
-        for (const lang of Object.keys(langPaths).sort()) {
-          let item = dropdownItem(lang, ROOT_URL + langPaths[lang]);
-          langDropdown.appendChild(item);
-        }
+        // versions
+        document.getElementById("version-dropdown").append(
+          ...versionDropdownItems(sitemap, branches),
+          dropdownSeparator(),
+          ...versionDropdownItems(sitemap, versions),
+        );
+        // languages for the current version
+        const langPaths = sitemap[VERSION].langPaths;
+        const langs = Object.keys(langPaths).sort();
+        document.getElementById("lang-dropdown").append(
+          ...langs.map((lang) => dropdownItem(lang, ROOT_URL + langPaths[lang])),
+        );
+        // return sitemap for chaining, i guess
+        return sitemap
       }
       document.addEventListener("DOMContentLoaded", () => {
         // fetch the sitemap from the root and use it to generate the navbar
         fetch(`${ROOT_URL}/meta/sitemap.json`)
           .then(r => r.json())
-          .then(fillDropdowns)
+          .then(addDropdowns)
           .catch(e => console.error(e))
         document.querySelectorAll("details.spell-collapsible").forEach(hookLoad);
         document.querySelectorAll("a.toggle-link").forEach(hookToggle);
@@ -525,7 +578,7 @@
             aria-haspopup="true"
             aria-expanded="false"
           >en_us <span class="caret"></span></a>
-          <ul class="dropdown-menu" id="lang-dropdown"></ul>
+          <ul class="dropdown-menu dropdown-menu-left" id="lang-dropdown"></ul>
         </li>
       </ul>
     </div>
@@ -541,6 +594,7 @@
       <b>Entries which are blurred are spoilers</b>. Click to reveal them, but be aware that they may spoil endgame
       progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.
     </p>
+      <div id="old-version-notice"></div>
   </blockquote>
 </div>
 <div class="container">
