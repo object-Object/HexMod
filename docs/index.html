@@ -105,6 +105,33 @@
       .dropdown-menu .divider {
         margin: 4px 0;
       }
+      .nobr {
+        white-space: nowrap;
+      }
+      .hidden {
+        display: none;
+        visibility: hidden;
+      }
+      @media (min-width: 40rem) {
+        .book-body {
+          width: 70%;
+          left: 5%;
+          position: relative;
+          float: left;
+        }
+        .toc-container {
+          position: sticky;
+          top: 0;
+          width: 25%;
+          float: left;
+          max-height: 80vh;
+          overflow-y: scroll;
+        }
+        .toc-permalink {
+          display: none;
+          visibility: hidden;
+        }
+      }
       @media (prefers-color-scheme: dark) {
         body {
           background-color: #201a20;
@@ -491,16 +518,10 @@
       // Fills the version dropdown menus and the "old version" message.
       function addDropdowns(sitemap) {
         let [branches, versions] = sortSitemapVersions(sitemap);
-        // set the "old version" message if this page is a version number, but not the latest one
+        // reveal the "old version" message if this page is a version number, but not the latest one
         // this isn't a dropdown, but it's here since we have the data anyway
         if (versions.slice(1).includes(VERSION)) {
-          // thanks for the idea petra
-          let oldVersionNotice = document.createElement("i");
-          oldVersionNotice.textContent = "The past is a foreign country; they do things differently there.";
-          document.getElementById("old-version-notice").append(
-            document.createElement("br"),
-            oldVersionNotice,
-          );
+          document.getElementById("old-version-notice").classList.remove("hidden")
         }
         // versions
         document.getElementById("version-dropdown").append(
@@ -594,7 +615,10 @@
       <b>Entries which are blurred are spoilers</b>. Click to reveal them, but be aware that they may spoil endgame
       progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.
     </p>
-      <div id="old-version-notice"></div>
+    <span id="old-version-notice" class="hidden">
+      <br />
+      <i>The past is a foreign country; they do things differently there.</i>
+    </span>
   </blockquote>
 </div>
 <div class="container">
@@ -602,141 +626,142 @@
       <h1 class="book-title">Hex Notebook</h1>
       <p>I seem to have discovered a new method of magical arts, in which one draws patterns strange and wild onto a hexagonal grid. It fascinates me. I&#39;ve decided to start a journal of my thoughts and findings.</p><p><a href='https://forum.petra-k.at/index.php'>Forum Link</a></p>
     </header>
-  <nav>
-<h2 id="table-of-contents" class="page-header">
-  Table of Contents<a
-    href="javascript:void(0)"
-    class="permalink toggle-link small"
-    data-target="toc-category"
-    title="Toggle all"
-  ><i class="bi bi-list-nested"></i></a><a
+<div id="table-of-contents"></div>
+<nav class="toc-container">
+  <h2 class="page-header">
+    Table of <span class="nobr">Contents<a
+      href="javascript:void(0)"
+      class="permalink toggle-link small"
+      data-target="toc-category"
+      title="Toggle all"
+    ><i class="bi bi-list-nested"></i></a><a
     href="#table-of-contents"
-    class="permalink small"
+    class="permalink small toc-permalink"
     title="Permalink"
-  ><i class="bi bi-link-45deg"></i></a>
-</h2>
-  <details class="toc-category">
-    <summary><a href="#basics">Getting Started</a></summary>
-    <ul>
-        <li><a href="#basics/media">Media</a></li>
-        <li><a href="#basics/geodes">Geodes</a></li>
-        <li><a href="#basics/couldnt_cast" class="spoilered">A Frustration</a></li>
-        <li><a href="#basics/start_to_see" class="spoilered">WHAT DID I SEE</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#casting">Hex Casting</a></summary>
-    <ul>
-        <li><a href="#casting/101">Hex Casting 101</a></li>
-        <li><a href="#casting/vectors">A Primer On Vectors</a></li>
-        <li><a href="#casting/mishaps">Mishaps</a></li>
-        <li><a href="#casting/stack">The Stack</a></li>
-        <li><a href="#casting/naming">Naming Actions</a></li>
-        <li><a href="#casting/influences">Influences</a></li>
-        <li><a href="#casting/mishaps2" class="spoilered">Enlightened Mishaps</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#items">Items</a></summary>
-    <ul>
-        <li><a href="#items/amethyst">Amethyst</a></li>
-        <li><a href="#items/staff">Staves</a></li>
-        <li><a href="#items/lens">Scrying Lens</a></li>
-        <li><a href="#items/thought_knot">Thought-Knot</a></li>
-        <li><a href="#items/focus">Focus</a></li>
-        <li><a href="#items/abacus">Abacus</a></li>
-        <li><a href="#items/spellbook">Spellbook</a></li>
-        <li><a href="#items/scroll">Scrolls</a></li>
-        <li><a href="#items/slate">Slates</a></li>
-        <li><a href="#items/hexcasting">Casting Items</a></li>
-        <li><a href="#items/phials">Phials of Media</a></li>
-        <li><a href="#items/pigments">Pigments</a></li>
-        <li><a href="#items/edified">Edified Trees</a></li>
-        <li><a href="#items/jeweler_hammer">Jeweler&#39;s Hammer</a></li>
-        <li><a href="#items/decoration">Decorative Blocks</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#greatwork" class="spoilered">The Great Work</a></summary>
-    <ul>
-        <li><a href="#greatwork/the_work" class="spoilered">The Work</a></li>
-        <li><a href="#greatwork/brainsweeping" class="spoilered">On The Flaying of Minds</a></li>
-        <li><a href="#greatwork/spellcircles" class="spoilered">Spell Circles</a></li>
-        <li><a href="#greatwork/impetus" class="spoilered">Impeti</a></li>
-        <li><a href="#greatwork/directrix" class="spoilered">Directrices</a></li>
-        <li><a href="#greatwork/akashiclib" class="spoilered">Akashic Libraries</a></li>
-        <li><a href="#greatwork/quenching_allays" class="spoilered">Quenching Allays</a></li>
-        <li><a href="#greatwork/fanciful_staves" class="spoilered">Fanciful Staves</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#lore" class="spoilered">Lore</a></summary>
-    <ul>
-        <li><a href="#lore/cardamom1" class="spoilered">Cardamom Steles, #1</a></li>
-        <li><a href="#lore/cardamom2" class="spoilered">Cardamom Steles, #2</a></li>
-        <li><a href="#lore/cardamom3" class="spoilered">Cardamom Steles, #3</a></li>
-        <li><a href="#lore/cardamom4" class="spoilered">Cardamom Steles, #4</a></li>
-        <li><a href="#lore/cardamom5" class="spoilered">Cardamom Steles, #5</a></li>
-        <li><a href="#lore/experiment1" class="spoilered">Wooleye Instance Notes</a></li>
-        <li><a href="#lore/experiment2" class="spoilered">Wooleye Interview Logs</a></li>
-        <li><a href="#lore/inventory" class="spoilered">Restoration Log #72</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#interop">Cross-Mod Compatibility</a></summary>
-    <ul>
-        <li><a href="#interop/interop">Cross-Mod Interations</a></li>
-        <li><a href="#interop/pehkui">Pehkui</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#patterns">Patterns</a></summary>
-    <ul>
-        <li><a href="#patterns/readers_guide">How to Read This Section</a></li>
-        <li><a href="#patterns/basics">Basic Patterns</a></li>
-        <li><a href="#patterns/numbers">Number Literals</a></li>
-        <li><a href="#patterns/math">Mathematics</a></li>
-        <li><a href="#patterns/consts">Constants</a></li>
-        <li><a href="#patterns/stackmanip">Stack Manipulation</a></li>
-        <li><a href="#patterns/logic">Logical Operators</a></li>
-        <li><a href="#patterns/entities">Entities</a></li>
-        <li><a href="#patterns/lists">List Manipulation</a></li>
-        <li><a href="#patterns/patterns_as_iotas">Escaping Patterns</a></li>
-        <li><a href="#patterns/readwrite">Reading and Writing</a></li>
-        <li><a href="#patterns/advanced_math">Advanced Mathematics</a></li>
-        <li><a href="#patterns/sets">Sets</a></li>
-        <li><a href="#patterns/meta">Meta-Evaluation</a></li>
-        <li><a href="#patterns/circle" class="spoilered">Spell Circle Patterns</a></li>
-        <li><a href="#patterns/akashic_patterns" class="spoilered">Akashic Patterns</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#patterns/spells">Spells</a></summary>
-    <ul>
-        <li><a href="#patterns/spells/itempicking">Working with Items</a></li>
-        <li><a href="#patterns/spells/basic">Basic Spells</a></li>
-        <li><a href="#patterns/spells/blockworks">Block Manipulation</a></li>
-        <li><a href="#patterns/spells/nadirs">Nadirs</a></li>
-        <li><a href="#patterns/spells/hexcasting">Crafting Casting Items</a></li>
-        <li><a href="#patterns/spells/sentinels">Sentinels</a></li>
-        <li><a href="#patterns/spells/colorize">Internalize Pigment</a></li>
-        <li><a href="#patterns/spells/flight">Flight</a></li>
-    </ul>
-  </details>
-  <details class="toc-category">
-    <summary><a href="#patterns/great_spells">Great Spells</a></summary>
-    <ul>
-        <li><a href="#patterns/great_spells/create_lava">Create Lava</a></li>
-        <li><a href="#patterns/great_spells/zeniths">Zeniths</a></li>
-        <li><a href="#patterns/great_spells/weather_manip">Weather Manipulation</a></li>
-        <li><a href="#patterns/great_spells/altiora">Altiora</a></li>
-        <li><a href="#patterns/great_spells/teleport">Greater Teleport</a></li>
-        <li><a href="#patterns/great_spells/greater_sentinel">Summon Greater Sentinel</a></li>
-        <li><a href="#patterns/great_spells/make_battery">Craft Phial</a></li>
-        <li><a href="#patterns/great_spells/brainsweep">Flay Mind</a></li>
-    </ul>
-  </details>
-  </nav>
+  ><i class="bi bi-link-45deg"></i></a></span>
+  </h2>
+    <details class="toc-category">
+      <summary><a href="#basics">Getting Started</a></summary>
+      <ul>
+          <li><a href="#basics/media">Media</a></li>
+          <li><a href="#basics/geodes">Geodes</a></li>
+          <li><a href="#basics/couldnt_cast" class="spoilered">A Frustration</a></li>
+          <li><a href="#basics/start_to_see" class="spoilered">WHAT DID I SEE</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#casting">Hex Casting</a></summary>
+      <ul>
+          <li><a href="#casting/101">Hex Casting 101</a></li>
+          <li><a href="#casting/vectors">A Primer On Vectors</a></li>
+          <li><a href="#casting/mishaps">Mishaps</a></li>
+          <li><a href="#casting/stack">The Stack</a></li>
+          <li><a href="#casting/naming">Naming Actions</a></li>
+          <li><a href="#casting/influences">Influences</a></li>
+          <li><a href="#casting/mishaps2" class="spoilered">Enlightened Mishaps</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#items">Items</a></summary>
+      <ul>
+          <li><a href="#items/amethyst">Amethyst</a></li>
+          <li><a href="#items/staff">Staves</a></li>
+          <li><a href="#items/lens">Scrying Lens</a></li>
+          <li><a href="#items/thought_knot">Thought-Knot</a></li>
+          <li><a href="#items/focus">Focus</a></li>
+          <li><a href="#items/abacus">Abacus</a></li>
+          <li><a href="#items/spellbook">Spellbook</a></li>
+          <li><a href="#items/scroll">Scrolls</a></li>
+          <li><a href="#items/slate">Slates</a></li>
+          <li><a href="#items/hexcasting">Casting Items</a></li>
+          <li><a href="#items/phials">Phials of Media</a></li>
+          <li><a href="#items/pigments">Pigments</a></li>
+          <li><a href="#items/edified">Edified Trees</a></li>
+          <li><a href="#items/jeweler_hammer">Jeweler&#39;s Hammer</a></li>
+          <li><a href="#items/decoration">Decorative Blocks</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#greatwork" class="spoilered">The Great Work</a></summary>
+      <ul>
+          <li><a href="#greatwork/the_work" class="spoilered">The Work</a></li>
+          <li><a href="#greatwork/brainsweeping" class="spoilered">On The Flaying of Minds</a></li>
+          <li><a href="#greatwork/spellcircles" class="spoilered">Spell Circles</a></li>
+          <li><a href="#greatwork/impetus" class="spoilered">Impeti</a></li>
+          <li><a href="#greatwork/directrix" class="spoilered">Directrices</a></li>
+          <li><a href="#greatwork/akashiclib" class="spoilered">Akashic Libraries</a></li>
+          <li><a href="#greatwork/quenching_allays" class="spoilered">Quenching Allays</a></li>
+          <li><a href="#greatwork/fanciful_staves" class="spoilered">Fanciful Staves</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#lore" class="spoilered">Lore</a></summary>
+      <ul>
+          <li><a href="#lore/cardamom1" class="spoilered">Cardamom Steles, #1</a></li>
+          <li><a href="#lore/cardamom2" class="spoilered">Cardamom Steles, #2</a></li>
+          <li><a href="#lore/cardamom3" class="spoilered">Cardamom Steles, #3</a></li>
+          <li><a href="#lore/cardamom4" class="spoilered">Cardamom Steles, #4</a></li>
+          <li><a href="#lore/cardamom5" class="spoilered">Cardamom Steles, #5</a></li>
+          <li><a href="#lore/experiment1" class="spoilered">Wooleye Instance Notes</a></li>
+          <li><a href="#lore/experiment2" class="spoilered">Wooleye Interview Logs</a></li>
+          <li><a href="#lore/inventory" class="spoilered">Restoration Log #72</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#interop">Cross-Mod Compatibility</a></summary>
+      <ul>
+          <li><a href="#interop/interop">Cross-Mod Interations</a></li>
+          <li><a href="#interop/pehkui">Pehkui</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns">Patterns</a></summary>
+      <ul>
+          <li><a href="#patterns/readers_guide">How to Read This Section</a></li>
+          <li><a href="#patterns/basics">Basic Patterns</a></li>
+          <li><a href="#patterns/numbers">Number Literals</a></li>
+          <li><a href="#patterns/math">Mathematics</a></li>
+          <li><a href="#patterns/consts">Constants</a></li>
+          <li><a href="#patterns/stackmanip">Stack Manipulation</a></li>
+          <li><a href="#patterns/logic">Logical Operators</a></li>
+          <li><a href="#patterns/entities">Entities</a></li>
+          <li><a href="#patterns/lists">List Manipulation</a></li>
+          <li><a href="#patterns/patterns_as_iotas">Escaping Patterns</a></li>
+          <li><a href="#patterns/readwrite">Reading and Writing</a></li>
+          <li><a href="#patterns/advanced_math">Advanced Mathematics</a></li>
+          <li><a href="#patterns/sets">Sets</a></li>
+          <li><a href="#patterns/meta">Meta-Evaluation</a></li>
+          <li><a href="#patterns/circle" class="spoilered">Spell Circle Patterns</a></li>
+          <li><a href="#patterns/akashic_patterns" class="spoilered">Akashic Patterns</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/spells">Spells</a></summary>
+      <ul>
+          <li><a href="#patterns/spells/itempicking">Working with Items</a></li>
+          <li><a href="#patterns/spells/basic">Basic Spells</a></li>
+          <li><a href="#patterns/spells/blockworks">Block Manipulation</a></li>
+          <li><a href="#patterns/spells/nadirs">Nadirs</a></li>
+          <li><a href="#patterns/spells/hexcasting">Crafting Casting Items</a></li>
+          <li><a href="#patterns/spells/sentinels">Sentinels</a></li>
+          <li><a href="#patterns/spells/colorize">Internalize Pigment</a></li>
+          <li><a href="#patterns/spells/flight">Flight</a></li>
+      </ul>
+    </details>
+    <details class="toc-category">
+      <summary><a href="#patterns/great_spells">Great Spells</a></summary>
+      <ul>
+          <li><a href="#patterns/great_spells/create_lava">Create Lava</a></li>
+          <li><a href="#patterns/great_spells/zeniths">Zeniths</a></li>
+          <li><a href="#patterns/great_spells/weather_manip">Weather Manipulation</a></li>
+          <li><a href="#patterns/great_spells/altiora">Altiora</a></li>
+          <li><a href="#patterns/great_spells/teleport">Greater Teleport</a></li>
+          <li><a href="#patterns/great_spells/greater_sentinel">Summon Greater Sentinel</a></li>
+          <li><a href="#patterns/great_spells/make_battery">Craft Phial</a></li>
+          <li><a href="#patterns/great_spells/brainsweep">Flay Mind</a></li>
+      </ul>
+    </details>
+</nav>
   <main class="book-body">
 <section id="basics">
     <h2 class="category-title page-header">Getting Started<a
