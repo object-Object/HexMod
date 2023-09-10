@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hex Book</title>
+    <title>hexdoc.hexcasting.title</title>
     <link rel="icon" href="logo.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="The Hex Book, all in one place." />
+    <meta name="description" content="hexdoc.hexcasting.description" />
     <meta name="author" content="petrak@, Alwinfy" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Hex Book" />
+    <meta property="og:title" content="hexdoc.hexcasting.title" />
     <meta property="og:image" content="https://object-object.github.io/HexMod/v/0.10.3/ru_ru/logo.png" />
     <meta property="og:url" content="https://object-object.github.io/HexMod/v/0.10.3/ru_ru" />
-    <meta property="og:description" content="The Hex Book, all in one place." />
+    <meta property="og:description" content="hexdoc.hexcasting.description" />
     <meta property="og:site_name" content="Hex Casting" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -44,10 +44,10 @@
         margin-bottom: 0.5em;
       }
       details .collapse-spell::before {
-        content: "Click to show spell";
+        content: "hexdoc.pattern.show";
       }
       details[open] .collapse-spell::before {
-        content: "Click to hide spell";
+        content: "hexdoc.pattern.hide";
       }
       blockquote.crafting-info {
         font-size: inherit;
@@ -180,8 +180,7 @@
           /* hack */
           --dark-mode: 1;
         }
-      }
-    </style>
+      }    </style>
     <noscript>
       <style>
         /* for accessibility */
@@ -383,7 +382,9 @@
             })`;
             context.font = `${pauseScale}px sans-serif`;
             context.fillText(
-              speedScale() ? speedScale() + "x" : "Paused",
+              // these variables are filled by Jinja
+              // slightly scuffed, but it works for now
+              speedScale() ? `hexdoc.pattern.multiplier` : "hexdoc.pattern.paused",
               0.2 * scale,
               canvas.height - 0.2 * scale
             );
@@ -574,7 +575,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="https://object-object.github.io/HexMod">Hex Book</a>
+      <a class="navbar-brand" href="https://object-object.github.io/HexMod">hexdoc.hexcasting.title</a>
     </div>
     <!-- content -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -607,17 +608,12 @@
 </nav>
 <div class="container" style="margin-top: 3em;">
   <blockquote>
-    <h1>This is the online version of the Hex Casting documentation.</h1>
-    <p>
-      Embedded images and patterns are included, but not crafting recipes or items. There's an in-game book for those.
-    </p>
-    <p>
-      <b>Entries which are blurred are spoilers</b>. Click to reveal them, but be aware that they may spoil endgame
-      progression. Alternatively, click <a href="?nospoiler">here</a> to get a version with all spoilers showing.
-    </p>
+    <h1><p>hexdoc.welcome.1</p></h1>
+    <p><p>hexdoc.welcome.2</p></p>
+    <p><p>hexdoc.welcome.4</p></p>
     <span id="old-version-notice" class="hidden">
       <br />
-      <i>The past is a foreign country; they do things differently there.</i>
+      <p>hexdoc.welcome.old_version</p>
     </span>
   </blockquote>
 </div>
@@ -629,11 +625,11 @@
 <div id="table-of-contents"></div>
 <nav class="toc-container">
   <h2 class="page-header">
-    Table of <span class="nobr">Contents<a
+    hexdoc.toc.title<a
       href="javascript:void(0)"
       class="permalink toggle-link small"
       data-target="toc-category"
-      title="Toggle all"
+      title="hexdoc.toc.toggle_all"
     ><i class="bi bi-list-nested"></i></a><a
     href="#table-of-contents"
     class="permalink small toc-permalink"
@@ -885,7 +881,7 @@
         data-string="qaq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -893,7 +889,7 @@
         data-string="qaq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Следует заметить что <i>направление</i> этих рун не важно. Обе этих руны исполняют действие <a href='#patterns/basics@hexcasting:get_caster'><span style='color: #fc77be'>Зеркало нарцисса</span></a></p>
 <br />
@@ -1135,7 +1131,7 @@
     <p><span style='color: #b0b'>Посох</span> это моя точка входа в использовании рун всех типов. Если держать его в руке и нажать <span style='color: #8d6acc'>key.use</span>, я начну писать руну; тогда я смогу зажать любую кнопку мыши чтобы писать руны.</p><p>Это нечто большее чем просто кусок мысли на конце палки; в конечном счётё это всё что нужно.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: Several crafting recipes, for the <code>item.hexcasting.oak_staff</code>, <code>item.hexcasting.spruce_staff</code>, <code>item.hexcasting.birch_staff</code>, <code>item.hexcasting.jungle_staff</code>, <code>item.hexcasting.acacia_staff</code>, <code>item.hexcasting.dark_oak_staff</code>, <code>item.hexcasting.crimson_staff</code>, <code>item.hexcasting.warped_staff</code>, <code>item.hexcasting.edified_staff</code>.
+    hexdoc.pages.hexcasting.crafting_multi.description <code>item.hexcasting.oak_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.spruce_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.birch_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.jungle_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.acacia_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.dark_oak_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.crimson_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.warped_staff</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.edified_staff</code>.
   </blockquote>
       <p>Посох можно создать из различных видов дерева и он будет выглядеть по-разному, это <i>не влияет на руны</i></p>
 <br />
@@ -1155,7 +1151,7 @@
     <p>К примеру, смотря на редстоун пылинку я увижу силу её сигнала. Я предполагаю, что узнаю множество других блоков, с которыми взаимодействует линза.</p><p>В дополнение, удерживая её при написании рун сильно уменьшит расстояние между точками на рунной сетке, что позволит мне написать куда больше рун.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Линза прозрения</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Линза прозрения</code>.
   </blockquote>
       <p>hexcasting.page.lens.crafting.desc</p>
 <br />
@@ -1177,7 +1173,7 @@
     <p>Также, если я сохраню сущность в <span style='color: #b0b'>Талисмане</span> и попробую получить её после того как сущность погибла или исчезла <span style='color: #fc77be'>Чтение из предмета</span> вернёт Null абстракцию заместо сущности.</p><p>С помощью медовых сот я могу защитить талисман от случайной перезаписи. Попытавшись использоватоь <span style='color: #fc77be'>Запись в предмет</span> на залипшем талисмане провалится.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Талисман</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Талисман</code>.
   </blockquote>
       <p>hexcasting.page.focus.crafting.desc</p>
 <br />
@@ -1197,7 +1193,7 @@
     <p>Чтобы управлять счётами, нужно держать их, присесть и использовать колесо мыши. В основной руке число будет изменяться на 1 или 10 если я удерживаю Ctrl(Command для Эпл). В другой руке число измениться на 0.1 или 0.001.</p><p>Я могу встрясти счёты чтобы вернуть их к 0 с помощью приседания+правая кнопка мыши.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Рунные счёты</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Рунные счёты</code>.
   </blockquote>
       <p>hexcasting.page.abacus.crafting.desc</p>
 <br />
@@ -1217,7 +1213,7 @@
     <p><i>Wizards love words. Most of them read a great deal, and indeed one strong sign of a potential wizard is the inability to get to sleep without reading something first.</i></p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Книга знаний</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Книга знаний</code>.
   </blockquote>
       <p>hexcasting.page.spellbook.crafting.desc</p>
 <br />
@@ -1237,11 +1233,11 @@
     <p>In addition, I can also find so-called <span style='color: #b0b'>Ancient Scrolls</span> in the dungeons and strongholds of the world. These contain the stroke order of Great Spells, powerful magicks rumored to be too powerful for the hands and minds of mortals...</p><p>If those &#34;mortals&#34; couldn&#39;t cast them, I&#39;m not sure they deserve to know them.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.scroll_small</code> and <code>item.hexcasting.scroll_medium</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.scroll_small</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.scroll_medium</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Свиток</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Свиток</code>.
   </blockquote>
       <p>hexcasting.page.scroll.crafting.desc</p>
 <br />
@@ -1261,7 +1257,7 @@
     <p>Perhaps this knowledge will be revealed to me with time. But for now, I suppose they make a quaint piece of decor.</p><p>At the least, they can be placed on any side of a block, unlike <span style='color: #b0b'>Scroll</span>s.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.slate</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.slate</code>.
   </blockquote>
       <p>hexcasting.page.slate.crafting.desc</p>
 <br />
@@ -1290,13 +1286,13 @@
 <br />
   <div id="items/hexcasting@cypher_trinket">
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Побрякушка</code> and <code>Штуковина</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Побрякушка</code>hexdoc.pages.patchouli.crafting.separator<code>Штуковина</code>.
   </blockquote>
   </div>
 <br />
   <div id="items/hexcasting@artifact">
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Амулет</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Амулет</code>.
   </blockquote>
       <p>hexcasting.page.hexcasting.crafting.desc</p>
   </div>
@@ -1337,44 +1333,44 @@
     <p>hexcasting.page.pigments.2</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: Several crafting recipes, for the <code>Белый оттенок</code>, <code>Оранжевый оттенок</code>, <code>Пурпурный оттенок</code>, <code>Голубой оттенок</code>, <code>Жёлтый оттенок</code>, <code>Светло-зеленый оттенок</code>, <code>Розовый оттенок</code>, <code>Серый оттенок</code>, <code>Светло-серый оттенок</code>, <code>Бирюзовый оттенок</code>, <code>Фиолетовый оттенок</code>, <code>Синий оттенок</code>, <code>Коричневый оттенок</code>, <code>Зелёный оттенок</code>, <code>Красный оттенок</code>.
+    hexdoc.pages.hexcasting.crafting_multi.description <code>Белый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Оранжевый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Пурпурный оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Голубой оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Жёлтый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Светло-зеленый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Розовый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Серый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Светло-серый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Бирюзовый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Фиолетовый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Синий оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Коричневый оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Зелёный оттенок</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>Красный оттенок</code>.
   </blockquote>
       <p>hexcasting.page.pigments.colored.crafting.desc</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_agender</code> and <code>item.hexcasting.pride_colorizer_aroace</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_agender</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_aroace</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_aromantic</code> and <code>item.hexcasting.pride_colorizer_asexual</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_aromantic</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_asexual</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_bisexual</code> and <code>item.hexcasting.pride_colorizer_demiboy</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_bisexual</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_demiboy</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_demigirl</code> and <code>item.hexcasting.pride_colorizer_gay</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_demigirl</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_gay</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_genderfluid</code> and <code>item.hexcasting.pride_colorizer_genderqueer</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_genderfluid</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_genderqueer</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_intersex</code> and <code>item.hexcasting.pride_colorizer_lesbian</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_intersex</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_lesbian</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_nonbinary</code> and <code>item.hexcasting.pride_colorizer_pansexual</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_nonbinary</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_pansexual</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.pride_colorizer_plural</code> and <code>item.hexcasting.pride_colorizer_transgender</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.pride_colorizer_plural</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.pride_colorizer_transgender</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Оттенок души</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Оттенок души</code>.
   </blockquote>
       <p>hexcasting.page.pigments.uuid.crafting.desc</p>
 <br />
@@ -1394,23 +1390,23 @@
     <p>hexcasting.page.edified.2</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.edified_planks</code> and <code>item.hexcasting.edified_wood</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.edified_planks</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.edified_wood</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.edified_stairs</code> and <code>item.hexcasting.edified_slab</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.edified_stairs</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.edified_slab</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.edified_panel</code> and <code>item.hexcasting.edified_tile</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.edified_panel</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.edified_tile</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.edified_door</code> and <code>item.hexcasting.edified_trapdoor</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.edified_door</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.edified_trapdoor</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.edified_button</code> and <code>item.hexcasting.edified_pressure_plate</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.edified_button</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.edified_pressure_plate</code>.
   </blockquote>
 <br />
     <p>hexcasting.page.edified.crafting.desc</p>
@@ -1429,7 +1425,7 @@
     <p>hexcasting.page.jeweler_hammer.1</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>item.hexcasting.jeweler_hammer</code>.
+    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.jeweler_hammer</code>.
   </blockquote>
       <p>hexcasting.page.jeweler_hammer.crafting.desc</p>
 <br />
@@ -1447,33 +1443,33 @@
     <p>За время моего обучения я открыл некоторые строительные блоки и вещи, которые я нахожу подходящими для декорирования. Ниже я описал способы их создания.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Блок скрижали</code> and <code>Блок скрижали</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Блок скрижали</code>hexdoc.pages.patchouli.crafting.separator<code>Блок скрижали</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Свиточная бумага</code> and <code>Бумага древних свитков</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Свиточная бумага</code>hexdoc.pages.patchouli.crafting.separator<code>Бумага древних свитков</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Фонарь из бумаги свитков</code> and <code>Фонарь из бумаги древних свитков</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Фонарь из бумаги свитков</code>hexdoc.pages.patchouli.crafting.separator<code>Фонарь из бумаги древних свитков</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Фонарь из бумаги древних свитков</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Фонарь из бумаги древних свитков</code>.
   </blockquote>
       <p>hexcasting.page.decoration.ancient_scroll.crafting.desc</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Аметистовые плитки</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Аметистовые плитки</code>.
   </blockquote>
       <p>hexcasting.page.decoration.tiles.crafting.desc</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Аметистовый песок</code> and <code>Аметистовая пыль</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Аметистовый песок</code>hexdoc.pages.patchouli.crafting.separator<code>Аметистовая пыль</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Аметистовая свеча</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Аметистовая свеча</code>.
   </blockquote>
       <p>hexcasting.page.decoration.sconce.crafting.desc</p>
 <br />
@@ -1527,7 +1523,7 @@
     <p>The villagers of this world have enough consciousness left to be extracted. Place it into a block, warp it, change it. Intricate patterns caused by different patterns of thought, the abstract neural pathways of their jobs and lives mapped into the cold physic of solid atoms.</p><p>This is what <a href='#patterns/great_spells/brainsweep'><span style='color: #fc77be'>Flay Mind</span></a> does, the extraction. Target the villager entity and the destination block. Ten <span style='color: #b0b'>Charged Crystals</span> for this perversion of will.</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>item.minecraft.budding_amethyst</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>item.minecraft.budding_amethyst</code>.
   </blockquote>
   <p>hexcasting.page.brainsweeping.budding_amethyst</p>
 <br />
@@ -1585,24 +1581,24 @@
     <p>The solution I aim for, then, is to specialize a mind. Remove it from the tyranny of nerves, clip all outputs but delicate splays of <span style='color: #74b3f2'>media</span>-manipulating apparati, cauterize all inputs but the signal to start its work.</p><p>The process of <span style='color: #fc77be'>mindflaying</span> I am now familiar with will do excellently; the mind of a villager is complex enough to do the work, but not so complex as to resist its reformation.</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Empty Impetus</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Empty Impetus</code>.
   </blockquote>
       <p>hexcasting.page.impetus.empty_impetus</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>Toolsmith Impetus</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>Toolsmith Impetus</code>.
   </blockquote>
   <p>hexcasting.page.impetus.impetus_rightclick</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>Cleric Impetus</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>Cleric Impetus</code>.
   </blockquote>
   <p>hexcasting.page.impetus.impetus_storedplayer.1</p>
 <br />
     <p>hexcasting.page.impetus.impetus_storedplayer.2</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>Fletcher Impetus</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>Fletcher Impetus</code>.
   </blockquote>
   <p>hexcasting.page.impetus.impetus_look</p>
 <br />
@@ -1624,12 +1620,12 @@
     <p>A Directrix accepts a wave of <span style='color: #74b3f2'>media</span> and determines to which of the arrows it will exit from, depending on the villager mind inside.</p><p>I am not certain if this idea was bestowed upon me, or if my mind is bent around the barrier enough to splint off its own ideas now... but if the idea came from my own mind, if I thought it, can it be said it was bestowed? The brain is a vessel for the mind and the mind is a vessel for ideas and the ideas vessel thought and thought sees all and knows all-- I MUST N O T</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Empty Directrix</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Empty Directrix</code>.
   </blockquote>
       <p>hexcasting.page.directrix.empty_directrix</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>Mason Directrix</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>Mason Directrix</code>.
   </blockquote>
   <p>hexcasting.page.directrix.directrix_redstone</p>
 <br />
@@ -1651,12 +1647,12 @@
     <p>hexcasting.page.akashiclib.2</p>
 <br />
     <blockquote class="crafting-info">
-    Depicted in the book: A mind-flaying recipe producing the <code>Запись акаши</code>.
+    hexdoc.pages.hexcasting.brainsweep.description <code>Запись акаши</code>.
   </blockquote>
   <p>hexcasting.page.akashiclib.akashic_record</p>
 <br />
   <blockquote class="crafting-info">
-    Depicted in the book: The crafting recipe for the <code>Книжный шкаф акаши</code> and <code>Akashic Ligature</code>.
+    hexdoc.pages.patchouli.crafting.description <code>Книжный шкаф акаши</code>hexdoc.pages.patchouli.crafting.separator<code>Akashic Ligature</code>.
   </blockquote>
 <br />
     <p>hexcasting.page.akashiclib.3</p>
@@ -1967,7 +1963,7 @@
         data-string="wawawddew"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wawawddew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.interop.gravity.get</p>
   </div>
@@ -1987,7 +1983,7 @@
         data-string="wdwdwaaqw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdwdwaaqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.interop.gravity.set</p>
   </div>
@@ -2020,7 +2016,7 @@
         data-string="aawawwawwa"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aawawwawwa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.interop.pehkui.get</p>
   </div>
@@ -2040,7 +2036,7 @@
         data-string="ddwdwwdwwd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddwdwwdwwd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.interop.pehkui.set</p>
   </div>
@@ -2102,7 +2098,7 @@
         data-string="qaq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.get_caster</p>
   </div>
@@ -2122,7 +2118,7 @@
         data-string="aa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.entity_pos/eye</p>
   </div>
@@ -2142,7 +2138,7 @@
         data-string="dd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.entity_pos/foot</p>
   </div>
@@ -2162,7 +2158,7 @@
         data-string="wa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.get_entity_look</p>
   </div>
@@ -2182,7 +2178,7 @@
         data-string="wqaawdd"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaawdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.raycast.1</p>
   </div>
@@ -2204,7 +2200,7 @@
         data-string="weddwaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: weddwaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.raycast/axis.1</p>
   </div>
@@ -2226,7 +2222,7 @@
         data-string="weaqa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: weaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.raycast/entity</p>
   </div>
@@ -2246,7 +2242,7 @@
         data-string="de"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: de</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.print</p>
   </div>
@@ -2266,7 +2262,7 @@
         data-string="awq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.get_entity_height</p>
   </div>
@@ -2286,7 +2282,7 @@
         data-string="wq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.basics_pattern.get_entity_velocity</p>
   </div>
@@ -2317,7 +2313,7 @@
         data-string="aqaa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2325,7 +2321,7 @@
         data-string="dedd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dedd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Нет какого-то простейшего способа писать числа. Этот метод в теории является рабочим для любого числа и единственное ограничение - размер сетки.</p>
   </div>
@@ -2342,7 +2338,7 @@
         data-string="aqaae"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqaae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Руна для 10.</p>
 <br />
@@ -2356,7 +2352,7 @@
         data-string="aqaaqww"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqaaqww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Руна для 7: 5 + 1 + 1.</p>
 <br />
@@ -2370,7 +2366,7 @@
         data-string="deddwqea"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deddwqea</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Руна для -32: - ( 1 + 5 + 10 * 2 ).</p>
 <br />
@@ -2384,7 +2380,7 @@
         data-string="aqaaqdww"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqaaqdww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Руна для 4.5: 5 / 2 + 1 + 1.</p>
 <br />
@@ -2419,7 +2415,7 @@
         data-string="waaw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Выполнить сложение.</p>
   </div>
@@ -2441,7 +2437,7 @@
         data-string="wddw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wddw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Выполнить вычитание.</p>
   </div>
@@ -2463,7 +2459,7 @@
         data-string="waqaw"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waqaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Выполнить умножение.</p>
   </div>
@@ -2485,7 +2481,7 @@
         data-string="wdedw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdedw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Деление или пересечение векторов.</p>
   </div>
@@ -2507,7 +2503,7 @@
         data-string="wqaqw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Посчитать abs(num) или длину вектора</p>
   </div>
@@ -2529,7 +2525,7 @@
         data-string="wedew"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wedew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Посчитать pow(num, num) или vector projection.</p>
   </div>
@@ -2551,7 +2547,7 @@
         data-string="ewq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ewq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Убирает дробную часть числа, 4.5 -&gt; 4</p>
   </div>
@@ -2571,7 +2567,7 @@
         data-string="qwe"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qwe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Добивает число до потолка, 4.5 -&gt; 5</p>
   </div>
@@ -2591,7 +2587,7 @@
         data-string="eqqqqq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eqqqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Объединяет 3 числа на верху стэка в вектор XYZ (сверху вниз).</p>
   </div>
@@ -2611,7 +2607,7 @@
         data-string="qeeeee"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qeeeee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Делит вектор на компоненты X, Y, Z сверху вниз.</p>
   </div>
@@ -2631,7 +2627,7 @@
         data-string="addwaad"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: addwaad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.math.modulo</p>
   </div>
@@ -2651,7 +2647,7 @@
         data-string="qqqqqaww"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqaww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Скругляет вектор до ближайших значений.</p>
   </div>
@@ -2671,7 +2667,7 @@
         data-string="eqqq"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Случайное число от 0 до 1.</p>
   </div>
@@ -2702,7 +2698,7 @@
         data-string="aqae"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/true</p>
   </div>
@@ -2722,7 +2718,7 @@
         data-string="dedq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dedq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/false</p>
   </div>
@@ -2742,7 +2738,7 @@
         data-string="d"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: d</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/null</p>
   </div>
@@ -2762,7 +2758,7 @@
         data-string="qqqqq"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/vec/0</p>
   </div>
@@ -2782,7 +2778,7 @@
         data-string="qqqqqea"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqea</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2790,7 +2786,7 @@
         data-string="eeeeeqa"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeeqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/vec/x</p>
   </div>
@@ -2810,7 +2806,7 @@
         data-string="qqqqqew"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2818,7 +2814,7 @@
         data-string="eeeeeqw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeeqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/vec/y</p>
   </div>
@@ -2838,7 +2834,7 @@
         data-string="qqqqqed"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqed</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2846,7 +2842,7 @@
         data-string="eeeeeqd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeeqd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/vec/z</p>
   </div>
@@ -2866,7 +2862,7 @@
         data-string="eawae"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eawae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/double/tau</p>
   </div>
@@ -2886,7 +2882,7 @@
         data-string="qdwdq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qdwdq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/double/pi</p>
   </div>
@@ -2906,7 +2902,7 @@
         data-string="aaq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.consts.const/double/e</p>
   </div>
@@ -2937,7 +2933,7 @@
         data-string="a"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: a</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.pseudo-novice</p>
   </div>
@@ -2957,7 +2953,7 @@
         data-string="aawdd"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aawdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Меняет местами 2 верхние части стэка.</p>
   </div>
@@ -2977,7 +2973,7 @@
         data-string="aaeaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aaeaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.rotate</p>
   </div>
@@ -2997,7 +2993,7 @@
         data-string="ddqdd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddqdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.rotate_reverse</p>
   </div>
@@ -3017,7 +3013,7 @@
         data-string="aadaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aadaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Дублирует верх стэка.</p>
   </div>
@@ -3037,7 +3033,7 @@
         data-string="aaedd"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aaedd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.over</p>
   </div>
@@ -3057,7 +3053,7 @@
         data-string="ddqaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddqaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.tuck</p>
   </div>
@@ -3077,7 +3073,7 @@
         data-string="aadaadaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aadaadaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.duplicate_n</p>
   </div>
@@ -3097,7 +3093,7 @@
         data-string="aadadaaw"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aadadaaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.2dup</p>
   </div>
@@ -3117,7 +3113,7 @@
         data-string="qwaeawqaeaqa"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qwaeawqaeaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Добавляет на верх стэка длину стэка. ([0, 1] -&gt; [0, 1, 2])</p>
   </div>
@@ -3137,7 +3133,7 @@
         data-string="ddad"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Захватывает n&#39;ый элемент со стэка и приводит к верху стэка.</p>
   </div>
@@ -3157,7 +3153,7 @@
         data-string="aada"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aada</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.stackmanip.fisherman/copy</p>
   </div>
@@ -3177,7 +3173,7 @@
         data-string="aeea"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aeea</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -3185,7 +3181,7 @@
         data-string="eada"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eada</canvas>
+      >hexdoc.pattern.not_supported</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -3193,7 +3189,7 @@
         data-string="ae"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>An infinite family of actions that keep or remove elements at the top of the stack based on the sequence of dips and lines.</p>
   </div>
@@ -3215,7 +3211,7 @@
         data-string="qaawdde"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaawdde</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Rearranges the top elements of the stack based on the given numerical code, which is the index of the permutation wanted.</p>
   </div>
@@ -3251,7 +3247,7 @@
         data-string="dw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg == 0 or Null -&gt; return 1 else 0</p>
   </div>
@@ -3271,7 +3267,7 @@
         data-string="aw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.logic.bool_coerce</p>
   </div>
@@ -3291,7 +3287,7 @@
         data-string="waw"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 != Null -&gt; return arg1 else arg2</p>
   </div>
@@ -3311,7 +3307,7 @@
         data-string="wdw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 == Null -&gt; return Null else arg2</p>
   </div>
@@ -3331,7 +3327,7 @@
         data-string="dwa"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dwa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>xor(arg1, arg2) -&gt; non-Null else Null</p>
   </div>
@@ -3351,7 +3347,7 @@
         data-string="awdd"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.logic.if</p>
   </div>
@@ -3371,7 +3367,7 @@
         data-string="ad"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 == arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3391,7 +3387,7 @@
         data-string="da"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: da</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 != arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3411,7 +3407,7 @@
         data-string="e"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: e</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 &gt; arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3431,7 +3427,7 @@
         data-string="q"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: q</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 &lt; arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3451,7 +3447,7 @@
         data-string="ee"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 &gt;= arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3471,7 +3467,7 @@
         data-string="qq"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>arg1 &lt;= arg2 -&gt; return 1 else 0</p>
   </div>
@@ -3502,7 +3498,7 @@
         data-string="qqqqqdaqa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Сущность на этом месте или null.</p>
   </div>
@@ -3522,7 +3518,7 @@
         data-string="qqqqqdaqaawa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqaawa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Животное на этом месте или null.</p>
   </div>
@@ -3542,7 +3538,7 @@
         data-string="qqqqqdaqaawq"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqaawq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Монстр на этом месте или null.</p>
   </div>
@@ -3562,7 +3558,7 @@
         data-string="qqqqqdaqaaww"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqaaww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Предмет на этом месте или null.</p>
   </div>
@@ -3582,7 +3578,7 @@
         data-string="qqqqqdaqaawe"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqaawe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Игрок на этом месте или null.</p>
   </div>
@@ -3602,7 +3598,7 @@
         data-string="qqqqqdaqaawd"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqdaqaawd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Живое существо на этом месте или null.</p>
   </div>
@@ -3622,7 +3618,7 @@
         data-string="qqqqqwdeddwa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwdeddwa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь животных около позиции.</p>
   </div>
@@ -3642,7 +3638,7 @@
         data-string="eeeeewaqaawa"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeewaqaawa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь не животных около позиции.</p>
   </div>
@@ -3662,7 +3658,7 @@
         data-string="qqqqqwdeddwq"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwdeddwq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь монстров около позиции.</p>
   </div>
@@ -3682,7 +3678,7 @@
         data-string="eeeeewaqaawq"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeewaqaawq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь не монстров около позиции.</p>
   </div>
@@ -3702,7 +3698,7 @@
         data-string="qqqqqwdeddww"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwdeddww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь предметов около позиции.</p>
   </div>
@@ -3722,7 +3718,7 @@
         data-string="eeeeewaqaaww"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeewaqaaww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь не предметов около позиции.</p>
   </div>
@@ -3742,7 +3738,7 @@
         data-string="qqqqqwdeddwe"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwdeddwe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь игроков около позиции.</p>
   </div>
@@ -3762,7 +3758,7 @@
         data-string="eeeeewaqaawe"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeewaqaawe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь не игроков около позиции.</p>
   </div>
@@ -3782,7 +3778,7 @@
         data-string="qqqqqwdeddwd"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwdeddwd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь живых существ около позиции.</p>
   </div>
@@ -3802,7 +3798,7 @@
         data-string="eeeeewaqaawd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeewaqaawd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь не живых существ около позиции.</p>
   </div>
@@ -3822,7 +3818,7 @@
         data-string="qqqqqwded"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwded</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p><br />Берет позицию и максимальную дистанцию со стэка и возвращает очередь существ около позиции.</p>
   </div>
@@ -3853,7 +3849,7 @@
         data-string="deeed"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deeed</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.index</p>
   </div>
@@ -3873,7 +3869,7 @@
         data-string="qaeaqwded"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaeaqwded</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.slice</p>
   </div>
@@ -3893,7 +3889,7 @@
         data-string="edqde"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: edqde</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.append</p>
   </div>
@@ -3913,7 +3909,7 @@
         data-string="qaeaq"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaeaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.concat</p>
   </div>
@@ -3933,7 +3929,7 @@
         data-string="qqaeaae"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqaeaae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.empty_list</p>
   </div>
@@ -3953,7 +3949,7 @@
         data-string="adeeed"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: adeeed</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.singleton</p>
   </div>
@@ -3973,7 +3969,7 @@
         data-string="aqaeaq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqaeaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.list_size</p>
   </div>
@@ -3993,7 +3989,7 @@
         data-string="qqqaede"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqaede</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.reverse_list</p>
   </div>
@@ -4013,7 +4009,7 @@
         data-string="dedqde"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dedqde</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.index_of</p>
   </div>
@@ -4033,7 +4029,7 @@
         data-string="edqdewaqa"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: edqdewaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.list_remove</p>
   </div>
@@ -4053,7 +4049,7 @@
         data-string="wqaeaqw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaeaqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.modify_in_place</p>
   </div>
@@ -4073,7 +4069,7 @@
         data-string="ewdqdwe"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ewdqdwe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.last_n_list</p>
   </div>
@@ -4093,7 +4089,7 @@
         data-string="qwaeawq"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qwaeawq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.splat</p>
   </div>
@@ -4113,7 +4109,7 @@
         data-string="ddewedd"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddewedd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.construct</p>
   </div>
@@ -4133,7 +4129,7 @@
         data-string="aaqwqaa"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aaqwqaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.lists.deconstruct</p>
   </div>
@@ -4168,7 +4164,7 @@
         data-string="qqqaw"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.patterns_as_iotas.escape.1</p>
   </div>
@@ -4190,7 +4186,7 @@
         data-string="qqq"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.patterns_as_iotas.parens.1</p>
   </div>
@@ -4210,7 +4206,7 @@
         data-string="eee"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.patterns_as_iotas.parens.2</p>
   </div>
@@ -4247,7 +4243,7 @@
         data-string="aqqqqq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqqqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Скопировать информацию из предмета (к примеру <a href='#items/focus'><span style='color: #b0b'>Талисман</span></a>, <a href='#items/abacus'><span style='color: #b0b'>Счёты</span></a> или <a href='#items/spellbook'><span style='color: #b0b'>Книга знаний</span></a>) в моей другой руке, и добавить на верх стэка.</p>
   </div>
@@ -4267,7 +4263,7 @@
         data-string="deeeee"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deeeee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.write</p>
   </div>
@@ -4287,7 +4283,7 @@
         data-string="wawqwqwqwqwqw"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wawqwqwqwqwqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Типо <span style='color: #fc77be'></span>, но информация читается из сущности предмета.</p>
   </div>
@@ -4307,7 +4303,7 @@
         data-string="wdwewewewewew"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdwewewewewew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.write/entity</p>
   </div>
@@ -4327,7 +4323,7 @@
         data-string="aqqqqqe"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqqqqqe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Если прочесть информацию из другой руки можно - вернёт 1, нет - 0.</p>
   </div>
@@ -4347,7 +4343,7 @@
         data-string="wawqwqwqwqwqwew"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wawqwqwqwqwqwew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.readable/entity</p>
   </div>
@@ -4367,7 +4363,7 @@
         data-string="deeeeeq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deeeeeq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Если сохранить информацию можно - возвращает 1 если нет - 0.</p>
   </div>
@@ -4387,7 +4383,7 @@
         data-string="wdwewewewewewqw"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdwewewewewewqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.writable/entity</p>
   </div>
@@ -4416,7 +4412,7 @@
         data-string="eqqwawqaaw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eqqwawqaaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.write/local</p>
   </div>
@@ -4436,7 +4432,7 @@
         data-string="qeewdweddw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qeewdweddw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.readwrite.read/local</p>
   </div>
@@ -4470,7 +4466,7 @@
         data-string="waweaqa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waweaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Unifies two sets.</p>
   </div>
@@ -4492,7 +4488,7 @@
         data-string="wdweaqa"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wdweaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the intersection of two sets.</p>
   </div>
@@ -4514,7 +4510,7 @@
         data-string="dwaeaqa"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dwaeaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the exclusive disjunction of two sets.</p>
   </div>
@@ -4536,7 +4532,7 @@
         data-string="dweaqa"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dweaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the inversion of a bitset, changing all &#34;on&#34; bits to &#34;off&#34; and vice versa. In my experience, this will take the form of that number negated and decreased by one. For example, 0 will become -1, and -100 will become 99.</p>
   </div>
@@ -4556,7 +4552,7 @@
         data-string="aweaqa"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aweaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Removes duplicate entries from a list.</p>
   </div>
@@ -4587,7 +4583,7 @@
         data-string="qqqqqaa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Синус угла в радианах. Выражается в <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> и <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4607,7 +4603,7 @@
         data-string="qqqqqad"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Косинус угла в радианах. Выражается в <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> и <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4627,7 +4623,7 @@
         data-string="wqqqqqadq"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqqqqqadq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Тангенс угла в радианах. Выражается в <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> and <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4647,7 +4643,7 @@
         data-string="ddeeeee"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddeeeee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the inverse sine of a value with absolute value 1 or less, yielding the angle whose sine is that value. Related to the values of <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> and <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4667,7 +4663,7 @@
         data-string="adeeeee"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: adeeeee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the inverse cosine of a value with absolute value 1 or less, yielding the angle whose cosine is that value. Related to the values of <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> and <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4687,7 +4683,7 @@
         data-string="eadeeeeew"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eadeeeeew</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Takes the inverse tangent of a value, yielding the angle whose tangent is that value. Related to the values of <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> and <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a>.</p>
   </div>
@@ -4707,7 +4703,7 @@
         data-string="eqaqe"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eqaqe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Removes the number at the top of the stack, then takes the logarithm of the number at the top using the other number as its base. Related to the value of <a href='#patterns/consts@hexcasting:const/double/e'><span style='color: #8d6acc'><i>e</i></span></a>.</p>
   </div>
@@ -4738,7 +4734,7 @@
         data-string="deaqq"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: deaqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Убирает очередь рун со стэка и поочерёдно их использует.<br />Cтоит около одного <span style='color: #b0b'>Осколка Аметиста</span>.</p>
   </div>
@@ -4760,7 +4756,7 @@
         data-string="dadad"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dadad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.meta.for_each.1</p>
   </div>
@@ -4782,7 +4778,7 @@
         data-string="aqdee"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqdee</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.meta.halt.1</p>
   </div>
@@ -4818,7 +4814,7 @@
         data-string="eaqwqae"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eaqwqae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.circle_patterns.circle/impetus_pos</p>
   </div>
@@ -4838,7 +4834,7 @@
         data-string="eaqwqaewede"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eaqwqaewede</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.circle_patterns.circle/impetus_dir</p>
   </div>
@@ -4858,7 +4854,7 @@
         data-string="eaqwqaewdd"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eaqwqaewdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.circle_patterns.circle/bounds/min</p>
   </div>
@@ -4878,7 +4874,7 @@
         data-string="aqwqawaaqa"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqwqawaaqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.circle_patterns.circle/bounds/max</p>
   </div>
@@ -4911,7 +4907,7 @@
         data-string="qqqwqqqqqaq"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqwqqqqqaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.akashic_patterns.akashic/read</p>
   </div>
@@ -4931,7 +4927,7 @@
         data-string="eeeweeeeede"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeweeeeede</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.akashic_patterns.akashic/write</p>
   </div>
@@ -4992,7 +4988,7 @@
         data-string="aawaawaa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aawaawaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Создает взрыв на месте вектора с силой данного числа.</p>
   </div>
@@ -5014,7 +5010,7 @@
         data-string="ddwddwdd"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddwddwdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Создаёт огненный взрыв на данных координатах с данной силой.</p>
   </div>
@@ -5036,7 +5032,7 @@
         data-string="awqqqwaqw"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awqqqwaqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Даёт импульс данному существу в данном направлении, сила обозначается длиной вектора.<br />Стоит количество <span style='color: #b0b'>Aметистовой пыли</span> равное квадрату длины вектора.</p>
   </div>
@@ -5056,7 +5052,7 @@
         data-string="awqqqwaq"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awqqqwaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Телепортирует существо по направлению её взгляда на данную длину.<br />Стоит 1 <span style='color: #b0b'>Аметистовый осколок</span> за каждый блок.</p>
   </div>
@@ -5076,7 +5072,7 @@
         data-string="adaa"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: adaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Требует вектор и 2 числа. Проигрывает <span style='color: #8d6acc'>инструмент</span> основанный на первом числе на указаной позиции, с <span style='color: #8d6acc'>нотой</span> основанной на втором числе. Стоит малое количество мысли.</p>
   </div>
@@ -5109,7 +5105,7 @@
         data-string="eeeeede"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: eeeeede</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.place_block</p>
   </div>
@@ -5129,7 +5125,7 @@
         data-string="qaqqqqq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qaqqqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.break_block</p>
   </div>
@@ -5149,7 +5145,7 @@
         data-string="aqawqadaq"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aqawqadaq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.create_water</p>
   </div>
@@ -5169,7 +5165,7 @@
         data-string="dedwedade"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: dedwedade</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.destroy_water</p>
   </div>
@@ -5189,7 +5185,7 @@
         data-string="qqa"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.conjure_block</p>
   </div>
@@ -5209,7 +5205,7 @@
         data-string="qqd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.conjure_light</p>
   </div>
@@ -5229,7 +5225,7 @@
         data-string="wqaqwawqaqw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaqwawqaqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.bonemeal</p>
   </div>
@@ -5249,7 +5245,7 @@
         data-string="wqaqwd"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wqaqwd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.edify</p>
   </div>
@@ -5269,7 +5265,7 @@
         data-string="aaqawawa"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: aaqawawa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.ignite</p>
   </div>
@@ -5289,7 +5285,7 @@
         data-string="ddedwdwd"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: ddedwdwd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.blockworks.extinguish</p>
   </div>
@@ -5324,7 +5320,7 @@
         data-string="qqqqqaqwawaw"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqaqwawaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.nadirs.potion/weakness</p>
   </div>
@@ -5344,7 +5340,7 @@
         data-string="qqqqqawwawawd"
         data-start="west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqawwawawd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.nadirs.potion/levitation</p>
   </div>
@@ -5364,7 +5360,7 @@
         data-string="qqqqqaewawawe"
         data-start="south_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqaewawawe</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.nadirs.potion/wither</p>
   </div>
@@ -5384,7 +5380,7 @@
         data-string="qqqqqadwawaww"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqadwawaww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.nadirs.potion/poison</p>
   </div>
@@ -5404,7 +5400,7 @@
         data-string="qqqqqadwawaw"
         data-start="south_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqadwawaw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.nadirs.potion/slowness</p>
   </div>
@@ -5437,7 +5433,7 @@
         data-string="waqqqqq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waqqqqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.hexcasting_spell.craft/cypher</p>
   </div>
@@ -5457,7 +5453,7 @@
         data-string="wwaqqqqqeaqeaeqqqeaeq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wwaqqqqqeaqeaeqqqeaeq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.hexcasting_spell.craft/trinket</p>
   </div>
@@ -5477,7 +5473,7 @@
         data-string="wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.hexcasting_spell.craft/artifact</p>
   </div>
@@ -5497,7 +5493,7 @@
         data-string="qqqqqwaeaeaeaeaea"
         data-start="north_west"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqqwaeaeaeaeaea</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.hexcasting_spell.recharge.1</p>
   </div>
@@ -5519,7 +5515,7 @@
         data-string="qdqawwaww"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qdqawwaww</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.hexcasting_spell.erase.1</p>
   </div>
@@ -5556,7 +5552,7 @@
         data-string="waeawae"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waeawae</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.sentinels.sentinel/create</p>
   </div>
@@ -5576,7 +5572,7 @@
         data-string="qdwdqdw"
         data-start="north_east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: qdwdqdw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.sentinels.sentinel/destroy</p>
   </div>
@@ -5596,7 +5592,7 @@
         data-string="waeawaede"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waeawaede</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.sentinels.sentinel/get_pos</p>
   </div>
@@ -5616,7 +5612,7 @@
         data-string="waeawaedwa"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: waeawaedwa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.sentinels.sentinel/wayfind</p>
   </div>
@@ -5647,7 +5643,7 @@
         data-string="awddwqawqwawq"
         data-start="east"
         data-per-world="False"
-      >Your browser does not support visualizing patterns. Pattern code: awddwqawqwawq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.colorize</p>
   </div>
@@ -5690,7 +5686,7 @@
         data-string="eaqawqadaqd"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: eaqawqadaqd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Summon a block of lava or insert a bucket&#39;s worth into a block at the given position. Costs about one <span style='color: #b0b'>Charged Amethyst</span>.</p>
   </div>
@@ -5723,7 +5719,7 @@
         data-string="waadwawdaaweewq"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: waadwawdaaweewq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.weather_manip.lightning</p>
   </div>
@@ -5743,7 +5739,7 @@
         data-string="wwweeewwweewdawdwad"
         data-start="west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: wwweeewwweewdawdwad</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.weather_manip.summon_rain</p>
   </div>
@@ -5763,7 +5759,7 @@
         data-string="eeewwweeewwaqqddqdqd"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: eeewwweeewwaqqddqdqd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.weather_manip.dispel_rain</p>
   </div>
@@ -5794,7 +5790,7 @@
         data-string="eawwaeawawaa"
         data-start="north_west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: eawwaeawawaa</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>The power of flight! I have wrestled Nature to its knees. But Nature is vengeful, and itches for me to break its contract so it may break my shins.</p>
   </div>
@@ -5827,7 +5823,7 @@
         data-string="wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Куда мощнее <a href='#patterns/spells/basic@hexcasting:blink'><span style='color: #fc77be'>Блинка</span></a>, это позволит мне телепортироваться на невероятные расстония, пускай ограничение и есть, но оно <i>куда больше</i>.</p>
   </div>
@@ -5862,7 +5858,7 @@
         data-string="qqqqaawawaedd"
         data-start="north_west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqqqaawawaedd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.zeniths.potion/regeneration</p>
   </div>
@@ -5882,7 +5878,7 @@
         data-string="qqqaawawaeqdd"
         data-start="west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqqaawawaeqdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.zeniths.potion/night_vision</p>
   </div>
@@ -5902,7 +5898,7 @@
         data-string="qqaawawaeqqdd"
         data-start="south_west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qqaawawaeqqdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.zeniths.potion/absorption</p>
   </div>
@@ -5922,7 +5918,7 @@
         data-string="qaawawaeqqqdd"
         data-start="south_east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qaawawaeqqqdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.zeniths.potion/haste</p>
   </div>
@@ -5942,7 +5938,7 @@
         data-string="aawawaeqqqqdd"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: aawawaeqqqqdd</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>hexcasting.page.zeniths.potion/strength</p>
   </div>
@@ -5973,7 +5969,7 @@
         data-string="waeawaeqqqwqwqqwq"
         data-start="east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: waeawaeqqqwqwqqwq</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Summon a greater version of my <a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>Sentinel</span></a>. Costs about 2 <span style='color: #b0b'>Amethyst Dust</span>s.</p>
   </div>
@@ -6006,7 +6002,7 @@
         data-string="aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw"
         data-start="south_west"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Infuse a bottle with <span style='color: #74b3f2'>media</span> to form a <span style='color: #b0b'>Phial.</span></p>
   </div>
@@ -6039,7 +6035,7 @@
         data-string="qeqwqwqwqwqeqaeqeaqeqaeqaqded"
         data-start="north_east"
         data-per-world="True"
-      >Your browser does not support visualizing patterns. Pattern code: qeqwqwqwqwqeqaeqeaqeqaeqaqded</canvas>
+      >hexdoc.pattern.not_supported</canvas>
   </details>
       <p>Я не могу узнать начало или конец этой руны... Честно говоря мне страшно узнать что оно сделает...</p>
   </div>
