@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>hexdoc.hexcasting.title</title>
+    <title>咒术之书</title>
     <link rel="icon" href="logo.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="hexdoc.hexcasting.description" />
+    <meta name="description" content="咒术之书，辑录合一。" />
     <meta name="author" content="petrak@, Alwinfy" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="hexdoc.hexcasting.title" />
+    <meta property="og:title" content="咒术之书" />
     <meta property="og:image" content="https://object-object.github.io/HexMod/v/latest/zh_cn/logo.png" />
     <meta property="og:url" content="https://object-object.github.io/HexMod/v/latest/zh_cn" />
-    <meta property="og:description" content="hexdoc.hexcasting.description" />
+    <meta property="og:description" content="咒术之书，辑录合一。" />
     <meta property="og:site_name" content="Hex Casting" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -44,10 +44,10 @@
         margin-bottom: 0.5em;
       }
       details .collapse-spell::before {
-        content: "hexdoc.pattern.show";
+        content: "点击以显示图案";
       }
       details[open] .collapse-spell::before {
-        content: "hexdoc.pattern.hide";
+        content: "点击以隐藏图案";
       }
       blockquote.crafting-info {
         font-size: inherit;
@@ -384,7 +384,7 @@
             context.fillText(
               // these variables are filled by Jinja
               // slightly scuffed, but it works for now
-              speedScale() ? `hexdoc.pattern.multiplier` : "hexdoc.pattern.paused",
+              speedScale() ? `${speedScale()}x` : "暂停",
               0.2 * scale,
               canvas.height - 0.2 * scale
             );
@@ -575,7 +575,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="https://object-object.github.io/HexMod">hexdoc.hexcasting.title</a>
+      <a class="navbar-brand" href="https://object-object.github.io/HexMod">咒术之书</a>
     </div>
     <!-- content -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -608,13 +608,13 @@
 </nav>
 <div class="container" style="margin-top: 3em;">
   <blockquote>
-    <h1><p>hexdoc.welcome.1</p></h1>
-    <p><p>hexdoc.welcome.2</p></p>
-      <p><p>hexdoc.welcome.3</p></p>
-    <p><p>hexdoc.welcome.4</p></p>
+    <h1><p>这是Hex Casting文档的在线版本。</p></h1>
+    <p><p>此版本会显示文档内嵌的图片和图案，合成配方和物品则不会。缺失的内容请查阅游戏内手册。</p></p>
+      <p><p>此外，此版本是根据GitHub上最新代码构建而来的。其中可能包含游戏内暂未实装的<strong>新</strong>特性，就连Modrinth和CurseForge上的最新版本里也找不到！</p></p>
+    <p><p><strong>条目的模糊处理相当于剧透警告</strong>。点击可取消模糊，不过这么做有可能破坏游戏后期的进程与体验。也可点击<a href='?nospoiler'>此处</a>以取消所有模糊。</p></p>
     <span id="old-version-notice" class="hidden">
       <br />
-      <p>hexdoc.welcome.old_version</p>
+      <p><i>往事犹若异乡；他们在那里做的事情都不一样。</i></p>
     </span>
   </blockquote>
 </div>
@@ -626,11 +626,11 @@
 <div id="table-of-contents"></div>
 <nav class="toc-container">
   <h2 class="page-header">
-    hexdoc.toc.title<a
+    <span class="nobr">目录<a
       href="javascript:void(0)"
       class="permalink toggle-link small"
       data-target="toc-category"
-      title="hexdoc.toc.toggle_all"
+      title="显示或收起全部"
     ><i class="bi bi-list-nested"></i></a><a
     href="#table-of-contents"
     class="permalink small toc-permalink"
@@ -885,7 +885,7 @@
         data-string="qaq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaq</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -893,7 +893,7 @@
         data-string="qaq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaq</canvas>
   </details>
       <p>有意思的是，图案整体的<i>方向</i>完全不影响图案的功用。例如，上图中的两个图案都会执行名为<a href='#patterns/basics@hexcasting:get_caster'><span style='color: #fc77be'>意识之精思</span></a>的操作。</p>
 <br />
@@ -1135,7 +1135,7 @@
     <p><a href='#items/staff'><span style='color: #b0b'>法杖</span></a>是我尝试施放各类<span style='color: #b38ef3'>咒术</span>的起点。手持时按下<span style='color: #8d6acc'>右键</span>，就算开始了施放<span style='color: #b38ef3'>咒术</span>的过程。然后单击拖动绘制图案就可以了。</p><p>它还是和单纯把一小块<span style='color: #74b3f2'>媒质</span>放在木棍的一端有所不同，但不管怎么说，能用就行。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.crafting_multi.description <code>item.hexcasting.staff.oak</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.spruce</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.birch</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.jungle</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.acacia</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.dark_oak</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.crimson</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.warped</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.mangrove</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>item.hexcasting.staff.edified</code>.
+    书中显示如下事物的合成配方： <code>item.hexcasting.staff.oak</code>、<code>item.hexcasting.staff.spruce</code>、<code>item.hexcasting.staff.birch</code>、<code>item.hexcasting.staff.jungle</code>、<code>item.hexcasting.staff.acacia</code>、<code>item.hexcasting.staff.dark_oak</code>、<code>item.hexcasting.staff.crimson</code>、<code>item.hexcasting.staff.warped</code>、<code>item.hexcasting.staff.mangrove</code>、<code>item.hexcasting.staff.edified</code>.
   </blockquote>
       <p><i>施法不规范，自己两行泪。</i></p>
 <br />
@@ -1155,7 +1155,7 @@
     <p>例如，看向<span style='color: #b0b'>红石粉</span>会给出其信号强度。我猜测随着研究的深入，还能发现新的额外信息。</p><p>此外，用<a href='#items/staff'><span style='color: #b0b'>法杖</span></a>施法时，在另一只手持有探知透镜就能缩短点与点的间距，从而能在网格上绘制更多图案。</p><p>我还可以把它当单片眼镜戴在头上。这样做能显示额外信息，但不会缩小网格。但没关系，总有两全其美的办法……</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>探知透镜</code>.
+    书中显示如下事物的合成配方： <code>探知透镜</code>.
   </blockquote>
       <p><i>你必须学会……探知你所看到的事物。</i></p>
 <br />
@@ -1177,7 +1177,7 @@
     <p>另外，如果我在<span style='color: #b0b'>结念绳</span>中写入一个实体，然后在该实体死亡或消失后尝试复制，则<a href='#patterns/readwrite@hexcasting:read'><span style='color: #fc77be'>书吏之精思</span></a>会压入一个 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>结念绳</code>.
+    书中显示如下事物的合成配方： <code>结念绳</code>.
   </blockquote>
       <p><i>别人要是看到你带着块牌子，上面写着“本人风度翩翩，品貌非凡”，你又会作何感想？</i></p>
 <br />
@@ -1199,7 +1199,7 @@
     <p>另外，如果我在<a href='#items/focus'><span style='color: #b0b'>核心</span></a>中写入一个实体，然后在该实体死亡或消失后尝试复制，则<a href='#patterns/readwrite@hexcasting:read'><span style='color: #fc77be'>书吏之精思</span></a>会压入一个 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>。</p><p>最后，如果不希望<a href='#items/focus'><span style='color: #b0b'>核心</span></a>被覆写，可以将其与<span style='color: #b0b'>蜜脾</span>合成来蜡封，这时对其使用<a href='#patterns/readwrite@hexcasting:write'><span style='color: #fc77be'>书吏之策略</span></a>就会失败。<a href='#patterns/spells/hexcasting@hexcasting:erase'><span style='color: #fc77be'>清除物品</span></a>则会将蜡封和其内容物一并清除。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>核心</code>.
+    书中显示如下事物的合成配方： <code>核心</code>.
   </blockquote>
       <p><i>毒苹果，毒虫子。</i></p>
 <br />
@@ -1219,7 +1219,7 @@
     <p>操作方法是潜行时手持算盘滚动滚轮。如果是主手持算盘，则其数值会以 1 增加或减少，按住 Control 或 Command 时则以 10。若是副手持算盘，则其数值会以 0.1 增加或减少，按住 Control 或 Command 时则以 0.001。</p><p>也可以在潜行时手持算盘右击以重设为 0。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>算盘</code>.
+    书中显示如下事物的合成配方： <code>算盘</code>.
   </blockquote>
       <p><i>数学？那是给聪明人用的！</i></p>
 <br />
@@ -1239,7 +1239,7 @@
     <p>就像<a href='#items/focus'><span style='color: #b0b'>核心</span></a>一样，法术书也有防覆写机制。将其和<span style='color: #b0b'>蜜脾</span>合成就能给当前页上漆，从而防止<a href='#patterns/readwrite@hexcasting:write'><span style='color: #fc77be'>书吏之策略</span></a>改变其内容。而清除也和<a href='#items/focus'><span style='color: #b0b'>核心</span></a>一样，使用<a href='#patterns/spells/hexcasting@hexcasting:erase'><span style='color: #fc77be'>清除物品</span></a>就能同时去除漆封和当前页的内容。</p><p>也可在铁砧上改变当前书页的名字，方便查找。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>法术书</code>.
+    书中显示如下事物的合成配方： <code>法术书</code>.
   </blockquote>
       <p><i>巫师们喜欢阅读。大多数巫师经常阅读，而且睡前一定要读些什么确实是判断一个人是不是巫师的有效方法。</i></p>
 <br />
@@ -1259,11 +1259,11 @@
     <p>此外，我还在地牢和要塞里发现了所谓<a href='#items/scroll'><span style='color: #b0b'>远古卷轴</span></a>。它们记载了一些特殊法术的笔画顺序——<span style='color: #8d6acc'>卓越法术</span>，传闻是强大到凡人的意识无法承受的法术……</p><p>但如果那些“凡人”施放不了，那我觉得他们就不应该知道这些法术的存在。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>小型卷轴</code>hexdoc.pages.patchouli.crafting.separator<code>中型卷轴</code>.
+    书中显示如下事物的合成配方： <code>小型卷轴</code>和<code>中型卷轴</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>大型卷轴</code>.
+    书中显示如下事物的合成配方： <code>大型卷轴</code>.
   </blockquote>
       <p><i>我用锐利的笔和学生的鲜血在洁白的纸上书写，探知着他们的秘密。</i></p>
 <br />
@@ -1283,7 +1283,7 @@
     <p>也许我将来就会碰到这些知识。但就现在而言，我觉得它们非常适合装饰。</p><p>至少它们可被放在方块的任何一面，这点和<a href='#items/scroll'><span style='color: #b0b'>卷轴</span></a>不同。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>空白石板</code>.
+    书中显示如下事物的合成配方： <code>空白石板</code>.
   </blockquote>
       <p><i>这就是横竖撇捺了。要记牢。</i></p>
 <br />
@@ -1312,13 +1312,13 @@
 <br />
   <div id="items/hexcasting@cypher_trinket">
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>杂件</code>hexdoc.pages.patchouli.crafting.separator<code>缀品</code>.
+    书中显示如下事物的合成配方： <code>杂件</code>和<code>缀品</code>.
   </blockquote>
   </div>
 <br />
   <div id="items/hexcasting@artifact">
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>造物</code>.
+    书中显示如下事物的合成配方： <code>造物</code>.
   </blockquote>
       <p><i>我们常说一句话，“魔法从不……”。它从不“就是行得通”，它不会随你操控。你不能光靠所谓魔法扔个火球，烧顿晚饭，或是把一帮劫匪变成青蛙和蜗牛。</i></p>
   </div>
@@ -1359,46 +1359,46 @@
     <p>我不懂它们工作的具体原理，但我相信我已琢磨出制造不同颜色的染色剂的配方了。若要使用染色剂，可手持之并以另一只手施放<a href='#patterns/spells/colorize'><span style='color: #fc77be'>内化染色剂</span></a>。这会消耗对应染色剂并将我的意识涂为对应颜色。</p><p>染色剂会影响我用法杖施放<span style='color: #b38ef3'>咒术</span>时产生的火花的颜色，也会影响我的<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>的颜色。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.crafting_multi.description <code>白色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>橙色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>品红色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>淡蓝色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>黄色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>黄绿色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>粉红色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>灰色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>淡灰色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>青色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>紫色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>蓝色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>棕色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>绿色染色剂</code>hexdoc.pages.hexcasting.crafting_multi.separator<code>红色染色剂</code>.
+    书中显示如下事物的合成配方： <code>白色染色剂</code>、<code>橙色染色剂</code>、<code>品红色染色剂</code>、<code>淡蓝色染色剂</code>、<code>黄色染色剂</code>、<code>黄绿色染色剂</code>、<code>粉红色染色剂</code>、<code>灰色染色剂</code>、<code>淡灰色染色剂</code>、<code>青色染色剂</code>、<code>紫色染色剂</code>、<code>蓝色染色剂</code>、<code>棕色染色剂</code>、<code>绿色染色剂</code>、<code>红色染色剂</code>.
   </blockquote>
       <p>五彩缤纷的染色剂。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>无性别染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>无浪漫倾向无性恋染色剂</code>.
+    书中显示如下事物的合成配方： <code>无性别染色剂</code>和<code>无浪漫倾向无性恋染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>无浪漫倾向染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>无性恋染色剂</code>.
+    书中显示如下事物的合成配方： <code>无浪漫倾向染色剂</code>和<code>无性恋染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>双性恋染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>部分男性染色剂</code>.
+    书中显示如下事物的合成配方： <code>双性恋染色剂</code>和<code>部分男性染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>部分女性染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>男同性恋染色剂</code>.
+    书中显示如下事物的合成配方： <code>部分女性染色剂</code>和<code>男同性恋染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>性别流体染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>性别酷儿染色剂</code>.
+    书中显示如下事物的合成配方： <code>性别流体染色剂</code>和<code>性别酷儿染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>双性人染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>女同性恋染色剂</code>.
+    书中显示如下事物的合成配方： <code>双性人染色剂</code>和<code>女同性恋染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>非二元性别染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>泛性恋染色剂</code>.
+    书中显示如下事物的合成配方： <code>非二元性别染色剂</code>和<code>泛性恋染色剂</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>多重人格染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>跨性别染色剂</code>.
+    书中显示如下事物的合成配方： <code>多重人格染色剂</code>和<code>跨性别染色剂</code>.
   </blockquote>
 <br />
     <p>hexcasting.page.pigments.special</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>灵魂闪光染色剂</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.default_colorizer</code>.
+    书中显示如下事物的合成配方： <code>灵魂闪光染色剂</code>和<code>item.hexcasting.default_colorizer</code>.
   </blockquote>
 <br />
 </div>
@@ -1417,23 +1417,23 @@
     <p>我觉得这种木材与<span style='color: #b38ef3'>咒法学</span>有着紧密的联系。但就算真有，我也完全找不到这联系在哪。它和普通木头如出一辙，不同只在于颜色不一样。</p><p>就现在而言，它们是很好的装饰用方块。</p><p>当然，也可用斧来去皮。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>启迪木板</code>.
+    书中显示如下事物的合成配方： <code>启迪木板</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>启迪木楼梯</code>hexdoc.pages.patchouli.crafting.separator<code>启迪木台阶</code>.
+    书中显示如下事物的合成配方： <code>启迪木楼梯</code>和<code>启迪木台阶</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>启迪木块</code>hexdoc.pages.patchouli.crafting.separator<code>启迪木方砖</code>.
+    书中显示如下事物的合成配方： <code>启迪木块</code>和<code>启迪木方砖</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>启迪木门</code>hexdoc.pages.patchouli.crafting.separator<code>启迪木活板门</code>.
+    书中显示如下事物的合成配方： <code>启迪木门</code>和<code>启迪木活板门</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>启迪木按钮</code>hexdoc.pages.patchouli.crafting.separator<code>启迪木压力板</code>.
+    书中显示如下事物的合成配方： <code>启迪木按钮</code>和<code>启迪木压力板</code>.
   </blockquote>
 <br />
     <p><i>它们那周身洁白的巨大而光滑的树干，仅凭自己支撑起了茂密的树冠，投下绿荫与静谧。</i></p>
@@ -1452,7 +1452,7 @@
     <p>在无数次摧毁<span style='color: #74b3f2'>媒质</span>来源的惨痛经历后，我设计了一把用于防止手滑的工具。</p><p>将脆弱的晶态<span style='color: #74b3f2'>媒质</span>用作镐的固定结，就得到了<a href='#items/jeweler_hammer'><span style='color: #b0b'>珠宝匠锤</span></a>。它和<span style='color: #b0b'>铁镐</span>在许多方面完全一致，但珠宝匠锤不会破坏任何完整方块。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>珠宝匠锤</code>.
+    书中显示如下事物的合成配方： <code>珠宝匠锤</code>.
   </blockquote>
       <p><i>她小心翼翼地敲开那半块红宝石，让其中的灵体逸散而出。</i></p>
 <br />
@@ -1470,33 +1470,33 @@
     <p>我在研究过程中发现了些挺美观的建筑方块的其他装饰品。制作方法整理如下。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>板岩块</code>hexdoc.pages.patchouli.crafting.separator<code>板岩块</code>.
+    书中显示如下事物的合成配方： <code>板岩块</code>和<code>板岩块</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>纸卷轴</code>hexdoc.pages.patchouli.crafting.separator<code>远古纸卷轴</code>.
+    书中显示如下事物的合成配方： <code>纸卷轴</code>和<code>远古纸卷轴</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>纸灯笼</code>hexdoc.pages.patchouli.crafting.separator<code>远古纸灯笼</code>.
+    书中显示如下事物的合成配方： <code>纸灯笼</code>和<code>远古纸灯笼</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>远古纸灯笼</code>.
+    书中显示如下事物的合成配方： <code>远古纸灯笼</code>.
   </blockquote>
       <p>棕色染料在仿制<a href='#items/scroll'><span style='color: #b0b'>远古卷轴</span></a>这方面表现非常出色。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>紫水晶瓦</code>.
+    书中显示如下事物的合成配方： <code>紫水晶瓦</code>.
   </blockquote>
       <p><a href='#items/decoration'><span style='color: #b0b'>紫水晶瓦</span></a>也可在切石机内制作。</p><p><a href='#items/decoration'><span style='color: #b0b'>紫水晶粉块</span></a>（见后页）受重力影响。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>紫水晶粉块</code>hexdoc.pages.patchouli.crafting.separator<code>紫水晶粉</code>.
+    书中显示如下事物的合成配方： <code>紫水晶粉块</code>和<code>紫水晶粉</code>.
   </blockquote>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>紫水晶灯台</code>.
+    书中显示如下事物的合成配方： <code>紫水晶灯台</code>.
   </blockquote>
       <p><a href='#items/decoration'><span style='color: #b0b'>紫水晶灯台</span></a>会发出光和粒子，并会产生悦耳的“叮铃”声。</p>
 <br />
@@ -1550,7 +1550,7 @@
     <p>这个世界中的村民还留有能被提取的感知力。将这种感知力放在方块中，扭曲它，改变它。由不同的思维模式造就的精密图案，关于他们工作和生活的抽象神经通路，都被投射到无生气的固态物质的原子中。</p><p>这就是<a href='#patterns/great_spells/brainsweep'><span style='color: #fc77be'>剥离意识</span></a>的用途，那个提取过程。需将村民实体和目标方块放在栈中。扭曲意识则要消耗 10 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>紫水晶母岩</code>.
+    书中显示如下事物的意识剥离配方： <code>紫水晶母岩</code>.
   </blockquote>
   <p>如下是一种实际用途。这个剥离过程接受任何职业的村民，前提是他们足够熟练。其他配方则有更具体的要求。我再也不必为<span style='color: #74b3f2'>媒质</span>亲身沉入地狱了。</p>
 <br />
@@ -1608,24 +1608,24 @@
     <p>我选择的解决方案，是特种化一个意识。将其从神经的暴政中释放，剪去除<span style='color: #74b3f2'>媒质</span>操控装置外的一切功用件，烙封除启动信号口外的一切接收端口。</p><p>我现在已较为熟练掌握的<a href='#greatwork/brainsweeping'><span style='color: #fc77be'>剥离意识</span></a>过程就能很好地做到这些。村民的意识复杂到足以启动法术环，但也还没复杂到能抵御扭曲。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.impetus.empty</code>.
+    书中显示如下事物的合成配方： <code>item.hexcasting.impetus.empty</code>.
   </blockquote>
       <p>第一步，基床。虽然和纯粹的<a href='#greatwork/impetus'><span style='color: #b0b'>促动石</span></a>不大一样，但它能让<span style='color: #74b3f2'>媒质</span>从箭头所指方向流出。这就提供了一种改变媒质波所在平面的方法。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>item.hexcasting.impetus.rightclick</code>.
+    书中显示如下事物的意识剥离配方： <code>item.hexcasting.impetus.rightclick</code>.
   </blockquote>
   <p>第二步，转移意识。村民职业的不同意味着<a href='#greatwork/impetus'><span style='color: #b0b'>促动石</span></a>激活条件的不同。<a href='#greatwork/impetus'><span style='color: #b0b'>工具匠促动石</span></a>会在对其按下右键时启动。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>item.hexcasting.impetus.redstone</code>.
+    书中显示如下事物的意识剥离配方： <code>item.hexcasting.impetus.redstone</code>.
   </blockquote>
   <p><a href='#greatwork/impetus'><span style='color: #b0b'>牧师促动石</span></a>必须绑定至某一玩家，对其使用存有代表玩家的 iota 的物品（例如<a href='#items/focus'><span style='color: #b0b'>核心</span></a>）即可。这之后，它会在收到红石信号时启动。</p>
 <br />
     <p>这种<a href='#greatwork/impetus'><span style='color: #b0b'>促动石</span></a>也使得被绑定的玩家和他们周围一小块区域会一直受法术环影响。不管该玩家离法术环多远都会和站在法术环里一样。</p><p>用<a href='#items/lens'><span style='color: #b0b'>探知透镜</span></a>观察<a href='#greatwork/impetus'><span style='color: #b0b'>牧师促动石</span></a>就会显示被绑定的玩家。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>item.hexcasting.impetus.look</code>.
+    书中显示如下事物的意识剥离配方： <code>item.hexcasting.impetus.look</code>.
   </blockquote>
   <p><a href='#greatwork/impetus'><span style='color: #b0b'>制箭师促动石</span></a>会在被注视一段时间后启动。</p>
 <br />
@@ -1647,12 +1647,12 @@
     <p><a href='#greatwork/directrix'><span style='color: #b0b'>导向石</span></a>会接受一个<span style='color: #74b3f2'>媒质</span>波并决定它的流向，具体如何操控主要看其中的村民意识。</p><p>我不清楚是这个想法先找到我的，还是我的意识先产生这种想法的……如果这种想法是我的意识产生的，是我自己想出来的，那还能说是想法找到我吗？大脑是意识的容器意识是想法的容器想法思维容器思维全知思维全知——停，下。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.directrix.empty</code>.
+    书中显示如下事物的合成配方： <code>item.hexcasting.directrix.empty</code>.
   </blockquote>
       <p>第一步，基床……用“基底”这个名字会准确些。倘若没有意识引导，媒质的流向是由<span style='color: #74b3f2'>媒质</span>波的微观涨落和环境决定的，换句话说，随机的。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>item.hexcasting.directrix.redstone</code>.
+    书中显示如下事物的意识剥离配方： <code>item.hexcasting.directrix.redstone</code>.
   </blockquote>
   <p><a href='#greatwork/directrix'><span style='color: #b0b'>石匠导向石</span></a>会根据红石信号改变输出方向。没有信号的话，出口是<span style='color: #74b3f2'>媒质</span>色的一端；有信号的话，出口是红石色的一端。</p>
 <br />
@@ -1674,12 +1674,12 @@
     <p>一座图书馆。我的计划，如下。</p><p>就和图案与操作的对应关系一样，我能以我自己的方式将自创的图案与 iota 对应起来。<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏记录</span></a>是图书馆的控制核心，而每个<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏书架</span></a>存储一个映射。它们必须互相连接，直接贴在一起，不超过 32 格。<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏桥接块</span></a>没有存储功能但被视为连接方块，从而增加图书馆的大小。</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>阿卡夏记录</code>.
+    书中显示如下事物的意识剥离配方： <code>阿卡夏记录</code>.
   </blockquote>
   <p>存储和分配图案非常简单但太过磨人，我还有更要紧的事要做。剥离一个精于此道的意识能省很多麻烦。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>阿卡夏书架</code>hexdoc.pages.patchouli.crafting.separator<code>阿卡夏桥接块</code>.
+    书中显示如下事物的合成配方： <code>阿卡夏书架</code>和<code>阿卡夏桥接块</code>.
   </blockquote>
 <br />
     <p>图书馆的使用方法很简单，交给图书管理员一个图案，然后他把对应的 iota 交给你。共有两个相关图案，<a href='#patterns/akashic_patterns'>笔记在此</a>。</p><p>对书架使用一张空白的<a href='#items/scroll'><span style='color: #b0b'>卷轴</span></a>就能将图案复制到<a href='#items/scroll'><span style='color: #b0b'>卷轴</span></a>上。潜行时右击书架就能清除其中数据。</p>
@@ -1702,7 +1702,7 @@
     <p>理解这点后，唯一<strong>正确</strong>的选择就是去征服它们奇异的意识——它们奇异的自我——也是它们的全部、一个意识、一个自我、一段尾声。它们的性状似乎揭示了某些东西。我能……我能使用它们压缩<span style='color: #74b3f2'>媒质</span>，将两束思维叠放在一起，形体与认知，多与一。</p><p>这个过程不知怎么的会自行产生<span style='color: #74b3f2'>媒质</span>。这是怎么回事？也许——也许是<strong>我</strong>的缘故，是完成这项任务的过程——</p>
 <br />
     <blockquote class="crafting-info">
-    hexdoc.pages.hexcasting.brainsweep.description <code>淬灵晶块</code>.
+    书中显示如下事物的意识剥离配方： <code>淬灵晶块</code>.
   </blockquote>
   <p>它不重要。我不重要。它们不重要，重要的只有功用。这就是了。</p><p>这肯定相当痛苦。</p>
 <br />
@@ -1710,12 +1710,12 @@
       <p>所得的产物十分脆弱。直接破坏会将其打碎成碎片，<span style='color: #8d6acc'>时运</span>则能增加产量……如果需要获得方块本身，那要有精准采集才行。</p><p>产生的碎片相当于将 3 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>拼在一起。方块则相当于 4 个碎片。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>紫水晶粉</code>.
+    书中显示如下事物的合成配方： <code>紫水晶粉</code>.
   </blockquote>
       <p>它们变幻莫测，好像会在我的手中不断变形闪烁，若是给予它们来自另一种<span style='color: #74b3f2'>媒质</span>形态的引导，它们便会变成对应的形态，且<span style='color: #74b3f2'>媒质</span>总量前后不变。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>紫水晶碎片</code>hexdoc.pages.patchouli.crafting.separator<code>充能紫水晶</code>.
+    书中显示如下事物的合成配方： <code>紫水晶碎片</code>和<code>充能紫水晶</code>.
   </blockquote>
 <br />
     </div>
@@ -1734,7 +1734,7 @@
     <p>卸去无知的外壳后，更换工具——那些我亲手打磨的法杖——更是理所应当。这些全新的设计并非拥有额外属性——但它们光彩万分，光耀夺目……它们一如我视线边缘的闪烁与光耀。</p>
 <br />
   <blockquote class="crafting-info">
-    hexdoc.pages.patchouli.crafting.description <code>item.hexcasting.staff.quenched</code>hexdoc.pages.patchouli.crafting.separator<code>item.hexcasting.staff.mindsplice</code>.
+    书中显示如下事物的合成配方： <code>item.hexcasting.staff.quenched</code>和<code>item.hexcasting.staff.mindsplice</code>.
   </blockquote>
 <br />
     </div>
@@ -2026,7 +2026,7 @@
         data-string="aawawwawwa"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aawawwawwa</canvas>
   </details>
       <p>获取实体的大小倍数，也即当前大小和原本大小的比值。对大多数实体而言，此值为 1。</p>
   </div>
@@ -2046,7 +2046,7 @@
         data-string="ddwdwwdwwd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddwdwwdwwd</canvas>
   </details>
       <p>设置实体的大小倍数，需传入一个与其原本大小的比值。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶碎片</span></a>。</p>
   </div>
@@ -2125,7 +2125,7 @@
         data-string="qaq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaq</canvas>
   </details>
       <p>返回我，也就是施法者。</p>
   </div>
@@ -2145,7 +2145,7 @@
         data-string="aa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aa</canvas>
   </details>
       <p>将栈顶的实体变为其眼部位置。这个图案比较适用于我自己。</p>
   </div>
@@ -2165,7 +2165,7 @@
         data-string="dd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dd</canvas>
   </details>
       <p>将栈顶的实体变为其所站位置。这个图案比较适用于其他实体。</p>
   </div>
@@ -2185,7 +2185,7 @@
         data-string="wa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wa</canvas>
   </details>
       <p>将栈顶的实体变为其视线方向上的单位向量。</p>
   </div>
@@ -2205,7 +2205,7 @@
         data-string="wqaawdd"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaawdd</canvas>
   </details>
       <p>将两个向量组合（分别表示位置和方向）并返回如下问题的答案：若我站在该位置并看向该方向，我会看到什么方块？消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -2227,7 +2227,7 @@
         data-string="weddwaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：weddwaa</canvas>
   </details>
       <p>与<a href='#patterns/basics@hexcasting:raycast'><span style='color: #fc77be'>弓箭手之馏化</span></a>类似，但会返回如下问题的答案：我看着的是方块的<i>哪一面</i>？消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -2249,7 +2249,7 @@
         data-string="weaqa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：weaqa</canvas>
   </details>
       <p>与<a href='#patterns/basics@hexcasting:raycast'><span style='color: #fc77be'>弓箭手之馏化</span></a>类似，但会返回我所看的<i>实体</i>。消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -2269,7 +2269,7 @@
         data-string="de"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：de</canvas>
   </details>
       <p>向我展示栈顶的 iota。</p>
   </div>
@@ -2289,7 +2289,7 @@
         data-string="awq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awq</canvas>
   </details>
       <p>将栈顶的实体变为其高度。</p>
   </div>
@@ -2309,7 +2309,7 @@
         data-string="wq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wq</canvas>
   </details>
       <p>将栈顶的实体变为其移动方向上的向量，其模长为实体的移动速度。</p>
   </div>
@@ -2340,7 +2340,7 @@
         data-string="aqaa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqaa</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2348,7 +2348,7 @@
         data-string="dedd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dedd</canvas>
   </details>
       <p>没有绘制数字的简单方法，这点挺烦人的。自然屈尊为我们创造的方法如下。</p>
   </div>
@@ -2365,7 +2365,7 @@
         data-string="aqaae"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqaae</canvas>
   </details>
       <p>该图案会返回 10。</p>
 <br />
@@ -2379,7 +2379,7 @@
         data-string="aqaaqww"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqaaqww</canvas>
   </details>
       <p>该图案会返回 7：5 + 1 + 1。</p>
 <br />
@@ -2393,7 +2393,7 @@
         data-string="deddwqea"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deddwqea</canvas>
   </details>
       <p>该图案会返回 -32：(1 + 5 + 10) * 2 的相反数。</p>
 <br />
@@ -2407,7 +2407,7 @@
         data-string="aqaaqdww"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqaaqdww</canvas>
   </details>
       <p>该图案会返回 4.5：5 / 2 + 1 + 1。</p>
 <br />
@@ -2442,7 +2442,7 @@
         data-string="waaw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waaw</canvas>
   </details>
       <p>执行加法。</p>
   </div>
@@ -2464,7 +2464,7 @@
         data-string="wddw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wddw</canvas>
   </details>
       <p>执行减法。</p>
   </div>
@@ -2486,7 +2486,7 @@
         data-string="waqaw"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waqaw</canvas>
   </details>
       <p>hexcasting.page.math.mul.1</p>
   </div>
@@ -2508,7 +2508,7 @@
         data-string="wdedw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wdedw</canvas>
   </details>
       <p>hexcasting.page.math.div.1</p>
   </div>
@@ -2530,7 +2530,7 @@
         data-string="wqaqw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaqw</canvas>
   </details>
       <p>hexcasting.page.math.abs.1</p>
   </div>
@@ -2552,7 +2552,7 @@
         data-string="wedew"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wedew</canvas>
   </details>
       <p>hexcasting.page.math.pow.1</p>
   </div>
@@ -2574,7 +2574,7 @@
         data-string="ewq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ewq</canvas>
   </details>
       <p>对一个数取底，也即去掉小数部分取整。</p>
   </div>
@@ -2594,7 +2594,7 @@
         data-string="qwe"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qwe</canvas>
   </details>
       <p>对一个数取顶，也即将小数部分不为零的数换为大于其的最小整数。</p>
   </div>
@@ -2614,7 +2614,7 @@
         data-string="eqqqqq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eqqqqq</canvas>
   </details>
       <p>将三个数作为向量的 X，Y，Z 分量组合（最下方为 X 分量）。</p>
   </div>
@@ -2634,7 +2634,7 @@
         data-string="qeeeee"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qeeeee</canvas>
   </details>
       <p>将一个向量拆分为其 X，Y，Z 分量（最下方为 X 分量）。</p>
   </div>
@@ -2654,7 +2654,7 @@
         data-string="addwaad"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：addwaad</canvas>
   </details>
       <p>取两数除法的余数。也即执行除法后<i>剩余</i>的数。例如，5 % 2 得 1，5 % 3 得 2。</p>
   </div>
@@ -2674,7 +2674,7 @@
         data-string="qqqqqaww"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqaww</canvas>
   </details>
       <p>若栈顶为向量，则返回与其夹角最小的轴向单位向量；零向量不受影响。若栈顶为数，则返回该数的符号；所给数为正则返回 1，为负责返回 -1，0 不受影响。</p>
   </div>
@@ -2694,7 +2694,7 @@
         data-string="eqqq"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eqqq</canvas>
   </details>
       <p>返回一个 0 与 1 之间的随机数。</p>
   </div>
@@ -2725,7 +2725,7 @@
         data-string="aqae"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqae</canvas>
   </details>
       <p>返回 <span style='color: #8d6acc'>True</span>。</p>
   </div>
@@ -2745,7 +2745,7 @@
         data-string="dedq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dedq</canvas>
   </details>
       <p>返回 <span style='color: #8d6acc'>False</span>。</p>
   </div>
@@ -2765,7 +2765,7 @@
         data-string="d"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：d</canvas>
   </details>
       <p>返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a> 这一虚指。</p>
   </div>
@@ -2785,7 +2785,7 @@
         data-string="qqqqq"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqq</canvas>
   </details>
       <p>返回 [0, 0, 0]。</p>
   </div>
@@ -2805,7 +2805,7 @@
         data-string="qqqqqea"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqea</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2813,7 +2813,7 @@
         data-string="eeeeeqa"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeeqa</canvas>
   </details>
       <p>左图（逆时针绘制）返回 [1, 0, 0]；右图（顺时针绘制）返回 [-1, 0, 0]。</p>
   </div>
@@ -2833,7 +2833,7 @@
         data-string="qqqqqew"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqew</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2841,7 +2841,7 @@
         data-string="eeeeeqw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeeqw</canvas>
   </details>
       <p>左图（逆时针绘制）返回 [0, 1, 0]；右图（顺时针绘制）返回 [0, -1, 0]。</p>
   </div>
@@ -2861,7 +2861,7 @@
         data-string="qqqqqed"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqed</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -2869,7 +2869,7 @@
         data-string="eeeeeqd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeeqd</canvas>
   </details>
       <p>左图（逆时针绘制）返回 [0, 0, 1]；右图（顺时针绘制）返回 [0, 0, -1]。</p>
   </div>
@@ -2889,7 +2889,7 @@
         data-string="eawae"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eawae</canvas>
   </details>
       <p>返回 τ，也即圆的弧度。</p>
   </div>
@@ -2909,7 +2909,7 @@
         data-string="qdwdq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qdwdq</canvas>
   </details>
       <p>返回 π，也即半圆的弧度。</p>
   </div>
@@ -2929,7 +2929,7 @@
         data-string="aaq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aaq</canvas>
   </details>
       <p>返回 <i>e</i>，也即自然对数的底。</p>
   </div>
@@ -2960,7 +2960,7 @@
         data-string="a"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：a</canvas>
   </details>
       <p>移除栈顶的 iota。</p><p>这似乎是<a href='#patterns/stackmanip@hexcasting:mask'><span style='color: #fc77be'>簿记员之策略</span></a>的一种特殊形式。</p>
   </div>
@@ -2980,7 +2980,7 @@
         data-string="aawdd"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aawdd</canvas>
   </details>
       <p>交换栈顶两个 iota 的位置。</p>
   </div>
@@ -3000,7 +3000,7 @@
         data-string="aaeaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aaeaa</canvas>
   </details>
       <p>将栈顶往下第三元素拉至栈顶。[0, 1, 2] 变为 [1, 2, 0]。</p>
   </div>
@@ -3020,7 +3020,7 @@
         data-string="ddqdd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddqdd</canvas>
   </details>
       <p>将栈顶元素沉至栈顶往下第三位处。[0, 1, 2] 变为 [2, 0, 1]。</p>
   </div>
@@ -3040,7 +3040,7 @@
         data-string="aadaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aadaa</canvas>
   </details>
       <p>复制栈顶的 iota。</p>
   </div>
@@ -3060,7 +3060,7 @@
         data-string="aaedd"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aaedd</canvas>
   </details>
       <p>将栈顶往下第二元素复制至栈顶。[0, 1] 变为 [0, 1, 0]。</p>
   </div>
@@ -3080,7 +3080,7 @@
         data-string="ddqaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddqaa</canvas>
   </details>
       <p>将栈底元素复制至栈顶往下第二元素下方。[0, 1] 变为 [1, 0, 1]。</p>
   </div>
@@ -3100,7 +3100,7 @@
         data-string="aadaadaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aadaadaa</canvas>
   </details>
       <p>移除栈顶的数，然后将现在的栈顶元素复制该数次。（若所给数为 2，则栈顶会有两个同一元素。）</p>
   </div>
@@ -3120,7 +3120,7 @@
         data-string="aadadaaw"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aadadaaw</canvas>
   </details>
       <p>复制栈顶的两个 iota。[0, 1] 变为 [0, 1, 0, 1]。</p>
   </div>
@@ -3140,7 +3140,7 @@
         data-string="qwaeawqaeaqa"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qwaeawqaeaqa</canvas>
   </details>
       <p>以数的形式压入栈中元素的个数。（例如，一个形如 [0, 1] 的栈会变为 [0, 1, 2]。）</p>
   </div>
@@ -3160,7 +3160,7 @@
         data-string="ddad"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddad</canvas>
   </details>
       <p>提出下标为所给数的元素并将其置于栈顶。</p>
   </div>
@@ -3180,7 +3180,7 @@
         data-string="aada"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aada</canvas>
   </details>
       <p>与<span style='color: #fc77be'>渔夫之策略</span>类似，但会复制 iota 而非将其提出。</p>
   </div>
@@ -3200,7 +3200,7 @@
         data-string="aeea"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aeea</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -3208,7 +3208,7 @@
         data-string="eada"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eada</canvas>
       <canvas
         class="spell-viz"
         width="216"
@@ -3216,7 +3216,7 @@
         data-string="ae"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ae</canvas>
   </details>
       <p>一组无限个根据凹槽和横线的顺序来保留或移除栈中元素的操作。</p>
   </div>
@@ -3238,7 +3238,7 @@
         data-string="qaawdde"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaawdde</canvas>
   </details>
       <p>根据所给数字代码重排栈顶若干元素。</p>
   </div>
@@ -3274,7 +3274,7 @@
         data-string="aw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aw</canvas>
   </details>
       <p>将参数变换为布尔值。数 <span style='color: #8d6acc'>0</span>、<a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>，以及空列表会变为 False。其余所有则变为 True。</p>
   </div>
@@ -3294,7 +3294,7 @@
         data-string="wqaqw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaqw</canvas>
   </details>
       <p>将布尔值变换为数。True 变为 <span style='color: #8d6acc'>1</span>， False 变为 <span style='color: #8d6acc'>0</span>。</p>
   </div>
@@ -3314,7 +3314,7 @@
         data-string="dw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dw</canvas>
   </details>
       <p>如果参数是 True，返回 False；如果参数是 False，返回 True。</p>
   </div>
@@ -3334,7 +3334,7 @@
         data-string="waw"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waw</canvas>
   </details>
       <p>如果至少有一个参数是 True，返回 True。否则返回 False。</p>
   </div>
@@ -3354,7 +3354,7 @@
         data-string="wdw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wdw</canvas>
   </details>
       <p>如果两个参数都是 True，返回 True。否则返回 False。</p>
   </div>
@@ -3374,7 +3374,7 @@
         data-string="dwa"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dwa</canvas>
   </details>
       <p>如果参数中仅一个是 True，返回 True。否则返回 False。</p>
   </div>
@@ -3394,7 +3394,7 @@
         data-string="awdd"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awdd</canvas>
   </details>
       <p>如果第一个参数是 True，保留第二个参数并移除第三个。否则保留第三个参数并移除第二个。</p>
   </div>
@@ -3414,7 +3414,7 @@
         data-string="ad"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ad</canvas>
   </details>
       <p>如果第一个参数等于第二个（允许较小误差），返回 True。否则返回 False。</p>
   </div>
@@ -3434,7 +3434,7 @@
         data-string="da"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：da</canvas>
   </details>
       <p>如果第一个参数不等于第二个（允许较小误差），返回 True。否则返回 False。</p>
   </div>
@@ -3454,7 +3454,7 @@
         data-string="e"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：e</canvas>
   </details>
       <p>如果第一个参数大于第二个，返回 True. 否则返回 False。</p>
   </div>
@@ -3474,7 +3474,7 @@
         data-string="q"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：q</canvas>
   </details>
       <p>如果第一个参数小于第二个，返回 True。否则返回 False。</p>
   </div>
@@ -3494,7 +3494,7 @@
         data-string="ee"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ee</canvas>
   </details>
       <p>如果第一个参数大于或等于第二个，返回 True。否则返回 False。</p>
   </div>
@@ -3514,7 +3514,7 @@
         data-string="qq"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qq</canvas>
   </details>
       <p>如果第一个参数小于或等于第二个，返回 True。否则返回 False。</p>
   </div>
@@ -3545,7 +3545,7 @@
         data-string="qqqqqdaqa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqa</canvas>
   </details>
       <p>将栈顶位置向量变为该处实体（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3565,7 +3565,7 @@
         data-string="qqqqqdaqaawa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqaawa</canvas>
   </details>
       <p>将栈顶位置向量变为该处动物（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3585,7 +3585,7 @@
         data-string="qqqqqdaqaawq"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqaawq</canvas>
   </details>
       <p>将栈顶位置向量变为该处怪物（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3605,7 +3605,7 @@
         data-string="qqqqqdaqaaww"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqaaww</canvas>
   </details>
       <p>将栈顶位置向量变为该处物品实体（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3625,7 +3625,7 @@
         data-string="qqqqqdaqaawe"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqaawe</canvas>
   </details>
       <p>将栈顶位置向量变为该处玩家（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3645,7 +3645,7 @@
         data-string="qqqqqdaqaawd"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqdaqaawd</canvas>
   </details>
       <p>将栈顶位置向量变为该处生物（若无则返回 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>）。</p>
   </div>
@@ -3665,7 +3665,7 @@
         data-string="qqqqqwdeddwa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwdeddwa</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有动物的列表。</p>
   </div>
@@ -3685,7 +3685,7 @@
         data-string="eeeeewaqaawa"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeewaqaawa</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有非动物实体的列表。</p>
   </div>
@@ -3705,7 +3705,7 @@
         data-string="qqqqqwdeddwq"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwdeddwq</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有怪物的列表。</p>
   </div>
@@ -3725,7 +3725,7 @@
         data-string="eeeeewaqaawq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeewaqaawq</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有非怪物实体的列表。</p>
   </div>
@@ -3745,7 +3745,7 @@
         data-string="qqqqqwdeddww"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwdeddww</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有掉落的物品的列表。</p>
   </div>
@@ -3765,7 +3765,7 @@
         data-string="eeeeewaqaaww"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeewaqaaww</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有非物品实体的列表。</p>
   </div>
@@ -3785,7 +3785,7 @@
         data-string="qqqqqwdeddwe"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwdeddwe</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有玩家的列表。</p>
   </div>
@@ -3805,7 +3805,7 @@
         data-string="eeeeewaqaawe"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeewaqaawe</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有非玩家实体的列表。</p>
   </div>
@@ -3825,7 +3825,7 @@
         data-string="qqqqqwdeddwd"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwdeddwd</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有生物的列表。</p>
   </div>
@@ -3845,7 +3845,7 @@
         data-string="eeeeewaqaawd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeewaqaawd</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有非生物实体的列表。</p>
   </div>
@@ -3865,7 +3865,7 @@
         data-string="qqqqqwded"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwded</canvas>
   </details>
       <p>从栈顶获取位置及最大距离，返回该位置给定距离范围内所有实体的列表。</p>
   </div>
@@ -3896,7 +3896,7 @@
         data-string="deeed"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deeed</canvas>
   </details>
       <p>移除栈顶的数，将栈顶的列表变为其中下标为该数（就是被移除的那个数）的元素。若该数越界，则将列表换为 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>。</p>
   </div>
@@ -3916,7 +3916,7 @@
         data-string="qaeaqwded"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaeaqwded</canvas>
   </details>
       <p>移除栈顶的两个数，将栈顶的列表变为其中下标在两个数之间元素的子列表，包含下标下界，不含下标上界。例如，[0, 1, 2, 3, 4] 的 0, 2 子列表是 [0, 1]。</p>
   </div>
@@ -3936,7 +3936,7 @@
         data-string="edqde"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：edqde</canvas>
   </details>
       <p>移除栈顶元素，将其加到栈顶列表的末尾。</p>
   </div>
@@ -3956,7 +3956,7 @@
         data-string="qaeaq"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaeaq</canvas>
   </details>
       <p>hexcasting.page.lists.unappend</p>
   </div>
@@ -3976,7 +3976,7 @@
         data-string="waaw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waaw</canvas>
   </details>
       <p>hexcasting.page.lists.add</p>
   </div>
@@ -3996,7 +3996,7 @@
         data-string="qqaeaae"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqaeaae</canvas>
   </details>
       <p>压入一个空列表。</p>
   </div>
@@ -4016,7 +4016,7 @@
         data-string="adeeed"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：adeeed</canvas>
   </details>
       <p>移除栈顶元素，而后返回一个仅包含该元素的列表。</p>
   </div>
@@ -4036,7 +4036,7 @@
         data-string="wqaqw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaqw</canvas>
   </details>
       <p>hexcasting.page.lists.abs</p>
   </div>
@@ -4056,7 +4056,7 @@
         data-string="qqqaede"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqaede</canvas>
   </details>
       <p>hexcasting.page.lists.reverse</p>
   </div>
@@ -4076,7 +4076,7 @@
         data-string="dedqde"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dedqde</canvas>
   </details>
       <p>移除栈顶元素，并将栈顶列表变为该元素在其中第一次出现的位置（从 0 开始）。若没有出现过则返回 -1。</p>
   </div>
@@ -4096,7 +4096,7 @@
         data-string="edqdewaqa"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：edqdewaqa</canvas>
   </details>
       <p>hexcasting.page.lists.remove_from</p>
   </div>
@@ -4116,7 +4116,7 @@
         data-string="wqaeaqw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaeaqw</canvas>
   </details>
       <p>移除栈顶元素和栈顶的数，而后将栈顶列表中下标为该数（就是被移除的那个数）变为该元素。若该数越界则不进行操作。</p>
   </div>
@@ -4136,7 +4136,7 @@
         data-string="ewdqdwe"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ewdqdwe</canvas>
   </details>
       <p>移除<i>所给数</i>个元素，并将这些元素加入列表并将该列表压入栈顶。</p>
   </div>
@@ -4156,7 +4156,7 @@
         data-string="qwaeawq"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qwaeawq</canvas>
   </details>
       <p>移除栈顶列表，而后将其中元素全部压入栈顶。</p>
   </div>
@@ -4176,7 +4176,7 @@
         data-string="ddewedd"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddewedd</canvas>
   </details>
       <p>移除栈顶元素，将其加到栈顶列表的开头。</p>
   </div>
@@ -4196,7 +4196,7 @@
         data-string="aaqwqaa"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aaqwqaa</canvas>
   </details>
       <p>移除栈顶列表中的第一个元素，并将该元素压入栈顶。</p>
   </div>
@@ -4231,7 +4231,7 @@
         data-string="qqqaw"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqaw</canvas>
   </details>
       <p>要使用<a href='#patterns/patterns_as_iotas@hexcasting:escape'><span style='color: #fc77be'>考察</span></a>，先绘制它，然后绘制任意图案。第二个图案就会被加到栈中。</p>
   </div>
@@ -4253,7 +4253,7 @@
         data-string="qqq"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqq</canvas>
   </details>
       <p>绘制<a href='#patterns/patterns_as_iotas@hexcasting:open_paren'><span style='color: #fc77be'>内省</span></a>会让这之后绘制的图案不再与操作联系。而在绘制<a href='#patterns/patterns_as_iotas@hexcasting:open_paren'><span style='color: #fc77be'>反思</span></a>后，之前绘制的图案就会作为一个列表加到栈中。</p>
   </div>
@@ -4273,7 +4273,7 @@
         data-string="eee"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eee</canvas>
   </details>
       <p>如果绘制内省后再绘制一个<a href='#patterns/patterns_as_iotas@hexcasting:close_paren'><span style='color: #fc77be'>内省</span></a>，则它也将被加到列表中，而且需绘制<i>两次</i><a href='#patterns/patterns_as_iotas@hexcasting:close_paren'><span style='color: #fc77be'>反思</span></a>才能回到正常施法模式。</p>
   </div>
@@ -4295,7 +4295,7 @@
         data-string="eeedw"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeedw</canvas>
   </details>
       <p>hexcasting.page.patterns_as_iotas.undo</p>
   </div>
@@ -4330,7 +4330,7 @@
         data-string="aqqqqq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqqqqq</canvas>
   </details>
       <p>复制另一只手所持物品中 iota，并将其压入栈顶。</p>
   </div>
@@ -4350,7 +4350,7 @@
         data-string="deeeee"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deeeee</canvas>
   </details>
       <p>移除栈顶 iota，并将其写入另一只手中的物品中。</p>
   </div>
@@ -4370,7 +4370,7 @@
         data-string="wawqwqwqwqwqw"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wawqwqwqwqwqw</canvas>
   </details>
       <p>与<a href='#patterns/readwrite@hexcasting:read'><span style='color: #fc77be'>书吏之精思</span></a>类似，但会将 iota 从某实体中读出，而非手中物品。</p>
   </div>
@@ -4390,7 +4390,7 @@
         data-string="wdwewewewewew"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wdwewewewewew</canvas>
   </details>
       <p>与<a href='#patterns/readwrite@hexcasting:read'><span style='color: #fc77be'>书吏之策略</span></a>类似，但会将 iota 写入某实体，而非手中物品。</p><p>有意思的是，我似乎没法以这种手段写入我自己的真名。但我总感觉要是真这么做了我的安全就会受到严重威胁。</p>
   </div>
@@ -4410,7 +4410,7 @@
         data-string="aqqqqqe"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqqqqqe</canvas>
   </details>
       <p>如果另一只手中物品存有可被读取的 iota，返回 True。否则返回 False。</p>
   </div>
@@ -4430,7 +4430,7 @@
         data-string="wawqwqwqwqwqwew"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wawqwqwqwqwqwew</canvas>
   </details>
       <p>与<a href='#patterns/readwrite@hexcasting:readable'><span style='color: #fc77be'>审计员之精思</span></a>类似，但会检测实体可读性，而非手中物品。</p>
   </div>
@@ -4450,7 +4450,7 @@
         data-string="deeeeeq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deeeeeq</canvas>
   </details>
       <p>如果能将 iota 写入另一只手中的物品，返回 True。否则返回 False。</p>
   </div>
@@ -4470,7 +4470,7 @@
         data-string="wdwewewewewewqw"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wdwewewewewewqw</canvas>
   </details>
       <p>与<a href='#patterns/readwrite@hexcasting:writable'><span style='color: #fc77be'>估价员之精思</span></a>类似，但会检测实体可写性，而非手中物品。</p>
   </div>
@@ -4499,7 +4499,7 @@
         data-string="eqqwawqaaw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eqqwawqaaw</canvas>
   </details>
       <p>移除栈顶 iota，并将其写入<a href='#patterns/readwrite@hexcasting:local'><span style='color: #8d6acc'>渡鸦之思</span></a>，在施放<span style='color: #b38ef3'>咒术</span>的整个过程结束之前一直存在那里。</p>
   </div>
@@ -4519,7 +4519,7 @@
         data-string="qeewdweddw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qeewdweddw</canvas>
   </details>
       <p>将<a href='#patterns/readwrite@hexcasting:local'><span style='color: #8d6acc'>渡鸦之思</span></a>中的 iota 复制出来。（也许刚刚才用<a href='#patterns/readwrite@hexcasting:write/local'><span style='color: #fc77be'>福金之策略</span></a>写进去。）</p>
   </div>
@@ -4553,7 +4553,7 @@
         data-string="waw"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waw</canvas>
   </details>
       <p>取两集合的并集。</p>
   </div>
@@ -4575,7 +4575,7 @@
         data-string="wdw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wdw</canvas>
   </details>
       <p>取两集合的交集。</p>
   </div>
@@ -4597,7 +4597,7 @@
         data-string="dwa"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dwa</canvas>
   </details>
       <p>取两集合中每个集合独有的元素集合。</p>
   </div>
@@ -4619,7 +4619,7 @@
         data-string="dw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dw</canvas>
   </details>
       <p>对位组执行位非操作，将所有为 1 的比特换为 0，反之亦然。就我经验而言，这会使一个数变为其相反数，然后减 1。例如，0 会变成 -1，而 -100 会变成 99。</p>
   </div>
@@ -4639,7 +4639,7 @@
         data-string="aweaqa"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aweaqa</canvas>
   </details>
       <p>去除列表内重复的元素。</p>
   </div>
@@ -4670,7 +4670,7 @@
         data-string="qqqqqaa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqaa</canvas>
   </details>
       <p>计算所给角（弧度制）的正弦，也即该角在单位圆上的纵坐标。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4690,7 +4690,7 @@
         data-string="qqqqqad"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqad</canvas>
   </details>
       <p>计算所给角（弧度制）的余弦，也即该角在单位圆上的横坐标。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4710,7 +4710,7 @@
         data-string="wqqqqqadq"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqqqqqadq</canvas>
   </details>
       <p>计算所给角（弧度制）的正切，也即该角在单位圆上的斜率。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4730,7 +4730,7 @@
         data-string="ddeeeee"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddeeeee</canvas>
   </details>
       <p>计算所给数（绝对值小于 1）的反正弦，也即正弦为该值的角。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4750,7 +4750,7 @@
         data-string="adeeeee"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：adeeeee</canvas>
   </details>
       <p>计算所给数（绝对值小于 1）的反余弦，也即余弦为该值的角。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4770,7 +4770,7 @@
         data-string="eadeeeeew"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eadeeeeew</canvas>
   </details>
       <p>计算所给数的反正切，也即正切为该值的角。与 <a href='#patterns/consts@hexcasting:const/double/pi'><span style='color: #8d6acc'>π</span></a> 和 <a href='#patterns/consts@hexcasting:const/double/tau'><span style='color: #8d6acc'>τ</span></a> 的值有关。</p>
   </div>
@@ -4790,7 +4790,7 @@
         data-string="deadeeeeewd"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deadeeeeewd</canvas>
   </details>
       <p>计算所给纵坐标与横坐标的反正切，也即计算 X 轴正向，与原点至所给坐标的射线间的夹角。</p>
   </div>
@@ -4810,7 +4810,7 @@
         data-string="eqaqe"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eqaqe</canvas>
   </details>
       <p>计算以栈顶元素为底的，栈顶往下第二元素为真数的对数。与 <a href='#patterns/consts@hexcasting:const/double/e'><span style='color: #8d6acc'><i>e</i></span></a> 的值有关。</p>
   </div>
@@ -4841,7 +4841,7 @@
         data-string="deaqq"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：deaqq</canvas>
   </details>
       <p>移除栈顶的图案列表，然后就像我用<a href='#items/staff'><span style='color: #b0b'>法杖</span></a>施法一样依次运行（直到碰到<a href='#patterns/meta@hexcasting:halt'><span style='color: #fc77be'>卡戎之策略</span></a>）。如果一个 iota 已用<a href='#patterns/patterns_as_iotas@hexcasting:escape'><span style='color: #fc77be'>考察</span></a>或<a href='#patterns/patterns_as_iotas@hexcasting:open_paren'><span style='color: #fc77be'>类似手段</span></a>作为图案加入栈中，那么该 iota 将在运行时被加到栈中。否则其将在非图案元素运行失败。</p>
   </div>
@@ -4863,7 +4863,7 @@
         data-string="qwaqde"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qwaqde</canvas>
   </details>
       <p>hexcasting.page.meta.eval/cc.1</p>
   </div>
@@ -4885,7 +4885,7 @@
         data-string="dadad"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dadad</canvas>
   </details>
       <p>移除栈中的一个图案列表和一个列表，然后对后一列表中的每个元素运行前一图案列表中的图案。</p>
   </div>
@@ -4907,7 +4907,7 @@
         data-string="aqdee"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqdee</canvas>
   </details>
       <p>这个图案将强制停止<span style='color: #b38ef3'>咒术</span>的施放。它独自出现可能没什么用，我只要不绘制图案或是放下法杖就行了。</p>
   </div>
@@ -4943,7 +4943,7 @@
         data-string="eaqwqae"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eaqwqae</canvas>
   </details>
       <p>返回该法术环的<a href='#greatwork/impetus'><span style='color: #b0b'>促动石</span></a>的位置。</p>
   </div>
@@ -4963,7 +4963,7 @@
         data-string="eaqwqaewede"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eaqwqaewede</canvas>
   </details>
       <p>以单位向量返回该法术环的<a href='#greatwork/impetus'><span style='color: #b0b'>促动石</span></a>的面朝方向。</p>
   </div>
@@ -4983,7 +4983,7 @@
         data-string="eaqwqaewdd"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eaqwqaewdd</canvas>
   </details>
       <p>返回该法术环影响范围的西北靠下转角的位置。</p>
   </div>
@@ -5003,7 +5003,7 @@
         data-string="aqwqawaaqa"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqwqawaaqa</canvas>
   </details>
       <p>返回该法术环影响范围的东南靠上转角的位置。</p>
   </div>
@@ -5036,7 +5036,7 @@
         data-string="qqqwqqqqqaq"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqwqqqqqaq</canvas>
   </details>
       <p>在<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏记录</span></a>处从<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏图书馆</span></a>中读出所给图案对应的 iota。没有读取距离限制。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5056,7 +5056,7 @@
         data-string="eeeweeeeede"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeweeeeede</canvas>
   </details>
       <p>在<a href='#greatwork/akashiclib'><span style='color: #b0b'>阿卡夏图书馆</span></a>的<a href='#greatwork/akashiclib'><span style='color: #b0b'>记录</span></a>处将 iota 和所给图案对应起来。<i>有</i>存储距离限制。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5117,7 +5117,7 @@
         data-string="aawaawaa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aawaawaa</canvas>
   </details>
       <p>移除栈顶的数和向量，并在所给位置产生一次强度为所给数的爆炸。</p>
   </div>
@@ -5139,7 +5139,7 @@
         data-string="ddwddwdd"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddwddwdd</canvas>
   </details>
       <p>移除栈顶的数和向量，并在所给位置产生一次强度为所给数的带火焰的爆炸。</p>
   </div>
@@ -5161,7 +5161,7 @@
         data-string="awqqqwaqw"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awqqqwaqw</canvas>
   </details>
       <p>移除栈顶的实体和表示方向的向量，然后将所给实体沿所给方向推动出去。驱动力的强度由向量的模长决定。<br />消耗向量模长的平方个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。除对某实体第一次使用外，其他情况额外消耗 1 个。</p>
   </div>
@@ -5181,7 +5181,7 @@
         data-string="awqqqwaq"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awqqqwaq</canvas>
   </details>
       <p>移除栈顶的实体和表示长度的数，然后将所给实体沿其视线方向向前传送所给长度格。<br />每传送两格消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶碎片</span></a>。</p>
   </div>
@@ -5201,7 +5201,7 @@
         data-string="adaa"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：adaa</canvas>
   </details>
       <p>移除栈顶的一个向量和两个数。在指定位置以指定<span style='color: #8d6acc'>乐器</span>（由第一个数决定）弹奏<span style='color: #8d6acc'>一个音</span>（由第二个数决定）。消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -5234,7 +5234,7 @@
         data-string="eeeeede"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeeeede</canvas>
   </details>
       <p>移除一个位置向量，然后挑选一个方块并放在给定位置。<br />消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -5254,7 +5254,7 @@
         data-string="qaqqqqq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaqqqqq</canvas>
   </details>
       <p>移除一个位置向量，然后破坏给定位置的方块。此法术能破坏几乎所有钻石镐能破坏的方块。<br />消耗 1/8 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5274,7 +5274,7 @@
         data-string="aqawqadaq"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqawqadaq</canvas>
   </details>
       <p>在给定位置生成一格水（或给流体容器注入至多一桶水）。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5294,7 +5294,7 @@
         data-string="dedwedade"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dedwedade</canvas>
   </details>
       <p>清空给定位置的流体容器，或是清除给定位置周围的液体。消耗大约 2 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5314,7 +5314,7 @@
         data-string="qqa"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqa</canvas>
   </details>
       <p>在给定位置构筑一个空灵缥缈却坚硬可触的，闪着光的方块。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5334,7 +5334,7 @@
         data-string="qqd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqd</canvas>
   </details>
       <p>在给定位置构筑一个发着我染色剂颜色的光的魔法光源。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5354,7 +5354,7 @@
         data-string="wqaqwawqaqw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaqwawqaqw</canvas>
   </details>
       <p>使目标位置的植物或树苗更快成长，就像对其施以<span style='color: #b0b'>骨粉</span>一样。消耗略多于 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5374,7 +5374,7 @@
         data-string="wqaqwd"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wqaqwd</canvas>
   </details>
       <p>将<span style='color: #74b3f2'>媒质</span>强制注入目标位置的树苗，使其长为<a href='#items/edified'><span style='color: #8d6acc'>启迪树</span></a>。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5394,7 +5394,7 @@
         data-string="aaqawawa"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aaqawawa</canvas>
   </details>
       <p>在给定位置上方生火，就像在该位置使用<span style='color: #b0b'>火焰弹</span>一样。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5414,7 +5414,7 @@
         data-string="ddedwdwd"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：ddedwdwd</canvas>
   </details>
       <p>熄灭周围较大区域内的火焰。消耗大约 6 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5449,7 +5449,7 @@
         data-string="qqqqqaqwawaw"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqaqwawaw</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>虚弱</span>。每 10 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5469,7 +5469,7 @@
         data-string="qqqqqawwawawd"
         data-start="west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqawwawawd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>飘浮</span>。每 5 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5489,7 +5489,7 @@
         data-string="qqqqqaewawawe"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqaewawawe</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>凋零</span>。每 1 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5509,7 +5509,7 @@
         data-string="qqqqqadwawaww"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqadwawaww</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>中毒</span>。每 3 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5529,7 +5529,7 @@
         data-string="qqqqqadwawaw"
         data-start="south_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqadwawaw</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>缓慢</span>。每 5 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5562,7 +5562,7 @@
         data-string="waqqqqq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waqqqqq</canvas>
   </details>
       <p>消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5582,7 +5582,7 @@
         data-string="wwaqqqqqeaqeaeqqqeaeq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wwaqqqqqeaqeaeqqqeaeq</canvas>
   </details>
       <p>消耗大约 5 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5602,7 +5602,7 @@
         data-string="wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wwaqqqqqeawqwqwqwqwqwwqqeadaeqqeqqeadaeqq</canvas>
   </details>
       <p>消耗大约 10 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5622,7 +5622,7 @@
         data-string="qqqqqwaeaeaeaeaea"
         data-start="north_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqqwaeaeaeaeaea</canvas>
   </details>
       <p>给另一只手中的能装<span style='color: #74b3f2'>媒质</span>的物品重新充能。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶碎片</span></a>。</p>
   </div>
@@ -5644,7 +5644,7 @@
         data-string="qdqawwaww"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qdqawwaww</canvas>
   </details>
       <p>清除另一只手中写有<span style='color: #b38ef3'>咒术</span>的物品。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5681,7 +5681,7 @@
         data-string="waeawae"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waeawae</canvas>
   </details>
       <p>在给定位置召唤哨卫<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5701,7 +5701,7 @@
         data-string="qdwdqdw"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qdwdqdw</canvas>
   </details>
       <p>将我的<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>从世界中驱除出去。消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -5721,7 +5721,7 @@
         data-string="waeawaede"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waeawaede</canvas>
   </details>
       <p>将我的<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>的位置加到栈中，若并未召唤则加入一个 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>。消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -5741,7 +5741,7 @@
         data-string="waeawaedwa"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waeawaedwa</canvas>
   </details>
       <p>将栈顶的位置向量变为从我的位置指向<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>的单位向量，若并未召唤则变为 <a href='#casting/influences'><span style='color: #8d6acc'>Null</span></a>。消耗极少量<span style='color: #74b3f2'>媒质</span>。</p>
   </div>
@@ -5772,7 +5772,7 @@
         data-string="awddwqawqwawq"
         data-start="east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awddwqawqwawq</canvas>
   </details>
       <p>我需要在施法时在另一只手中持有<a href='#items/pigments'><span style='color: #b0b'>染色剂</span></a>。施法后，染色剂将被消耗而我意识的颜色也将永久改变（至少是在再次施法前）。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5807,7 +5807,7 @@
         data-string="awawaawq"
         data-start="south_west"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：awawaawq</canvas>
   </details>
       <p>受范围限制的飞行法术。</p>
   </div>
@@ -5829,7 +5829,7 @@
         data-string="dwdwdewq"
         data-start="north_east"
         data-per-world="False"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：dwdwdewq</canvas>
   </details>
       <p>受时间限制的飞行法术。</p>
   </div>
@@ -5874,7 +5874,7 @@
         data-string="eaqawqadaqd"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eaqawqadaqd</canvas>
   </details>
       <p>在给定位置生成一格熔岩（或给流体容器注入至多一桶熔岩）。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。</p>
   </div>
@@ -5909,7 +5909,7 @@
         data-string="qqqqaawawaedd"
         data-start="north_west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqqaawawaedd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>生命恢复</span>。每 1 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5929,7 +5929,7 @@
         data-string="qqqaawawaeqdd"
         data-start="west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqqaawawaeqdd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>夜视</span>。每 5 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5949,7 +5949,7 @@
         data-string="qqaawawaeqqdd"
         data-start="south_west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qqaawawaeqqdd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>伤害吸收</span>。每 1 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5969,7 +5969,7 @@
         data-string="qaawawaeqqqdd"
         data-start="south_east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qaawawaeqqqdd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>急迫</span>。每 3 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -5989,7 +5989,7 @@
         data-string="aawawaeqqqqdd"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aawawaeqqqqdd</canvas>
   </details>
       <p>给予<span style='color: #8d6acc'>力量</span>。每 3 秒持续时间的基础消耗为 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -6020,7 +6020,7 @@
         data-string="waadwawdaaweewq"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waadwawdaaweewq</canvas>
   </details>
       <p>我能命令苍穹！此法术会在我所想之处召唤一道落雷。消耗大约 3 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶碎片</span></a>。</p>
   </div>
@@ -6040,7 +6040,7 @@
         data-string="wwweeewwweewdawdwad"
         data-start="west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wwweeewwweewdawdwad</canvas>
   </details>
       <p>我能控制云彩！此法术会在我所处世界各处召来雨水。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>充能紫水晶</span></a>。若已在下雨就无效。</p>
   </div>
@@ -6060,7 +6060,7 @@
         data-string="eeewwweeewwaqqddqdqd"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eeewwweeewwaqqddqdqd</canvas>
   </details>
       <p>召雨的反面。此法术会将我所处世界的雨水驱离。消耗大约 1 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶碎片</span></a>。若未在下雨就无效。</p>
   </div>
@@ -6091,7 +6091,7 @@
         data-string="eawwaeawawaa"
         data-start="north_west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：eawwaeawawaa</canvas>
   </details>
       <p>此法术会将一束<span style='color: #74b3f2'>媒质</span>在我身旁塑成翅膀状，并赋予其足够物质性，从而允许施法者滑翔。</p>
   </div>
@@ -6124,7 +6124,7 @@
         data-string="wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：wwwqqqwwwqqeqqwwwqqwqqdqqqqqdqq</canvas>
   </details>
       <p>hexcasting.page.teleport/great.1</p>
   </div>
@@ -6157,7 +6157,7 @@
         data-string="waeawaeqqqwqwqqwq"
         data-start="east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：waeawaeqqqwqwqqwq</canvas>
   </details>
       <p>召唤一个比普通<a href='#patterns/spells/sentinels'><span style='color: #8d6acc'>哨卫</span></a>要强大的哨卫。消耗大约 2 个<a href='#items/amethyst'><span style='color: #b0b'>紫水晶粉</span></a>。</p>
   </div>
@@ -6190,7 +6190,7 @@
         data-string="aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw"
         data-start="south_west"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：aqqqaqwwaqqqqqeqaqqqawwqwqwqwqwqw</canvas>
   </details>
       <p>将<span style='color: #74b3f2'>媒质</span>注入一个玻璃瓶，从而制成<a href='#items/phials'><span style='color: #b0b'>试剂瓶</span></a>。</p>
   </div>
@@ -6223,7 +6223,7 @@
         data-string="qeqwqwqwqwqeqaeqeaqeqaeqaqded"
         data-start="north_east"
         data-per-world="True"
-      >hexdoc.pattern.not_supported</canvas>
+      >浏览器不支持图案的可视化。图案代码见此：qeqwqwqwqwqeqaeqeaqeqaeqaqded</canvas>
   </details>
       <p>我搞不懂这个法术……说实话，我也不清楚我到底想不想搞懂。</p>
   </div>
