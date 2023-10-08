@@ -1,3 +1,9 @@
+.footer {
+  margin: 16px;
+}
+.footer p {
+  text-align: center;
+}
 summary {
   display: list-item;
 }
@@ -71,13 +77,13 @@ blockquote.crafting-info {
   bottom: -4px;
   right: -4px;
 }
-:is(.crafting-table-grid, .crafting-table-result) :is(img, span) {
+.texture {
   image-rendering: pixelated;
   width: 32px;
   height: 32px;
 }
-.tooltip {
-  white-space: nowrap;
+.cycle-textures .texture:not(.cycle-textures-active) {
+  display: none;
 }
 a.permalink {
   margin-left: 0.5em;
@@ -208,3 +214,1265 @@ canvas.spell-viz {
     --dark-mode: 1;
   }
 }
+/**/
+  .texture-hexcasting-item-colorizer-pride_transgender-png {
+    animation: texture-hexcasting-item-colorizer-pride_transgender-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_transgender.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_transgender-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-pride_genderqueer-png {
+    animation: texture-hexcasting-item-colorizer-pride_genderqueer-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_genderqueer.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_genderqueer-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-dye_orange-png {
+    animation: texture-hexcasting-item-colorizer-dye_orange-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_orange.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_orange-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_gray-png {
+    animation: texture-hexcasting-item-colorizer-dye_gray-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_gray.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_gray-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_red-png {
+    animation: texture-hexcasting-item-colorizer-dye_red-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_red.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_red-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_green-png {
+    animation: texture-hexcasting-item-colorizer-dye_green-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_green.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_green-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_light_gray-png {
+    animation: texture-hexcasting-item-colorizer-dye_light_gray-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_light_gray.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_light_gray-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_blue-png {
+    animation: texture-hexcasting-item-colorizer-dye_blue-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_blue.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_blue-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_bisexual-png {
+    animation: texture-hexcasting-item-colorizer-pride_bisexual-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_bisexual.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_bisexual-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-dye_purple-png {
+    animation: texture-hexcasting-item-colorizer-dye_purple-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_purple.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_purple-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_aroace-png {
+    animation: texture-hexcasting-item-colorizer-pride_aroace-png 2.6s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_aroace.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_aroace-png {
+      0%, 19.2307% { background-position-y: 0px }
+      19.2308%, 26.923% { background-position-y: -32px }
+      26.9231%, 28.8461% { background-position-y: -64px }
+      28.8462%, 30.7691% { background-position-y: -96px }
+      30.7692%, 32.6922% { background-position-y: -128px }
+      32.6923%, 34.6153% { background-position-y: -160px }
+      34.6154%, 36.5384% { background-position-y: -192px }
+      36.5385%, 38.4614% { background-position-y: -224px }
+      38.4615%, 40.3845% { background-position-y: -256px }
+      40.3846%, 42.3076% { background-position-y: -288px }
+      42.3077%, 44.2307% { background-position-y: -320px }
+      44.2308%, 46.1537% { background-position-y: -352px }
+      46.1538%, 48.0768% { background-position-y: -384px }
+      48.0769%, 49.9999% { background-position-y: -416px }
+      50%, 51.923% { background-position-y: -448px }
+      51.9231%, 53.8461% { background-position-y: -480px }
+      53.8462%, 55.7691% { background-position-y: -512px }
+      55.7692%, 57.6922% { background-position-y: -544px }
+      57.6923%, 59.6153% { background-position-y: -576px }
+      59.6154%, 61.5384% { background-position-y: -608px }
+      61.5385%, 63.4614% { background-position-y: -640px }
+      63.4615%, 82.6922% { background-position-y: -672px }
+      82.6923%, 84.6153% { background-position-y: -704px }
+      84.6154%, 86.5384% { background-position-y: -736px }
+      86.5385%, 88.4614% { background-position-y: -768px }
+      88.4615%, 90.3845% { background-position-y: -800px }
+      90.3846%, 92.3076% { background-position-y: -832px }
+      92.3077%, 94.2307% { background-position-y: -864px }
+      94.2308%, 96.1537% { background-position-y: -896px }
+      96.1538%, 98.0768% { background-position-y: -928px }
+      98.0769%, 100% { background-position-y: -960px }
+  }
+  .texture-hexcasting-item-colorizer-dye_brown-png {
+    animation: texture-hexcasting-item-colorizer-dye_brown-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_brown.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_brown-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_demigirl-png {
+    animation: texture-hexcasting-item-colorizer-pride_demigirl-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_demigirl.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_demigirl-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-pride_agender-png {
+    animation: texture-hexcasting-item-colorizer-pride_agender-png 2.95s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_agender.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_agender-png {
+      0%, 16.9491% { background-position-y: 0px }
+      16.9492%, 23.7287% { background-position-y: -32px }
+      23.7288%, 25.4236% { background-position-y: -64px }
+      25.4237%, 27.1185% { background-position-y: -96px }
+      27.1186%, 28.8135% { background-position-y: -128px }
+      28.8136%, 30.5084% { background-position-y: -160px }
+      30.5085%, 32.2033% { background-position-y: -192px }
+      32.2034%, 33.8982% { background-position-y: -224px }
+      33.8983%, 35.5931% { background-position-y: -256px }
+      35.5932%, 37.288% { background-position-y: -288px }
+      37.2881%, 38.983% { background-position-y: -320px }
+      38.9831%, 40.6779% { background-position-y: -352px }
+      40.678%, 57.627% { background-position-y: -384px }
+      57.6271%, 59.3219% { background-position-y: -416px }
+      59.322%, 61.0168% { background-position-y: -448px }
+      61.0169%, 62.7118% { background-position-y: -480px }
+      62.7119%, 69.4914% { background-position-y: -512px }
+      69.4915%, 71.1863% { background-position-y: -544px }
+      71.1864%, 72.8813% { background-position-y: -576px }
+      72.8814%, 74.5762% { background-position-y: -608px }
+      74.5763%, 76.2711% { background-position-y: -640px }
+      76.2712%, 77.966% { background-position-y: -672px }
+      77.9661%, 79.6609% { background-position-y: -704px }
+      79.661%, 86.4406% { background-position-y: -736px }
+      86.4407%, 88.1355% { background-position-y: -768px }
+      88.1356%, 89.8304% { background-position-y: -800px }
+      89.8305%, 91.5253% { background-position-y: -832px }
+      91.5254%, 93.2202% { background-position-y: -864px }
+      93.2203%, 94.9152% { background-position-y: -896px }
+      94.9153%, 96.6101% { background-position-y: -928px }
+      96.6102%, 98.305% { background-position-y: -960px }
+      98.3051%, 100% { background-position-y: -992px }
+  }
+  .texture-hexcasting-item-colorizer-dye_lime-png {
+    animation: texture-hexcasting-item-colorizer-dye_lime-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_lime.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_lime-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_gay-png {
+    animation: texture-hexcasting-item-colorizer-pride_gay-png 2.6s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_gay.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_gay-png {
+      0%, 19.2307% { background-position-y: 0px }
+      19.2308%, 26.923% { background-position-y: -32px }
+      26.9231%, 28.8461% { background-position-y: -64px }
+      28.8462%, 30.7691% { background-position-y: -96px }
+      30.7692%, 32.6922% { background-position-y: -128px }
+      32.6923%, 34.6153% { background-position-y: -160px }
+      34.6154%, 36.5384% { background-position-y: -192px }
+      36.5385%, 38.4614% { background-position-y: -224px }
+      38.4615%, 40.3845% { background-position-y: -256px }
+      40.3846%, 42.3076% { background-position-y: -288px }
+      42.3077%, 44.2307% { background-position-y: -320px }
+      44.2308%, 46.1537% { background-position-y: -352px }
+      46.1538%, 48.0768% { background-position-y: -384px }
+      48.0769%, 49.9999% { background-position-y: -416px }
+      50%, 51.923% { background-position-y: -448px }
+      51.9231%, 53.8461% { background-position-y: -480px }
+      53.8462%, 55.7691% { background-position-y: -512px }
+      55.7692%, 57.6922% { background-position-y: -544px }
+      57.6923%, 59.6153% { background-position-y: -576px }
+      59.6154%, 61.5384% { background-position-y: -608px }
+      61.5385%, 63.4614% { background-position-y: -640px }
+      63.4615%, 82.6922% { background-position-y: -672px }
+      82.6923%, 84.6153% { background-position-y: -704px }
+      84.6154%, 86.5384% { background-position-y: -736px }
+      86.5385%, 88.4614% { background-position-y: -768px }
+      88.4615%, 90.3845% { background-position-y: -800px }
+      90.3846%, 92.3076% { background-position-y: -832px }
+      92.3077%, 94.2307% { background-position-y: -864px }
+      94.2308%, 96.1537% { background-position-y: -896px }
+      96.1538%, 98.0768% { background-position-y: -928px }
+      98.0769%, 100% { background-position-y: -960px }
+  }
+  .texture-hexcasting-item-colorizer-pride_pansexual-png {
+    animation: texture-hexcasting-item-colorizer-pride_pansexual-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_pansexual.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_pansexual-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-dye_white-png {
+    animation: texture-hexcasting-item-colorizer-dye_white-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_white.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_white-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_lesbian-png {
+    animation: texture-hexcasting-item-colorizer-pride_lesbian-png 2.6s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_lesbian.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_lesbian-png {
+      0%, 19.2307% { background-position-y: 0px }
+      19.2308%, 26.923% { background-position-y: -32px }
+      26.9231%, 28.8461% { background-position-y: -64px }
+      28.8462%, 30.7691% { background-position-y: -96px }
+      30.7692%, 32.6922% { background-position-y: -128px }
+      32.6923%, 34.6153% { background-position-y: -160px }
+      34.6154%, 36.5384% { background-position-y: -192px }
+      36.5385%, 38.4614% { background-position-y: -224px }
+      38.4615%, 40.3845% { background-position-y: -256px }
+      40.3846%, 42.3076% { background-position-y: -288px }
+      42.3077%, 44.2307% { background-position-y: -320px }
+      44.2308%, 46.1537% { background-position-y: -352px }
+      46.1538%, 48.0768% { background-position-y: -384px }
+      48.0769%, 49.9999% { background-position-y: -416px }
+      50%, 51.923% { background-position-y: -448px }
+      51.9231%, 53.8461% { background-position-y: -480px }
+      53.8462%, 55.7691% { background-position-y: -512px }
+      55.7692%, 57.6922% { background-position-y: -544px }
+      57.6923%, 59.6153% { background-position-y: -576px }
+      59.6154%, 61.5384% { background-position-y: -608px }
+      61.5385%, 63.4614% { background-position-y: -640px }
+      63.4615%, 82.6922% { background-position-y: -672px }
+      82.6923%, 84.6153% { background-position-y: -704px }
+      84.6154%, 86.5384% { background-position-y: -736px }
+      86.5385%, 88.4614% { background-position-y: -768px }
+      88.4615%, 90.3845% { background-position-y: -800px }
+      90.3846%, 92.3076% { background-position-y: -832px }
+      92.3077%, 94.2307% { background-position-y: -864px }
+      94.2308%, 96.1537% { background-position-y: -896px }
+      96.1538%, 98.0768% { background-position-y: -928px }
+      98.0769%, 100% { background-position-y: -960px }
+  }
+  .texture-hexcasting-item-colorizer-pride_asexual-png {
+    animation: texture-hexcasting-item-colorizer-pride_asexual-png 2.95s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_asexual.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_asexual-png {
+      0%, 16.9491% { background-position-y: 0px }
+      16.9492%, 23.7287% { background-position-y: -32px }
+      23.7288%, 25.4236% { background-position-y: -64px }
+      25.4237%, 27.1185% { background-position-y: -96px }
+      27.1186%, 28.8135% { background-position-y: -128px }
+      28.8136%, 30.5084% { background-position-y: -160px }
+      30.5085%, 32.2033% { background-position-y: -192px }
+      32.2034%, 33.8982% { background-position-y: -224px }
+      33.8983%, 35.5931% { background-position-y: -256px }
+      35.5932%, 37.288% { background-position-y: -288px }
+      37.2881%, 38.983% { background-position-y: -320px }
+      38.9831%, 40.6779% { background-position-y: -352px }
+      40.678%, 57.627% { background-position-y: -384px }
+      57.6271%, 59.3219% { background-position-y: -416px }
+      59.322%, 61.0168% { background-position-y: -448px }
+      61.0169%, 62.7118% { background-position-y: -480px }
+      62.7119%, 69.4914% { background-position-y: -512px }
+      69.4915%, 71.1863% { background-position-y: -544px }
+      71.1864%, 72.8813% { background-position-y: -576px }
+      72.8814%, 74.5762% { background-position-y: -608px }
+      74.5763%, 76.2711% { background-position-y: -640px }
+      76.2712%, 77.966% { background-position-y: -672px }
+      77.9661%, 79.6609% { background-position-y: -704px }
+      79.661%, 86.4406% { background-position-y: -736px }
+      86.4407%, 88.1355% { background-position-y: -768px }
+      88.1356%, 89.8304% { background-position-y: -800px }
+      89.8305%, 91.5253% { background-position-y: -832px }
+      91.5254%, 93.2202% { background-position-y: -864px }
+      93.2203%, 94.9152% { background-position-y: -896px }
+      94.9153%, 96.6101% { background-position-y: -928px }
+      96.6102%, 98.305% { background-position-y: -960px }
+      98.3051%, 100% { background-position-y: -992px }
+  }
+  .texture-hexcasting-item-colorizer-dye_yellow-png {
+    animation: texture-hexcasting-item-colorizer-dye_yellow-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_yellow.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_yellow-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_black-png {
+    animation: texture-hexcasting-item-colorizer-dye_black-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_black.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_black-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_aromantic-png {
+    animation: texture-hexcasting-item-colorizer-pride_aromantic-png 2.6s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_aromantic.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_aromantic-png {
+      0%, 19.2307% { background-position-y: 0px }
+      19.2308%, 26.923% { background-position-y: -32px }
+      26.9231%, 28.8461% { background-position-y: -64px }
+      28.8462%, 30.7691% { background-position-y: -96px }
+      30.7692%, 32.6922% { background-position-y: -128px }
+      32.6923%, 34.6153% { background-position-y: -160px }
+      34.6154%, 36.5384% { background-position-y: -192px }
+      36.5385%, 38.4614% { background-position-y: -224px }
+      38.4615%, 40.3845% { background-position-y: -256px }
+      40.3846%, 42.3076% { background-position-y: -288px }
+      42.3077%, 44.2307% { background-position-y: -320px }
+      44.2308%, 46.1537% { background-position-y: -352px }
+      46.1538%, 48.0768% { background-position-y: -384px }
+      48.0769%, 49.9999% { background-position-y: -416px }
+      50%, 51.923% { background-position-y: -448px }
+      51.9231%, 53.8461% { background-position-y: -480px }
+      53.8462%, 55.7691% { background-position-y: -512px }
+      55.7692%, 57.6922% { background-position-y: -544px }
+      57.6923%, 59.6153% { background-position-y: -576px }
+      59.6154%, 61.5384% { background-position-y: -608px }
+      61.5385%, 63.4614% { background-position-y: -640px }
+      63.4615%, 82.6922% { background-position-y: -672px }
+      82.6923%, 84.6153% { background-position-y: -704px }
+      84.6154%, 86.5384% { background-position-y: -736px }
+      86.5385%, 88.4614% { background-position-y: -768px }
+      88.4615%, 90.3845% { background-position-y: -800px }
+      90.3846%, 92.3076% { background-position-y: -832px }
+      92.3077%, 94.2307% { background-position-y: -864px }
+      94.2308%, 96.1537% { background-position-y: -896px }
+      96.1538%, 98.0768% { background-position-y: -928px }
+      98.0769%, 100% { background-position-y: -960px }
+  }
+  .texture-hexcasting-item-colorizer-dye_light_blue-png {
+    animation: texture-hexcasting-item-colorizer-dye_light_blue-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_light_blue.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_light_blue-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_nonbinary-png {
+    animation: texture-hexcasting-item-colorizer-pride_nonbinary-png 2.95s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_nonbinary.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_nonbinary-png {
+      0%, 16.9491% { background-position-y: 0px }
+      16.9492%, 23.7287% { background-position-y: -32px }
+      23.7288%, 25.4236% { background-position-y: -64px }
+      25.4237%, 27.1185% { background-position-y: -96px }
+      27.1186%, 28.8135% { background-position-y: -128px }
+      28.8136%, 30.5084% { background-position-y: -160px }
+      30.5085%, 32.2033% { background-position-y: -192px }
+      32.2034%, 33.8982% { background-position-y: -224px }
+      33.8983%, 35.5931% { background-position-y: -256px }
+      35.5932%, 37.288% { background-position-y: -288px }
+      37.2881%, 38.983% { background-position-y: -320px }
+      38.9831%, 40.6779% { background-position-y: -352px }
+      40.678%, 57.627% { background-position-y: -384px }
+      57.6271%, 59.3219% { background-position-y: -416px }
+      59.322%, 61.0168% { background-position-y: -448px }
+      61.0169%, 62.7118% { background-position-y: -480px }
+      62.7119%, 69.4914% { background-position-y: -512px }
+      69.4915%, 71.1863% { background-position-y: -544px }
+      71.1864%, 72.8813% { background-position-y: -576px }
+      72.8814%, 74.5762% { background-position-y: -608px }
+      74.5763%, 76.2711% { background-position-y: -640px }
+      76.2712%, 77.966% { background-position-y: -672px }
+      77.9661%, 79.6609% { background-position-y: -704px }
+      79.661%, 86.4406% { background-position-y: -736px }
+      86.4407%, 88.1355% { background-position-y: -768px }
+      88.1356%, 89.8304% { background-position-y: -800px }
+      89.8305%, 91.5253% { background-position-y: -832px }
+      91.5254%, 93.2202% { background-position-y: -864px }
+      93.2203%, 94.9152% { background-position-y: -896px }
+      94.9153%, 96.6101% { background-position-y: -928px }
+      96.6102%, 98.305% { background-position-y: -960px }
+      98.3051%, 100% { background-position-y: -992px }
+  }
+  .texture-hexcasting-item-colorizer-pride_plural-png {
+    animation: texture-hexcasting-item-colorizer-pride_plural-png 2.95s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_plural.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_plural-png {
+      0%, 16.9491% { background-position-y: 0px }
+      16.9492%, 23.7287% { background-position-y: -32px }
+      23.7288%, 25.4236% { background-position-y: -64px }
+      25.4237%, 27.1185% { background-position-y: -96px }
+      27.1186%, 28.8135% { background-position-y: -128px }
+      28.8136%, 30.5084% { background-position-y: -160px }
+      30.5085%, 32.2033% { background-position-y: -192px }
+      32.2034%, 33.8982% { background-position-y: -224px }
+      33.8983%, 35.5931% { background-position-y: -256px }
+      35.5932%, 37.288% { background-position-y: -288px }
+      37.2881%, 38.983% { background-position-y: -320px }
+      38.9831%, 40.6779% { background-position-y: -352px }
+      40.678%, 57.627% { background-position-y: -384px }
+      57.6271%, 59.3219% { background-position-y: -416px }
+      59.322%, 61.0168% { background-position-y: -448px }
+      61.0169%, 62.7118% { background-position-y: -480px }
+      62.7119%, 69.4914% { background-position-y: -512px }
+      69.4915%, 71.1863% { background-position-y: -544px }
+      71.1864%, 72.8813% { background-position-y: -576px }
+      72.8814%, 74.5762% { background-position-y: -608px }
+      74.5763%, 76.2711% { background-position-y: -640px }
+      76.2712%, 77.966% { background-position-y: -672px }
+      77.9661%, 79.6609% { background-position-y: -704px }
+      79.661%, 86.4406% { background-position-y: -736px }
+      86.4407%, 88.1355% { background-position-y: -768px }
+      88.1356%, 89.8304% { background-position-y: -800px }
+      89.8305%, 91.5253% { background-position-y: -832px }
+      91.5254%, 93.2202% { background-position-y: -864px }
+      93.2203%, 94.9152% { background-position-y: -896px }
+      94.9153%, 96.6101% { background-position-y: -928px }
+      96.6102%, 98.305% { background-position-y: -960px }
+      98.3051%, 100% { background-position-y: -992px }
+  }
+  .texture-hexcasting-item-colorizer-dye_cyan-png {
+    animation: texture-hexcasting-item-colorizer-dye_cyan-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_cyan.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_cyan-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-dye_magenta-png {
+    animation: texture-hexcasting-item-colorizer-dye_magenta-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_magenta.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_magenta-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-pride_demiboy-png {
+    animation: texture-hexcasting-item-colorizer-pride_demiboy-png 3.3s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_demiboy.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_demiboy-png {
+      0%, 15.1514% { background-position-y: 0px }
+      15.1515%, 16.6666% { background-position-y: -32px }
+      16.6667%, 18.1817% { background-position-y: -64px }
+      18.1818%, 19.6969% { background-position-y: -96px }
+      19.697%, 21.212% { background-position-y: -128px }
+      21.2121%, 22.7272% { background-position-y: -160px }
+      22.7273%, 24.2423% { background-position-y: -192px }
+      24.2424%, 25.7575% { background-position-y: -224px }
+      25.7576%, 27.2726% { background-position-y: -256px }
+      27.2727%, 28.7878% { background-position-y: -288px }
+      28.7879%, 30.3029% { background-position-y: -320px }
+      30.303%, 31.8181% { background-position-y: -352px }
+      31.8182%, 33.3332% { background-position-y: -384px }
+      33.3333%, 34.8484% { background-position-y: -416px }
+      34.8485%, 36.3635% { background-position-y: -448px }
+      36.3636%, 37.8787% { background-position-y: -480px }
+      37.8788%, 53.0302% { background-position-y: -512px }
+      53.0303%, 59.0908% { background-position-y: -544px }
+      59.0909%, 60.606% { background-position-y: -576px }
+      60.6061%, 62.1211% { background-position-y: -608px }
+      62.1212%, 63.6363% { background-position-y: -640px }
+      63.6364%, 65.1514% { background-position-y: -672px }
+      65.1515%, 66.6666% { background-position-y: -704px }
+      66.6667%, 68.1817% { background-position-y: -736px }
+      68.1818%, 69.6969% { background-position-y: -768px }
+      69.697%, 71.212% { background-position-y: -800px }
+      71.2121%, 72.7272% { background-position-y: -832px }
+      72.7273%, 74.2423% { background-position-y: -864px }
+      74.2424%, 75.7575% { background-position-y: -896px }
+      75.7576%, 77.2726% { background-position-y: -928px }
+      77.2727%, 78.7878% { background-position-y: -960px }
+      78.7879%, 80.3029% { background-position-y: -992px }
+      80.303%, 81.8181% { background-position-y: -1024px }
+      81.8182%, 83.3332% { background-position-y: -1056px }
+      83.3333%, 84.8484% { background-position-y: -1088px }
+      84.8485%, 100% { background-position-y: -1120px }
+  }
+  .texture-hexcasting-item-colorizer-pride_genderfluid-png {
+    animation: texture-hexcasting-item-colorizer-pride_genderfluid-png 2.6s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_genderfluid.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_genderfluid-png {
+      0%, 19.2307% { background-position-y: 0px }
+      19.2308%, 26.923% { background-position-y: -32px }
+      26.9231%, 28.8461% { background-position-y: -64px }
+      28.8462%, 30.7691% { background-position-y: -96px }
+      30.7692%, 32.6922% { background-position-y: -128px }
+      32.6923%, 34.6153% { background-position-y: -160px }
+      34.6154%, 36.5384% { background-position-y: -192px }
+      36.5385%, 38.4614% { background-position-y: -224px }
+      38.4615%, 40.3845% { background-position-y: -256px }
+      40.3846%, 42.3076% { background-position-y: -288px }
+      42.3077%, 44.2307% { background-position-y: -320px }
+      44.2308%, 46.1537% { background-position-y: -352px }
+      46.1538%, 48.0768% { background-position-y: -384px }
+      48.0769%, 49.9999% { background-position-y: -416px }
+      50%, 51.923% { background-position-y: -448px }
+      51.9231%, 53.8461% { background-position-y: -480px }
+      53.8462%, 55.7691% { background-position-y: -512px }
+      55.7692%, 57.6922% { background-position-y: -544px }
+      57.6923%, 59.6153% { background-position-y: -576px }
+      59.6154%, 61.5384% { background-position-y: -608px }
+      61.5385%, 63.4614% { background-position-y: -640px }
+      63.4615%, 82.6922% { background-position-y: -672px }
+      82.6923%, 84.6153% { background-position-y: -704px }
+      84.6154%, 86.5384% { background-position-y: -736px }
+      86.5385%, 88.4614% { background-position-y: -768px }
+      88.4615%, 90.3845% { background-position-y: -800px }
+      90.3846%, 92.3076% { background-position-y: -832px }
+      92.3077%, 94.2307% { background-position-y: -864px }
+      94.2308%, 96.1537% { background-position-y: -896px }
+      96.1538%, 98.0768% { background-position-y: -928px }
+      98.0769%, 100% { background-position-y: -960px }
+  }
+  .texture-hexcasting-item-colorizer-pride_intersex-png {
+    animation: texture-hexcasting-item-colorizer-pride_intersex-png 2.1s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/pride_intersex.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-pride_intersex-png {
+      0%, 23.8094% { background-position-y: 0px }
+      23.8095%, 26.1904% { background-position-y: -32px }
+      26.1905%, 28.5713% { background-position-y: -64px }
+      28.5714%, 30.9523% { background-position-y: -96px }
+      30.9524%, 33.3332% { background-position-y: -128px }
+      33.3333%, 35.7142% { background-position-y: -160px }
+      35.7143%, 38.0951% { background-position-y: -192px }
+      38.0952%, 40.4761% { background-position-y: -224px }
+      40.4762%, 42.857% { background-position-y: -256px }
+      42.8571%, 45.238% { background-position-y: -288px }
+      45.2381%, 47.6189% { background-position-y: -320px }
+      47.619%, 49.9999% { background-position-y: -352px }
+      50%, 52.3809% { background-position-y: -384px }
+      52.381%, 54.7618% { background-position-y: -416px }
+      54.7619%, 57.1428% { background-position-y: -448px }
+      57.1429%, 66.6666% { background-position-y: -480px }
+      66.6667%, 69.0475% { background-position-y: -512px }
+      69.0476%, 71.4285% { background-position-y: -544px }
+      71.4286%, 73.8094% { background-position-y: -576px }
+      73.8095%, 76.1904% { background-position-y: -608px }
+      76.1905%, 78.5713% { background-position-y: -640px }
+      78.5714%, 80.9523% { background-position-y: -672px }
+      80.9524%, 83.3332% { background-position-y: -704px }
+      83.3333%, 85.7142% { background-position-y: -736px }
+      85.7143%, 88.0951% { background-position-y: -768px }
+      88.0952%, 90.4761% { background-position-y: -800px }
+      90.4762%, 92.857% { background-position-y: -832px }
+      92.8571%, 95.238% { background-position-y: -864px }
+      95.2381%, 97.6189% { background-position-y: -896px }
+      97.619%, 100% { background-position-y: -928px }
+  }
+  .texture-hexcasting-item-colorizer-uuid-png {
+    animation: texture-hexcasting-item-colorizer-uuid-png 2.05s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/uuid.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-uuid-png {
+      0%, 24.3901% { background-position-y: 0px }
+      24.3902%, 26.8292% { background-position-y: -32px }
+      26.8293%, 29.2682% { background-position-y: -64px }
+      29.2683%, 31.7072% { background-position-y: -96px }
+      31.7073%, 34.1462% { background-position-y: -128px }
+      34.1463%, 36.5853% { background-position-y: -160px }
+      36.5854%, 39.0243% { background-position-y: -192px }
+      39.0244%, 63.4145% { background-position-y: -224px }
+      63.4146%, 65.8536% { background-position-y: -256px }
+      65.8537%, 75.6097% { background-position-y: -288px }
+      75.6098%, 78.0487% { background-position-y: -320px }
+      78.0488%, 80.4877% { background-position-y: -352px }
+      80.4878%, 82.9267% { background-position-y: -384px }
+      82.9268%, 85.3658% { background-position-y: -416px }
+      85.3659%, 87.8048% { background-position-y: -448px }
+      87.8049%, 90.2438% { background-position-y: -480px }
+      90.2439%, 92.6828% { background-position-y: -512px }
+      92.6829%, 95.1219% { background-position-y: -544px }
+      95.122%, 97.5609% { background-position-y: -576px }
+      97.561%, 100% { background-position-y: -608px }
+  }
+  .texture-hexcasting-item-colorizer-dye_pink-png {
+    animation: texture-hexcasting-item-colorizer-dye_pink-png 2.9s linear infinite;
+    background-size: 32px;
+    background-image: url("/Common/src/main/resources/assets/hexcasting/textures/item/colorizer/dye_pink.png");
+  }
+  @keyframes texture-hexcasting-item-colorizer-dye_pink-png {
+      0%, 17.2413% { background-position-y: 0px }
+      17.2414%, 20.6896% { background-position-y: -32px }
+      20.6897%, 24.1378% { background-position-y: -64px }
+      24.1379%, 27.5861% { background-position-y: -96px }
+      27.5862%, 31.0344% { background-position-y: -128px }
+      31.0345%, 34.4827% { background-position-y: -160px }
+      34.4828%, 37.9309% { background-position-y: -192px }
+      37.931%, 41.3792% { background-position-y: -224px }
+      41.3793%, 43.1033% { background-position-y: -256px }
+      43.1034%, 44.8275% { background-position-y: -288px }
+      44.8276%, 46.5516% { background-position-y: -320px }
+      46.5517%, 48.2758% { background-position-y: -352px }
+      48.2759%, 49.9999% { background-position-y: -384px }
+      50%, 67.2413% { background-position-y: -416px }
+      67.2414%, 68.9654% { background-position-y: -448px }
+      68.9655%, 75.862% { background-position-y: -480px }
+      75.8621%, 77.5861% { background-position-y: -512px }
+      77.5862%, 79.3102% { background-position-y: -544px }
+      79.3103%, 81.0344% { background-position-y: -576px }
+      81.0345%, 82.7585% { background-position-y: -608px }
+      82.7586%, 84.4827% { background-position-y: -640px }
+      84.4828%, 86.2068% { background-position-y: -672px }
+      86.2069%, 87.9309% { background-position-y: -704px }
+      87.931%, 89.6551% { background-position-y: -736px }
+      89.6552%, 91.3792% { background-position-y: -768px }
+      91.3793%, 93.1033% { background-position-y: -800px }
+      93.1034%, 94.8275% { background-position-y: -832px }
+      94.8276%, 96.5516% { background-position-y: -864px }
+      96.5517%, 98.2758% { background-position-y: -896px }
+      98.2759%, 100% { background-position-y: -928px }
+  }
+/**/
