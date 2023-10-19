@@ -1,6 +1,7 @@
 {% import "macros/formatting.html.jinja" as formatting -%}
+{% import "macros/recipes.html.jinja" as recipe_macros with context %}
 
-<div id="{{ entry.id.path }}">
+<div id="{{ entry.id.path }}" class="entry">
   {% call formatting.maybe_spoilered(entry) %}
     {{- formatting.section_header(entry, "h3", "entry-title") }}
 

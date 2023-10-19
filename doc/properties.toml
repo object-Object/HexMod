@@ -31,7 +31,9 @@ ref = "83e2169afbbce40990d69fc53e5962e4a793d467"
 version = "1.19.1"
 
 [textures]
-missing = []
+missing = [
+    "minecraft:textures*"
+]
 
 [textures.gaslighting]
 "hexcasting:quenched_allay_bricks" = { id="hexcasting:deco/quenched_allay_bricks_{}", variants=4 }
