@@ -146,12 +146,21 @@ blockquote.crafting-info {
   height: 32px;
 }
 
-.multi-textures .texture {
-  position: absolute;
+.toc-elem .item-texture{
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  --SIZE: 16px;
+  display:inline-block;
+}
+
+.multi-textures {
+  display: inline-block;
 }
 
 .multi-textures .texture:not(.multi-texture-active) {
   z-index: -1;
+  display: none;
 }
 
 .spotlight {

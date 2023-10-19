@@ -21,14 +21,28 @@
 {# header for categories and entries #}
 {% macro section_header(value, header_tag, class_name) -%}
   <{{ header_tag }} class="{{ class_name }} page-header">
-    {{ recipe_macros.render_item(value.icon) }}
+    {{ render_icon(value.icon) }}
     {{- value.name ~ jump_to_top() ~ permalink(value.id.path) -}}
   </{{ header_tag }}>
 {%- endmacro %}
 
+{% macro render_icon(iconish, name="") -%}
+  {% if iconish.gaslighting is defined %}
+      {{ recipe_macros.render_item(iconish) }}
+    {% else %}
+      {{
+      recipe_macros.render_texture(
+        name=name,
+        texture=iconish,
+        class_names=[],
+      )
+      }}
+    {% endif %}
+{%- endmacro%}
+
 {# link to value.id, with spoiler blur if value is a spoiler #}
 {% macro maybe_spoilered_link(value) -%}
-  <a href="#{{ value.id.path }}"{{ ' class="spoilered"'|safe if value.is_spoiler }}>{{ value.name }}</a>
+  <a href="#{{ value.id.path }}" class="toc-elem {{ ' spoilered'|safe if value.is_spoiler }}">{{ render_icon(value.icon) }} {{ value.name }}</a>
 {%- endmacro %}
 
 {# macro block which spoiler blurs its content if value is a spoiler #}
