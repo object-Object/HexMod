@@ -68,8 +68,9 @@ blockquote.crafting-info {
   display: flex;
   align-items: end;
 
-  .texture{
+  .texture {
     margin-right: 4px;
+    display: inline-block;
   }
 }
 
@@ -146,21 +147,24 @@ blockquote.crafting-info {
   height: 32px;
 }
 
-.toc-elem .item-texture{
-  width: 16px;
-  height: 16px;
-  margin-right: 2px;
-  --SIZE: 16px;
-  display:inline-block;
+.multi-textures .texture {
+  position: absolute;
 }
 
-.multi-textures {
+.toc-elem > .texture {
+  margin-right: 2px;
   display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.toc-elem .texture {
+  width: 16px;
+  height: 16px;
 }
 
 .multi-textures .texture:not(.multi-texture-active) {
-  z-index: -1;
-  display: none;
+  visibility: hidden;
 }
 
 .spotlight {
@@ -169,7 +173,7 @@ blockquote.crafting-info {
   margin: -6px 0 8px 0;
 }
 
-.spotlight .texture {
+.spotlight > .texture {
   position: absolute;
   top: 10px;
   left: 10px;
