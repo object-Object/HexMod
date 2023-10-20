@@ -5,6 +5,7 @@ from pydantic import model_validator
 from hexdoc.core.compat import HexVersion
 from hexdoc.core.resource import ResourceLocation
 from hexdoc.minecraft import LocalizedItem, Recipe
+from hexdoc.minecraft.assets.textures import ItemWithTexture
 from hexdoc.minecraft.recipe import ItemIngredient, ItemIngredientList
 from hexdoc.model import HexdocModel
 from hexdoc.model.tagged_union import NoValue, TypeTaggedUnion
@@ -48,7 +49,7 @@ class EntityTagIngredient(BrainsweepeeIngredient, type="entity_tag"):
 class BlockStateIngredient(HexdocModel):
     # TODO: tagged union
     type: Literal["block"]
-    block: ResourceLocation
+    block: ItemWithTexture
 
 
 class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"):
@@ -61,7 +62,7 @@ class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"
 
 
 class BlockState(HexdocModel):
-    name: LocalizedItem
+    name: ItemWithTexture
     properties: dict[str, Any] | None = None
 
 
