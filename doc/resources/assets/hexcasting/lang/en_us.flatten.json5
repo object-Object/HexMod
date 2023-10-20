@@ -43,6 +43,11 @@
       hide: "Click to hide recipes",
     },
 
+    villagerrequirements: {
+      any: "Villager must be a {} or higher",
+      professional: "Villager must be a {} {} or higher",
+    },
+
     pages: {
       hexcasting: {
         brainsweep: {
