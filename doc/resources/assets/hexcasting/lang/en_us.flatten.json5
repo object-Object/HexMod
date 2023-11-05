@@ -43,7 +43,7 @@
       hide: "Click to hide recipes",
     },
 
-    villagerrequirements: {
+    villager_requirements: {
       any: "Villager must be a {} or higher",
       professional: "Villager must be a {} {} or higher",
     },
