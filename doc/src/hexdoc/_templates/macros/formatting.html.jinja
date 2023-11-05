@@ -26,14 +26,14 @@
   </{{ header_tag }}>
 {%- endmacro %}
 
-{% macro render_icon(iconish, name="") -%}
-  {% if iconish.gaslighting is defined %}
-      {{ recipe_macros.render_item(iconish) }}
+{% macro render_icon(item_or_texture, name="") -%}
+  {% if item_or_texture.gaslighting is defined %}
+      {{ recipe_macros.render_item(item_or_texture) }}
     {% else %}
       {{
       recipe_macros.render_texture(
         name=name,
-        texture=iconish,
+        texture=item_or_texture,
         class_names=[],
       )
       }}
@@ -42,7 +42,7 @@
 
 {# link to value.id, with spoiler blur if value is a spoiler #}
 {% macro maybe_spoilered_link(value) -%}
-  <a href="#{{ value.id.path }}" class="toc-elem {{ ' spoilered'|safe if value.is_spoiler }}">{{ render_icon(value.icon) }} {{ value.name }}</a>
+  <a href="#{{ value.id.path }}" class="toc-elem {{ ' spoilered' if value.is_spoiler }}">{{ render_icon(value.icon) }} {{ value.name }}</a>
 {%- endmacro %}
 
 {# macro block which spoiler blurs its content if value is a spoiler #}

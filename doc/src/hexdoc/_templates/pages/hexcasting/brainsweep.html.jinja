@@ -2,12 +2,6 @@
 {% import "macros/recipes.html.jinja" as recipe_macros with context %}
 
 {% block body %}
-  {{ recipe_macros.render_mindcipe(page.recipe) }}
-  {# {{ recipe_macros.generic(
-    [page.recipe],
-    "name",
-    _("hexdoc.pages.hexcasting.brainsweep.description"),
-    _("hexdoc.pages.hexcasting.brainsweep.separator"),
-  ) }} #}
+  {{ recipe_macros.render_mind_flay_recipe(page.recipe) }}
   {{ page.text|hexdoc_block }}
 {% endblock body %}
