@@ -4,6 +4,7 @@ default_lang = "en_us"
 default_branch = "1.20" # TODO: switch back to main
 
 resource_dirs = [  # top takes priority
+    "new_hextures_2",
     "resources",
     "{_common.src}/main/resources",
     "{_common.src}/generated/resources",
