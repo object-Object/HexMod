@@ -131,7 +131,7 @@ function doCycleTexturesForever() {
   cycleTimeoutID = setTimeout(doCycleTexturesForever, 2000);
 }
 // these are filled by Jinja
-const BOOK_URL = "https://object-object.github.io/HexMod";
+const BOOK_URL = "https://hexcasting.hexxy.media";
 const VERSION = "0.9.6";
 const LANG = "en_us";
 // Creates an element in the form `<li><a href=${href}>${text}</a></li>`
