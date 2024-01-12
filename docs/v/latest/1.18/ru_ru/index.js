@@ -4,7 +4,7 @@ import semver from 'https://cdn.jsdelivr.net/npm/semver@7.5.4/+esm';
 const BOOK_URL = "https://hexcasting.hexxy.media";
 const VERSION = "latest/1.18";
 const MINECRAFT_VERSION = "1.18.2";
-const FULL_VERSION = "0.9.6.1.0.dev22";
+const FULL_VERSION = "0.9.6.1.0.dev23";
 const LANG = "ru_ru";
 const SHOW_DROPDOWN_MINECRAFT_VERSION = "true" === "true";
 const DROPDOWN_MINECRAFT_TEMPLATE = "Minecraft {version}";
