@@ -433,3 +433,9 @@ img.spell-viz {
 .palette-option {
   cursor: pointer;
 }
+.spell-settings-dropdown {
+  position: absolute;
+}
+.spell-settings-toggle {
+  font-size: large;
+}
