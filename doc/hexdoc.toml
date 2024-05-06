@@ -42,6 +42,9 @@ mod_name = "Hex Casting"
 author = "petrak@, Alwinfy"
 show_landing_text = true
 
+[lang]
+ru_ru = { quiet=true }
+
 # platforms
 
 [_common]
