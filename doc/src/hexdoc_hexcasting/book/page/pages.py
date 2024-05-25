@@ -1,6 +1,6 @@
 from typing import Any, Self
 
-from hexdoc.minecraft import LocalizedStr
+from hexdoc.core import LocalizedStr
 from hexdoc.minecraft.recipe import CraftingRecipe
 from hexdoc.patchouli.page import PageWithText, PageWithTitle
 from hexdoc_hexcasting.metadata import HexContext
