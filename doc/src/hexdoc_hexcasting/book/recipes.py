@@ -1,8 +1,7 @@
 from typing import Any, Literal, Self
 
-from hexdoc.core import ResourceLocation
-from hexdoc.minecraft import I18n, LocalizedStr
-from hexdoc.minecraft.assets import ItemWithTexture, PNGTexture
+from hexdoc.core import I18n, LocalizedStr, ResourceLocation
+from hexdoc.graphics import ImageField, ItemImage, TextureImage
 from hexdoc.minecraft.recipe import ItemIngredient, ItemIngredientList, Recipe
 from hexdoc.model import HexdocModel, TypeTaggedTemplate
 from hexdoc.utils import NoValue, classproperty
@@ -32,7 +31,7 @@ class VillagerIngredient(
 
     _level_name: LocalizedStr = PrivateAttr()
     _profession_name: LocalizedStr = PrivateAttr()
-    _texture: PNGTexture = PrivateAttr()
+    _texture: TextureImage = PrivateAttr()
 
     @property
     def level_name(self):
@@ -55,7 +54,7 @@ class VillagerIngredient(
 
         self._profession_name = i18n.localize_entity(self.profession, "villager")
 
-        self._texture = PNGTexture.load_id(
+        self._texture = TextureImage.load_id(
             id="textures/entities/villagers" / self.profession + ".png",
             context=info.context,
         )
@@ -66,7 +65,7 @@ class VillagerIngredient(
 class BlockStateIngredient(HexdocModel):
     # TODO: tagged union
     type: Literal["block"]
-    block: ItemWithTexture
+    block: ImageField[ItemImage]
 
 
 class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"):
@@ -79,7 +78,7 @@ class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"
 
 
 class BlockState(HexdocModel):
-    name: ItemWithTexture
+    name: ImageField[ItemImage]
     properties: dict[str, Any] | None = None
 
 

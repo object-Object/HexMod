@@ -1,9 +1,7 @@
 from types import NoneType
 from typing import Any
 
-from hexdoc.core import ResourceLocation
-from hexdoc.minecraft import LocalizedStr
-from hexdoc.minecraft.i18n import I18n
+from hexdoc.core import I18n, LocalizedStr, ResourceLocation
 from hexdoc.patchouli.page import PageWithText
 from pydantic import ValidationInfo, field_validator, model_validator
 

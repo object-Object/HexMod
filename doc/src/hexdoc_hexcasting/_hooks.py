@@ -3,10 +3,9 @@ from importlib.resources import Package
 from pathlib import Path
 from typing import Any
 
-from hexdoc.core import ResourceLocation
+from hexdoc.core import I18n, ResourceLocation
 from hexdoc.core.loader import ModResourceLoader
 from hexdoc.core.properties import Properties
-from hexdoc.minecraft import I18n
 from hexdoc.patchouli import BookContext, FormatTree
 from hexdoc.patchouli.text import STYLE_REGEX, SpecialStyleType, Style, resolve_macros
 from hexdoc.plugin import (
