@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any, Literal, Self
 
-from hexdoc.core import IsVersion, ResourceLocation
-from hexdoc.minecraft.assets import ItemWithTexture, PNGTexture
-from hexdoc.minecraft.i18n import I18n, LocalizedStr
+from hexdoc.core import I18n, IsVersion, LocalizedStr, ResourceLocation
+from hexdoc.graphics import ImageField, ItemImage, TextureImage
 from hexdoc.minecraft.recipe import ItemIngredient, ItemIngredientList, Recipe
 from hexdoc.model import HexdocModel, TypeTaggedTemplate
 from hexdoc.utils import NoValue, classproperty
@@ -29,7 +28,7 @@ class VillagerIngredient(BrainsweepeeIngredient, type="villager"):
 
     _level_name: LocalizedStr = PrivateAttr()
     _profession_name: LocalizedStr = PrivateAttr()
-    _texture: PNGTexture = PrivateAttr()
+    _texture: TextureImage = PrivateAttr()
 
     @property
     def level_name(self):
@@ -52,7 +51,7 @@ class VillagerIngredient(BrainsweepeeIngredient, type="villager"):
 
         self._profession_name = i18n.localize_entity(self.profession, "villager")
 
-        self._texture = PNGTexture.load_id(
+        self._texture = TextureImage.load_id(
             id="textures/entities/villagers" / self.profession + ".png",
             context=info.context,
         )
@@ -74,7 +73,7 @@ class EntityTypeIngredient(BrainsweepeeIngredient, type="entity_type"):
     entity_type: ResourceLocation = Field(alias="entityType")
 
     _name: LocalizedStr = PrivateAttr()
-    _texture: PNGTexture = PrivateAttr()
+    _texture: TextureImage = PrivateAttr()
 
     @property
     def name(self):
@@ -91,7 +90,7 @@ class EntityTypeIngredient(BrainsweepeeIngredient, type="entity_type"):
 
         self._name = i18n.localize_entity(self.entity_type)
 
-        self._texture = PNGTexture.load_id(
+        self._texture = TextureImage.load_id(
             id="textures/entities" / self.entity_type + ".png",
             context=info.context,
         )
@@ -107,7 +106,7 @@ class EntityTagIngredient(BrainsweepeeIngredient, type="entity_tag"):
 class BlockStateIngredient(HexdocModel):
     # TODO: tagged union
     type: Literal["block"]
-    block: ItemWithTexture
+    block: ImageField[ItemImage]
 
 
 class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"):
@@ -120,7 +119,7 @@ class ModConditionalIngredient(ItemIngredient, type="hexcasting:mod_conditional"
 
 
 class BlockState(HexdocModel):
-    name: ItemWithTexture
+    name: ImageField[ItemImage]
     properties: dict[str, Any] | None = None
 
 
