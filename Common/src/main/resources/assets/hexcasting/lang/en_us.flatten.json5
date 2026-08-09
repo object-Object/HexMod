@@ -1,5 +1,14 @@
 // A work in progress
 {
+  "foo:": {
+    "bar_": {
+      baz: "value 2",
+    },
+    "qux": {
+      "": "value 2",
+    },
+  },
+
   "item.hexcasting": {
     book: "Hex Notebook updated string",
     
